@@ -19,10 +19,17 @@ import { playSound } from "../engine/sound.js";
 const ESSAIS = 3;
 
 /* Largeur de la zone parfaite/correcte selon la difficulté du format :
-   plus le projet est ambitieux, plus le geste est exigeant. */
+   plus le projet est ambitieux, plus le geste est exigeant.
+
+   Nettement élargi : à l'ancienne échelle, un album (difficulté 4)
+   n'offrait que 10 % de barre en zone parfaite avec un curseur qui
+   traversait l'écran en moins d'une seconde — injouable autrement qu'au
+   hasard, ce qui vidait le mini-jeu de son sens. On veut un geste
+   d'adresse, pas une loterie : le joueur attentif doit réussir, le
+   joueur distrait doit rater. */
 function zonesPour(difficulte){
-  const parfait = Math.max(6, 18 - difficulte * 2);   // % de la barre
-  const correct = parfait * 2.6;
+  const parfait = Math.max(14, 30 - difficulte * 3);   // % de la barre
+  const correct = parfait * 2.4;
   return {parfait, correct};
 }
 
@@ -67,7 +74,8 @@ export function launchMixQTE(opts, onDone){
 
   let pos = 0;               // 0..1 le long de la barre
   let dir = 1;
-  let vitesse = 0.011 + difficulte * 0.0022;
+  // Ralenti d'environ un tiers : le curseur reste lisible à l'œil.
+  let vitesse = 0.0065 + difficulte * 0.0013;
   let essais = 0;
   let scores = [];
   let raf = null;
@@ -107,8 +115,9 @@ export function launchMixQTE(opts, onDone){
     cursor.className = "mixqte-cursor " + (s === 2 ? "hit-parfait" : s === 1 ? "hit-correct" : "hit-rate");
     setTimeout(()=>{ if(!fini) cursor.className = "mixqte-cursor"; }, 220);
 
-    // Ça accélère un peu à chaque essai : la tension monte.
-    vitesse += 0.0025;
+    // Ça accélère un peu à chaque essai : la tension monte, sans que le
+    // troisième essai devienne un coup de dés.
+    vitesse += 0.0012;
 
     if(essais >= ESSAIS) terminer();
   }

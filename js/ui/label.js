@@ -2,11 +2,13 @@ import { artistStatus, confirmAudienceChange, giveBonus, giveRest, moodEmoji, op
 import { marketDistrustActive, openMarketNego } from "../engine/contracts.js";
 import { getTier, impact, rosterCap, rosterFull } from "../engine/economy.js";
 import { getRelation, relLabel } from "../engine/events.js";
-import { beatmakerCap, confirmScout, externalAcceptChance, externalFee, marketFilteredList, marketGenreList, marketGoPage, recruitBeatmaker, setMarketFilter, setMarketGenre, setMarketPopBracket, setMarketSalaireSort, setMarketTalentBracket } from "../engine/market.js";
+import { beatmakerCap, confirmScout, externalAcceptChance, externalFee, marketFilteredList, marketGenreList, marketGoPage, recruitBeatmaker, REPERAGES_PAR_SAISON, reperagesRestants, setMarketFilter, setMarketGenre, setMarketPopBracket, setMarketSalaireSort, setMarketTalentBracket } from "../engine/market.js";
 import { artistNameById, calcPrediction, chooseDraftMode, draftAdvance, draftCost, draftGoStep, draftStepNames, ensureDraft, getProductionStage, langueName, launchBeatProject, launchProject, projectLock, projectPredictionRange, projectProgress, releaseChapterStreams, startDraft, themeName } from "../engine/production.js";
 import { safeRender, setTab } from "../render.js";
 import { state } from "../state.js";
 import { draftOptionChips, HIDDEN_STAT_NOTE } from "./chips.js";
+import { renderReseaux } from "./social.js";
+import { postCooldownRestant } from "../engine/social.js";
 import { chance, clamp, esc, fmt, fmtS, genTitle, langMatches } from "../utils.js";
 import { DATA } from "../data.js";
 
@@ -18,14 +20,16 @@ export function renderProjectPrediction(p){
 export function renderLabel(){
   const subs=[
     ["artistes","🎤 Mes artistes",state.signed.length],
-    ["recruter","🔍 Recruter",state.scoutUsed?0:1],
+    ["recruter","🔍 Recruter",reperagesRestants()],
     ["production","🎛️ Production",state.projects.length],
-    ["sorties","💿 Sorties",state.releases.length]
+    ["sorties","💿 Sorties",state.releases.length],
+    ["reseaux","📱 Réseaux",postCooldownRestant() === 0 ? 1 : 0]
   ];
   let body;
   if(state.labelSub === "recruter") body = renderRecruter();
   else if(state.labelSub === "production") body = renderProduction();
   else if(state.labelSub === "sorties") body = renderSorties();
+  else if(state.labelSub === "reseaux") body = renderReseaux();
   else body = renderArtists();
   return `
   <div class="subnav">
@@ -179,9 +183,11 @@ export function renderRecruter(){
     <div class="card">
       <div class="spread">
         <h2 style="margin:0">🔭 Repérage</h2>
-        <span class="pill">${state.scoutUsed ? "Fait — nouveau lot la saison prochaine" : "Gratuit, 1x/saison"}</span>
+        <span class="pill">${reperagesRestants() > 0
+          ? `Gratuit — ${reperagesRestants()} repérage${reperagesRestants()>1?"s":""} restant${reperagesRestants()>1?"s":""} cette saison`
+          : "Épuisé — nouveau lot la saison prochaine"}</span>
       </div>
-      <div class="small muted" style="margin-top:6px">🎲 Talents bruts : gratuits, potentiel parfois très élevé, mais humeur imprévisible et talent révélé seulement après signature. Un seul choix par saison, pas de négociation.</div>
+      <div class="small muted" style="margin-top:6px">🎲 Talents bruts : gratuits, potentiel parfois très élevé, mais humeur imprévisible et talent révélé seulement après signature. ${REPERAGES_PAR_SAISON} par saison, pas de négociation — le lot se renouvelle après chaque signature.</div>
       <div class="divider"></div>
       ${renderScout()}
     </div>
@@ -246,7 +252,7 @@ export function renderBeatmakerModal(){
 }
 
 export function renderScout(){
-  if(!state.scoutUsed){
+  if(reperagesRestants() > 0){
     return `
     <div class="grid g2">
       ${state.scout.map(a=>`

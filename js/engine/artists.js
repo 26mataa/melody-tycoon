@@ -1,5 +1,6 @@
 import { impact } from "./economy.js";
 import { scheduleFollowUp } from "./events.js";
+import { postSignature } from "./social.js";
 import { notify } from "../notify.js";
 import { after, safeRender } from "../render.js";
 import { log, state } from "../state.js";
@@ -67,6 +68,7 @@ export function finalizeSigned(a){
   a.themesPreferes = (a.themesPreferes && a.themesPreferes.length) ? a.themesPreferes : genThemesPreferes();
   a.audienceLockChapters = a.audienceLockChapters || 0;
   state.careerArtistsSigned = (state.careerArtistsSigned||0) + 1;
+  postSignature(a);
   return a;
 }
 

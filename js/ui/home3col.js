@@ -1,5 +1,5 @@
 import { avgMoral, dailyCost, getTier, MAMIE_COOLDOWN, mamieAvailable, mamieChaptersLeft, streamDailyIncome, tierScore } from "../engine/economy.js";
-import { mandatActif, mandatEpisodesRestants } from "../engine/mandate.js";
+import { mandatActif, mandatBloquant, mandatEpisodesRestants } from "../engine/mandate.js";
 import { getObjectives } from "../engine/player.js";
 import { artistNameById, getProductionStage, projectProgress } from "../engine/production.js";
 import { seasonTitle } from "../engine/season.js";
@@ -100,8 +100,10 @@ function renderColStory(){
     </div>
 
     ${renderMandat()}
-    ${noArtist && !mandatActif() ? renderNoArtistPush() : ``}
-    ${renderEpisode()}
+    ${mandatBloquant() ? `` : `
+      ${noArtist && !mandatActif() ? renderNoArtistPush() : ``}
+      ${renderEpisode()}
+    `}
 
     ${projets.length ? `
       <div class="panel" style="margin-top:14px">
@@ -136,20 +138,28 @@ function renderColStory(){
 function renderMandat(){
   const def = mandatActif();
   if(!def) return "";
+  const bloquant = !!def.bloquant;
   const reste = mandatEpisodesRestants();
-  const urgent = reste <= 2;
+  const urgent = !bloquant && reste <= 2;
   const cta = def.cta || {};
   const args = JSON.stringify([cta.tab || "dash", cta.sub || null]);
 
+  /* Un mandat bloquant prend toute la place de la colonne narrative : il
+     n'y a littéralement rien d'autre à faire, autant que ça se voie. Pas
+     de compte à rebours affiché — le temps ne passe pas tant qu'il est
+     là, un chiffre figé ne ferait qu'induire en erreur. */
   return `
-  <div class="mandat ${urgent ? "urgent" : ""}">
+  <div class="mandat ${bloquant ? "bloquant" : ""} ${urgent ? "urgent" : ""}">
     <div class="spread">
-      <span class="mandat-tag">${def.icone} Mandat en cours</span>
-      <span class="mandat-compte ${urgent ? "bad" : ""}">${reste} épisode${reste > 1 ? "s" : ""}</span>
+      <span class="mandat-tag">${def.icone} ${bloquant ? "L'histoire est en attente" : "Mandat en cours"}</span>
+      ${bloquant
+        ? `<span class="mandat-compte">rien d'autre à faire</span>`
+        : `<span class="mandat-compte ${urgent ? "bad" : ""}">${reste} épisode${reste > 1 ? "s" : ""}</span>`}
     </div>
     <div class="mandat-titre">${esc(def.titre)}</div>
     <div class="mandat-texte">${esc(def.texte())}</div>
     <button class="primary mandat-cta" data-action="gotoObjective" data-args='${args}'>${esc(cta.label || "Y aller")}</button>
+    ${bloquant ? `<div class="mandat-note">Aucun nouvel épisode ne se déclenchera avant.</div>` : ``}
   </div>`;
 }
 

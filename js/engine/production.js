@@ -1,6 +1,7 @@
 import { getRelation } from "./events.js";
 import { externalAcceptChance, externalFee } from "./market.js";
 import { performRoll } from "./roll.js";
+import { postSortie } from "./social.js";
 import { playSound } from "./sound.js";
 import { notify } from "../notify.js";
 import { safeRender } from "../render.js";
@@ -466,7 +467,7 @@ export function buildReviews(q, ptype, marquee){
   return shuffleArr(out);
 }
 
-export function resolveBeatProject(p){
+export function resolveBeatProject(p, bonusSeq){
   const bm = state.beatmakers.find(x=>x.id===p.beatmaker);
   if(!bm){
     log(`⚠️ Projet de beats annulé : le beatmaker a quitté le label.`,"neg");
@@ -477,21 +478,28 @@ export function resolveBeatProject(p){
   const hype = p.beatHype !== undefined ? p.beatHype : bm.hype;
   const hypeMult = 1 + (hype-50)/250;
 
+  /* Le motif reproduit au séquenceur (ui/stepqte.js) pèse sur le
+     résultat : bien joué, le beat vaut plus cher et donne un meilleur
+     bonus à l'artiste. Amplitude volontairement plus large que le mix
+     final (±14 contre ±10) parce que c'est un geste plus exigeant. */
+  const seq = bonusSeq || 0;
+  const seqMult = 1 + seq/45;
+
   if(p.type === "exclusif"){
     const target = state.signed.find(x=>x.id===p.beatTarget);
     if(target){
-      target.beatBonus = Math.round((10 + bm.skill*0.15) * hypeMult);
-      log(`🎚️ « ${p.title} » livré par ${bm.name}${hype>=70?` (hype à ${hype}% au lancement, bonus renforcé)`:``} : ${target.name} bénéficiera d'un bonus de qualité (+${target.beatBonus}) sur son prochain projet.`,"pos");
+      target.beatBonus = Math.max(0, Math.round((10 + bm.skill*0.15) * hypeMult + seq));
+      log(`🎚️ « ${p.title} » livré par ${bm.name}${hype>=70?` (hype à ${hype}% au lancement, bonus renforcé)`:``}${seq?` — séquenceur : ${seq>0?"+":""}${seq}`:``} : ${target.name} bénéficiera d'un bonus de qualité (+${target.beatBonus}) sur son prochain projet.`,"pos");
     }else{
       log(`🎚️ « ${p.title} » livré par ${bm.name}, mais l'artiste destinataire a quitté le label : beat perdu.`,"neg");
     }
     return;
   }
 
-  const mult = (0.6 + bm.skill/100) * hypeMult;
-  const revenue = Math.round((bt.base||0) * mult * rand(0.8,1.3));
+  const mult = (0.6 + bm.skill/100) * hypeMult * seqMult;
+  const revenue = Math.max(0, Math.round((bt.base||0) * mult * rand(0.8,1.3)));
   state.argent += revenue;
-  log(`🎚️ « ${p.title} » (${bt.name}) livré par ${bm.name}${hype>=70?` (était hype au lancement)`:``} : +${fmt(revenue)}.`,"pos");
+  log(`🎚️ « ${p.title} » (${bt.name}) livré par ${bm.name}${hype>=70?` (était hype au lancement)`:``}${seq?` — séquenceur : ${seq>0?"+":""}${seq}`:``} : +${fmt(revenue)}.`,"pos");
 }
 
 /* mixBonus : résultat du mini-jeu de mix final (voir ui/mixqte.js).
@@ -653,6 +661,9 @@ export function resolveRelease(p, mixBonus){
     fini:false
   };
   state.releases.push(release);
+  // Le fil des réseaux ne raconte que des faits réels de la partie :
+  // une sortie s'y annonce toute seule, avec une vraie réaction du public.
+  postSortie(release);
 
   if(marquee){
     log(`⭐ « ${p.title} » ne va pas passer inaperçu. On va en reparler.`,"info");

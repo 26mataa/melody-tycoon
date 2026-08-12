@@ -7,6 +7,7 @@ import { checkRetours } from "./memory.js";
 import { rareReleaseEvent, releaseChapterStreams, resolveBeatProject, resolveRelease } from "./production.js";
 import { resolveSeasonFinale } from "./season.js";
 import { launchMixQTE } from "../ui/mixqte.js";
+import { launchStepQTE } from "../ui/stepqte.js";
 import { safeRender } from "../render.js";
 import { log, save, state } from "../state.js";
 import { chance, clamp, rint } from "../utils.js";
@@ -44,9 +45,10 @@ export function advanceChapter(quiet){
     if(p.reste <= 0) done.push(p);
   });
   const aMixer = [];
+  const aSequencer = [];
   done.forEach(p=>{
     state.projects = state.projects.filter(x=>x !== p);
-    if(p.kind === "beat") resolveBeatProject(p);
+    if(p.kind === "beat") aSequencer.push(p);
     else aMixer.push(p);
   });
 
@@ -139,10 +141,40 @@ export function advanceChapter(quiet){
     resolveSeasonFinale();
   }
 
-  // Un projet arrivé à terme passe par le mix final avant d'exister vraiment.
+  // Un projet arrivé à terme passe par son mini-jeu avant d'exister
+  // vraiment : le séquenceur pour un beat, le mix final pour une sortie.
+  if(aSequencer.length) sequencerPuisLivrer(aSequencer, quiet);
   if(aMixer.length) mixerPuisSortir(aMixer, quiet);
 
   return {inc,cost};
+}
+
+/* Un beat terminé passe par le séquenceur : le motif reproduit décide du
+   bonus de qualité. Même contrat que le mix — en mode silencieux (bilan
+   de saison, bancs de test), aucun mini-jeu et aucun bonus. */
+function sequencerPuisLivrer(list, quiet){
+  const p = list.shift();
+  if(!p) return;
+
+  if(quiet){
+    resolveBeatProject(p, 0);
+    sequencerPuisLivrer(list, quiet);
+    return;
+  }
+
+  const chapitres = (DATA.BEAT_PTYPES[p.type] || {}).chapitres || 1;
+  launchStepQTE({
+    titre: p.title,
+    difficulte: Math.min(4, Math.max(1, chapitres))
+  }, res=>{
+    resolveBeatProject(p, res.bonus);
+    if(list.length){
+      sequencerPuisLivrer(list, quiet);
+    }else{
+      safeRender();
+      save();
+    }
+  });
 }
 
 /* Chaîne les sorties une par une : chaque projet a droit à son mix final,

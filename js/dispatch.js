@@ -30,6 +30,7 @@ import { closeSeasonFinale } from "./engine/season.js";
 import { rivalAttack, rivalDefend } from "./engine/rivalite.js";
 import { openBank, repayLoan, takeLoan, toggleMamiePanel, useMamieHelp } from "./engine/economy.js";
 import { goProduce } from "./engine/actions.js";
+import { publier } from "./engine/social.js";
 import { toggleSound as toggleSoundState, unlockAudio } from "./engine/sound.js";
 
 /* Ces deux actions se déclenchent à CHAQUE frappe (recherche d'artiste,
@@ -65,7 +66,7 @@ const ACTIONS = {
   gotoObjective, launchBeatProject, launchProject, negoBackToInitial,
   negoExposeCareer, negoOpenCustom, negoRefuse, negoSetDuration, negoSubmitCustom,
   negoValidate, openArtistProjectFromModal, openAudienceChange, openBank,
-  openMarketNego, goProduce, recruitBeatmaker, regenerateDraftTitle, releaseArtist,
+  openMarketNego, goProduce, publier, recruitBeatmaker, regenerateDraftTitle, releaseArtist,
   reopenBeatmakerDrawer, repayLoan, resolveEpisodeChoice, rivalAttack, rivalDefend,
   selectStart, setAudienceGenre, setMarketFilter, setState, setStateSaved, setTab,
   startDraft, startGame, takeLoan, toggleAudienceTheme, tapSecret, quitAdmin,

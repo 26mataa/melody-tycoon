@@ -548,3 +548,197 @@ h2{position:relative;padding-left:11px;border-left:4px solid var(--accent)}
 @media (prefers-reduced-motion: reduce){
   .mandat.urgent{ animation:none; box-shadow:0 0 0 2px color-mix(in srgb, var(--bad) 25%, transparent); }
 }
+
+/* ============================================================
+   PASTILLE TRÉSORERIE — barre du haut, donc visible sur TOUS les
+   onglets. Reprend le langage arrondi des .icon-btn / .topbar-profile
+   voisins pour ne pas casser la rangée.
+============================================================ */
+.money-chip{
+  display:flex; flex-direction:column; align-items:flex-end;
+  gap:1px; padding:5px 13px;
+  border-radius:999px;
+  background:var(--panel2);
+  border:1px solid var(--border);
+  cursor:pointer;
+  font-family:inherit;
+  line-height:1.15;
+  transition:transform .12s ease, border-color .12s ease;
+}
+.money-chip:hover{ transform:translateY(-1px); border-color:var(--accent); }
+.money-chip.bad{ border-color:var(--bad); }
+.money-chip-val{
+  font-weight:700; font-size:.95rem; color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+.money-chip.bad .money-chip-val{ color:var(--bad); }
+.money-chip-net{
+  font-size:.66rem; font-variant-numeric:tabular-nums;
+}
+.money-chip-net.good{ color:var(--good); }
+.money-chip-net.bad{ color:var(--bad); }
+.money-chip-net.muted{ color:var(--sub); }
+
+/* Sur petit écran la barre du haut est déjà serrée : on garde le solde,
+   on laisse tomber le flux par épisode. */
+@media (max-width: 720px){
+  .money-chip-net{ display:none; }
+  .money-chip{ padding:8px 12px; }
+}
+
+/* ============================================================
+   SÉQUENCEUR (stepqte.js) — grille de pas façon step sequencer.
+   Les deux variables de largeur sont lues par le JS pour placer la
+   tête de lecture : elles doivent rester ici, en un seul endroit.
+============================================================ */
+.stepqte-bg{
+  position:fixed; inset:0; z-index:120;
+  display:flex; align-items:center; justify-content:center;
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter:blur(6px);
+  animation:stepqteIn .22s ease;
+}
+.stepqte-bg.out{ animation:stepqteOut .22s ease forwards; }
+@keyframes stepqteIn{ from{opacity:0} to{opacity:1} }
+@keyframes stepqteOut{ from{opacity:1} to{opacity:0} }
+
+.stepqte-card{
+  --stepqte-cell:26px;
+  --stepqte-lab-w:104px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:0 18px 50px var(--shadow);
+  padding:22px 24px;
+  max-width:min(94vw, 620px);
+}
+.stepqte-title{ font-weight:800; font-size:1.05rem; }
+.stepqte-sub{ color:var(--sub); font-size:.86rem; margin-top:6px; line-height:1.5; }
+
+.stepqte-grid{ position:relative; margin:18px 0 6px; }
+.stepqte-row{ display:flex; align-items:center; gap:8px; margin-bottom:5px; }
+.stepqte-lab{
+  width:var(--stepqte-lab-w); flex:none;
+  font-size:.78rem; font-weight:600; color:var(--sub);
+  white-space:nowrap; overflow:hidden;
+}
+.stepqte-steps{ display:flex; }
+.stepqte-cell{
+  width:var(--stepqte-cell); height:var(--stepqte-cell);
+  flex:none;
+  border:1px solid var(--border);
+  border-radius:5px;
+  margin-right:2px;
+  background:var(--panel2);
+  padding:0; cursor:default;
+  transition:background .1s ease, transform .1s ease;
+}
+/* Repère visuel tous les 4 pas, comme les temps d'une mesure. */
+.stepqte-cell.beat{ border-color:color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.stepqte-grid.saisie .stepqte-cell{ cursor:pointer; }
+.stepqte-grid.saisie .stepqte-cell:hover{ background:var(--chip); }
+.stepqte-cell.on{ background:var(--accent); border-color:var(--accent); }
+.stepqte-cell.flash{ transform:scale(1.22); }
+/* Correction affichée à la fin. */
+.stepqte-cell.juste{ background:var(--good); border-color:var(--good); }
+.stepqte-cell.manque{ background:transparent; border:2px dashed var(--warn); }
+.stepqte-cell.faux{ background:var(--bad); border-color:var(--bad); opacity:.55; }
+
+.stepqte-head{
+  position:absolute; top:0; bottom:5px;
+  width:var(--stepqte-cell);
+  border-radius:5px;
+  background:color-mix(in srgb, var(--accent) 22%, transparent);
+  pointer-events:none;
+  transition:left .05s linear;
+}
+
+.stepqte-foot{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; flex-wrap:wrap; margin-top:14px;
+}
+.stepqte-timer{ font-size:.78rem; color:var(--sub); font-variant-numeric:tabular-nums; }
+.stepqte-actions{ display:flex; gap:8px; }
+
+.stepqte-result{
+  margin-top:12px; text-align:center;
+  opacity:0; max-height:0; overflow:hidden;
+  transition:opacity .25s ease, max-height .25s ease;
+}
+.stepqte-result.show{ opacity:1; max-height:90px; }
+.stepqte-result.good{ color:var(--good); }
+.stepqte-result.bad{ color:var(--bad); }
+
+/* Sous 560 px la grille de 16 pas ne tient plus : cases resserrées. */
+@media (max-width: 560px){
+  .stepqte-card{ --stepqte-cell:17px; --stepqte-lab-w:64px; padding:16px 14px; }
+  .stepqte-lab{ font-size:.68rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  .stepqte-bg, .stepqte-bg.out{ animation:none; }
+  .stepqte-cell.flash{ transform:none; }
+}
+
+/* Mandat BLOQUANT : il occupe seul la colonne narrative, donc il doit
+   se lire comme un mur, pas comme une notification de plus. */
+.mandat.bloquant{
+  border-width:2px;
+  border-left-width:5px;
+  background:color-mix(in srgb, var(--accent) 8%, var(--panel));
+  padding:20px 22px;
+}
+.mandat.bloquant .mandat-titre{ font-size:1.15rem; margin-top:10px; }
+.mandat.bloquant .mandat-texte{ font-size:.95rem; }
+.mandat.bloquant .mandat-cta{ margin-top:16px; padding:13px; font-size:1rem; }
+.mandat-note{
+  margin-top:10px; text-align:center;
+  font-size:.74rem; color:var(--sub); font-style:italic;
+}
+
+/* ============================================================
+   RÉSEAUX SOCIAUX — audience, fil, revue de presse.
+============================================================ */
+.social-count{
+  font-size:2.4rem; font-weight:800; line-height:1.1;
+  margin-top:10px; color:var(--accent);
+  font-variant-numeric:tabular-nums;
+}
+
+.social-feed{
+  display:flex; flex-direction:column; gap:10px;
+  max-height:520px; overflow-y:auto;
+  margin-top:10px; padding-right:4px;
+}
+
+.social-post, .social-presse{
+  border:1px solid var(--border);
+  border-left:3px solid var(--border);
+  border-radius:var(--radius-sm);
+  background:var(--panel2);
+  padding:11px 13px;
+}
+.social-post.hit{ border-left-color:var(--good); }
+.social-post.flop{ border-left-color:var(--bad); }
+
+.social-post-head{ display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+.social-post-auteur{ font-weight:700; font-size:.86rem; }
+.social-post-texte{ font-size:.88rem; line-height:1.5; margin-top:5px; }
+.social-post-cite{
+  margin-top:7px; padding-left:9px;
+  border-left:2px solid var(--accent);
+  font-size:.82rem; font-style:italic; color:var(--sub);
+}
+.social-post-res{ margin-top:6px; font-size:.82rem; font-weight:600; }
+.social-post-res.good{ color:var(--good); }
+.social-post-res.bad{ color:var(--bad); }
+.social-post-pied{
+  display:flex; justify-content:space-between; gap:8px;
+  margin-top:8px; padding-top:7px;
+  border-top:1px solid var(--border);
+}
+
+.social-presse-src{ font-weight:700; font-size:.84rem; }
+
+@media (max-width: 900px){
+  .social-feed{ max-height:none; }
+}

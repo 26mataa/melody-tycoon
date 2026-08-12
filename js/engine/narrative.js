@@ -7,6 +7,7 @@ import { playerStage, releaseDisponible, stageOf } from "./stages.js";
 import { enregistrerChoix } from "./memory.js";
 import { CAST_EPISODES } from "./cast.js";
 import { DEBUT_EPISODES } from "./debuts.js";
+import { mandatBloquant } from "./mandate.js";
 import { adaptCost } from "./economy.js";
 import { performRoll } from "./roll.js";
 import { playSound } from "./sound.js";
@@ -517,6 +518,11 @@ function poolAll(){
 
    3. LE PALIER ÉCONOMIQUE (min/max) — le contexte de moyens du label. */
 export function getEpisodePool(){
+  // Mandat bloquant : le récit est suspendu, pas ralenti. Aucun épisode
+  // n'est éligible tant que le joueur n'a pas fait ce qu'on lui demande —
+  // c'est ce qui rend l'obligation réelle plutôt que suggérée.
+  if(mandatBloquant()) return [];
+
   const tier = getTier().id;
   const stage = playerStage();
   const noRoster = state.signed.length === 0;

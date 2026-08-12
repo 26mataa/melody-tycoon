@@ -1,6 +1,7 @@
 import { genThemesPreferes } from "./engine/artists.js";
 import { drawNextEpisode, seedStartingFlags } from "./engine/narrative.js";
 import { creerCasting } from "./engine/cast.js";
+import { libererSiMandatRempli } from "./engine/mandate.js";
 import { rollSeasonLength } from "./engine/season.js";
 import { artistMatchesChosenGenres, getMarketDataV4, refreshBeatmakerPool, refreshScout } from "./engine/market.js";
 import { ensureDraft } from "./engine/production.js";
@@ -48,10 +49,11 @@ export function newState(){
     totalStreams:0,
     currentEpisode:null,episodeQueue:[],recentEpisodeIds:[],mandate:null,
     conduite:{},retoursEnAttente:[],cast:[],
+    social:{posts:[],bonusAbonnes:0,lastPostChapter:-99,postsTotal:0},
     careerArtistsSigned:0,careerHits:0,retired:false,
     retireConfirmOpen:false,epilogueData:null,profilePanelOpen:false,
     signed:[],market:[],scout:[],beatmakers:[],beatmakerPool:[],projects:[],releases:[],rivals:[],journal:[],cashHistory:[],
-    scoutUsed:false,scoutPickedId:null,scoutMsg:null,scoutModal:null,
+    scoutsUsed:0,scoutPickedId:null,scoutMsg:null,scoutModal:null,
     artistSel:null,marketSel:null,beatmakerSel:null,rivalProfile:null,bankModal:false,
     audienceModal:null,
     beatmakerDrawerOpen:true,beatmakerDrawerMin:false,
@@ -112,8 +114,20 @@ export function patchState(){
     if(!Array.isArray(state[k])) state[k]=[];
   });
   if(typeof state.conduite !== "object" || state.conduite === null) state.conduite = {};
+  if(typeof state.social !== "object" || state.social === null) state.social = clone(base.social);
+  for(const k in base.social){
+    if(state.social[k] === undefined) state.social[k] = base.social[k];
+  }
+  if(!Array.isArray(state.social.posts)) state.social.posts = [];
+  // Un mandat bloquant se referme dès que l'acte est fait — et comme il
+  // gèle le temps, personne d'autre ne peut le faire à sa place.
+  // Impérativement avant le tirage ci-dessous, sinon on resterait bloqué
+  // un rendu de plus après avoir signé.
+  libererSiMandatRempli();
+
   // Une partie en cours doit toujours avoir un épisode à l'écran : c'est lui
-  // qui fait avancer le temps, sans lui le jeu serait bloqué.
+  // qui fait avancer le temps, sans lui le jeu serait bloqué. (Sauf pendant
+  // un mandat bloquant : là, l'absence d'épisode est justement le propos.)
   if(!state.currentEpisode && state.screen === "game"){
     drawNextEpisode();
   }

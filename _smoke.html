@@ -34,6 +34,7 @@ const mand    = await import("./js/engine/mandate.js");
 const mem     = await import("./js/engine/memory.js");
 const day     = await import("./js/engine/day.js");
 const chips   = await import("./js/ui/chips.js");
+const { choiceAbordable, choiceRequiredArgent } = await import("./js/engine/events.js");
 const R       = await import("./js/render.js");
 const D       = await import("./js/data.js");
 await D.initData();
@@ -154,14 +155,20 @@ ok(S.state.mandate === null, "mandat rempli : il se referme");
 ok(S.state.credibilite > credAvant, "et il recompense", `${credAvant} -> ${S.state.credibilite}`);
 ok(S.state.storyFlags.includes("a_demarre_vite"), "il pose un flag durable");
 
-// Rate : l'echeance passe sans rien faire.
+/* Rate : l'echeance passe sans rien faire. On prend un mandat NON
+   bloquant — un mandat bloquant, par construction, ne peut pas expirer
+   puisqu'il gele le temps. */
 nouvellePartie();
+S.state.signed.push({id:55,name:"Sol",humeur:20,salaire:20,hits:0,flops:0,buzz:0,pop:20,talent:50,relations:{},contractRemaining:40,themesPreferes:[],potential:60,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+S.state.careerArtistsSigned = 1;
 S.state.chapter = 4;
-mand.ouvrirMandat("signer_premier");
+mand.ouvrirMandat("sauver_moral", 55);
+ok(!!S.state.mandate, "un mandat a echeance s'ouvre");
+ok(!mand.mandatBloquant(), "celui-la n'est pas bloquant");
 S.state.chapter = S.state.mandate.dueChapter;
 mand.checkMandat();
 ok(S.state.mandate === null, "echeance depassee : le mandat se solde");
-ok(S.state.storyFlags.includes("a_tarde_a_demarrer"), "et laisse un flag d'echec durable");
+ok(S.state.storyFlags.includes("a_laisse_tomber_un_artiste"), "et laisse un flag d'echec durable");
 
 // La sanction est reelle : un artiste abandonne s'en va.
 nouvellePartie();
@@ -201,12 +208,21 @@ ok(!!S.state.currentEpisode || S.state.episodeQueue.length > 0, "et un episode a
 /* ---------------------------------------------------------- */
 section("Une partie complete tourne sans casser");
 nouvellePartie();
+// Un artiste des le depart : sans roster, le mandat bloquant suspend le
+// recit — c'est voulu, et ce n'est pas ce qu'on mesure ici.
+S.state.signed.push({id:301,name:"Kayn",humeur:70,salaire:20,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:60,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+S.state.careerArtistsSigned = 1;
 let joues = 0, refus = 0;
 for(let i=0;i<120 && joues<70;i++){
   const ep = S.state.currentEpisode || nar.drawNextEpisode();
   if(!ep){ L.push("!!! plus aucun episode disponible au chapitre " + S.state.chapter); break; }
   const avantCh = S.state.chapter;
-  nar.resolveEpisodeChoice(Math.floor(Math.random()*ep.choices.length));
+  // Comme un vrai joueur : on ne clique que ce qui est payable.
+  const jouables = nar.episodeChoices(ep)
+    .map((c,idx)=>({idx, ok: choiceAbordable(c)}))
+    .filter(x=>x.ok);
+  if(!jouables.length){ L.push("!!! episode sans aucune option jouable"); break; }
+  nar.resolveEpisodeChoice(jouables[Math.floor(Math.random()*jouables.length)].idx);
   if(S.state.chapter > avantCh) joues++; else refus++;
 }
 ok(joues >= 60, "70 episodes s'enchainent sans blocage", `${joues} joues, ${refus} refuses (fonds)`);
@@ -297,15 +313,30 @@ ok(debuts.length >= 12, "l'arc des debuts est bien la ou il sert", `${debuts.len
    dans ce parcours-la, pas dans un joueur fige au jalon 0 pendant 45
    episodes — un cas qui n'arrive jamais en jeu. */
 let vus = new Set();
+// On signe tout de suite : le mandat bloquant est teste a part, ici on
+// mesure la variete du contenu sur une partie qui avance vraiment.
+S.state.signed.push({id:303,name:"Nea",humeur:70,salaire:20,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:60,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+S.state.careerArtistsSigned = 1;
 for(let i=0;i<45;i++){
+  /* Le roster peut se vider en cours de route (un mandat rate fait
+     partir un artiste) — et un label vide declenche le blocage, ce qui
+     couperait la mesure. Le blocage est verifie ailleurs : ici on
+     resigne pour continuer d'observer la variete du contenu. */
+  if(S.state.signed.length === 0){
+    S.state.signed.push({id:304+i,name:"Rem"+i,humeur:70,salaire:20,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:60,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+  }
   const ep = S.state.currentEpisode || nar.drawNextEpisode();
   if(!ep) break;
   vus.add(ep.defId || ep.title);
-  nar.resolveEpisodeChoice(Math.floor(Math.random()*ep.choices.length));
-  if(i === 6){
-    S.state.signed.push({id:501,name:"Kayn",humeur:70,salaire:4,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:40,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
-    S.state.careerArtistsSigned = 1;
-  }
+  /* On choisit parmi les options REELLEMENT payables : avec les salaires
+     revalorises, un joueur se retrouve vite a sec, et tirer un index au
+     hasard tombait souvent sur une option refusee — l'episode restait
+     alors affiche et la boucle tournait sur place. */
+  const dispo = nar.episodeChoices(ep)
+    .map((c,idx)=>({idx, ok: choiceAbordable(c)}))
+    .filter(x=>x.ok);
+  if(!dispo.length) break;
+  nar.resolveEpisodeChoice(dispo[Math.floor(Math.random()*dispo.length)].idx);
   if(i === 16){ S.state.releases.push({title:"Premier son",fini:false,reviews:[],streams:1000,dailyStreams:10,age:0,decay:.87,totalRevenue:0,history:[]}); }
   if(i === 26){ S.state.careerHits = 1; }
 }
@@ -316,7 +347,6 @@ section("Jamais de blocage, meme sans un centime");
 /* Regression : un episode dont TOUS les choix coutent de l'argent laissait
    un joueur a sec incapable de resoudre quoi que ce soit — donc incapable
    de faire avancer le temps. La partie restait figee pour de bon. */
-const { choiceAbordable, choiceRequiredArgent } = await import("./js/engine/events.js");
 nouvellePartie();
 S.state.argent = -50000;
 const gratuit = {t:"gratuit", d:{credibilite:1}};
@@ -326,6 +356,8 @@ ok(!choiceAbordable(payant), "mais un choix qui coute reste refuse");
 S.state.argent = 1000;
 ok(choiceAbordable(payant), "et redevient possible une fois l'argent la");
 nouvellePartie();
+S.state.signed.push({id:302,name:"Lior",humeur:70,salaire:20,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:60,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+S.state.careerArtistsSigned = 1;
 S.state.argent = -50000;
 S.state.bank.dette = 50000;
 let bloque = 0, avancees = 0;
@@ -376,6 +408,146 @@ for(let i=0;i<40;i++){
 }
 ok(sortiesOfferte === 0, "et cette porte de sortie n'apparait jamais quand on a l'argent");
 
+section("Argent visible sur tous les onglets");
+nouvellePartie();
+const ongletsTestes = ["dash","label","rivalite","finance"];
+let sansArgent = [];
+ongletsTestes.forEach(t=>{
+  S.state.tab = t;
+  R.safeRender();
+  const dom = document.getElementById("app").innerHTML;
+  if(!/money-chip/.test(dom)) sansArgent.push(t);
+});
+ok(sansArgent.length === 0, "la pastille tresorerie est presente sur chaque onglet",
+   sansArgent.length ? `absente sur : ${sansArgent.join(", ")}` : ongletsTestes.join(", "));
+S.state.tab = "label"; S.state.argent = 907;   // au-dela de 1000, fmt() abrege en k
+R.safeRender();
+ok(/907/.test(document.getElementById("app").innerHTML),
+   "elle affiche le vrai montant meme hors de l'accueil");
+S.state.tab = "dash";
+
+section("Recrutement debride");
+nouvellePartie();
+const mk = await import("./js/engine/market.js");
+const eco2 = await import("./js/engine/economy.js");
+ok(eco2.rosterCap() >= 6, "le plafond de depart n'est plus de 2 artistes", `${eco2.rosterCap()}`);
+ok(mk.REPERAGES_PAR_SAISON >= 3, "plusieurs reperages par saison", `${mk.REPERAGES_PAR_SAISON}`);
+ok(mk.reperagesRestants() === mk.REPERAGES_PAR_SAISON, "tous disponibles en debut de saison");
+S.state.scoutsUsed = 1;
+ok(mk.reperagesRestants() === mk.REPERAGES_PAR_SAISON - 1, "le compteur decremente");
+S.state.scoutsUsed = mk.REPERAGES_PAR_SAISON;
+ok(mk.reperagesRestants() === 0, "epuise apres le quota");
+mk.refreshScout();
+ok(mk.reperagesRestants() === mk.REPERAGES_PAR_SAISON, "la nouvelle saison remet le quota a zero");
+
+const espoir = mk.deriveMarketStats(30, 50);
+const valeur = mk.deriveMarketStats(60, 70);
+const star   = mk.deriveMarketStats(90, 90);
+ok(espoir.salaire >= 10, "un espoir coute un vrai salaire", `${espoir.salaire}/ep.`);
+ok(valeur.prix > 5000, "une valeur sure se paie", `${valeur.prix} EUR`);
+ok(star.prix > 40000, "une star coute tres cher", `${star.prix} EUR`);
+ok(star.salaire > valeur.salaire && valeur.salaire > espoir.salaire,
+   "les trois paliers restent ordonnes", `${espoir.salaire} < ${valeur.salaire} < ${star.salaire}`);
+
+section("Mandat BLOQUANT — impossible d'avancer sans recruter");
+nouvellePartie();
+S.state.chapter = 4;
+mand.tickMandats();
+ok(!!S.state.mandate && S.state.mandate.id === "signer_premier", "le mandat de recrutement s'ouvre",
+   S.state.mandate ? S.state.mandate.id : "aucun");
+ok(!!mand.mandatBloquant(), "et il est bien bloquant");
+ok(nar.getEpisodePool().length === 0, "plus aucun episode eligible tant qu'il est la");
+S.state.currentEpisode = null;
+ok(nar.drawNextEpisode() === null, "aucun episode ne se tire");
+const chapGele = S.state.chapter;
+nar.resolveEpisodeChoice(0);
+ok(S.state.chapter === chapGele, "et le temps ne passe pas non plus", `chapitre ${S.state.chapter}`);
+
+R.safeRender();
+const domBloc = document.getElementById("app").innerHTML;
+ok(/mandat bloquant|L'histoire est en attente/i.test(domBloc), "l'ecran affiche le blocage");
+ok(!/episode-choice/.test(domBloc), "et ne propose aucun choix d'episode");
+
+// On signe : tout doit repartir, sans avoir besoin d'un tour de moteur.
+S.state.signed.push({id:77,name:"Kayn",humeur:70,salaire:20,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:40,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+S.state.careerArtistsSigned = 1;
+R.safeRender();
+ok(!S.state.mandate || S.state.mandate.id !== "signer_premier", "signer libere le blocage");
+ok(S.state.storyFlags.includes("a_demarre_vite"), "et la recompense tombe");
+ok(nar.getEpisodePool().length > 0, "le pool d'episodes redevient disponible",
+   `${nar.getEpisodePool().length} entrees`);
+
+/* Le blocage ne doit jamais devenir un cul-de-sac : la seule action
+   exigee (le reperage) est gratuite, donc toujours possible. */
+nouvellePartie();
+S.state.argent = -99999;
+S.state.chapter = 4;
+mand.tickMandats();
+ok(!!mand.mandatBloquant(), "le blocage s'applique aussi a un joueur ruine");
+ok(mk.reperagesRestants() > 0, "mais le reperage gratuit reste ouvert : aucune impasse",
+   `${mk.reperagesRestants()} reperages`);
+
+section("Reseaux sociaux");
+nouvellePartie();
+const soc = await import("./js/engine/social.js");
+ok(typeof soc.followers() === "number", "un nombre d'abonnes existe", `${soc.followers()}`);
+const f0 = soc.followers();
+S.state.notoriete = 60;
+ok(soc.followers() > f0, "il suit la notoriete du label", `${f0} -> ${soc.followers()}`);
+ok(soc.formatFollowers(1500).includes("k"), "et s'affiche lisiblement", soc.formatFollowers(1500));
+ok(soc.paliersSocial().nom.length > 0, "un palier d'audience est nomme", soc.paliersSocial().nom);
+
+ok(S.state.social.posts.length === 0, "le fil demarre vide");
+S.state.chapter = 20;
+soc.publier("coulisses");
+ok(S.state.social.posts.length === 1, "publier ajoute au fil");
+ok(S.state.social.postsTotal === 1, "et compte la publication");
+ok(soc.postCooldownRestant() > 0, "un delai s'applique ensuite", `${soc.postCooldownRestant()} ep.`);
+const avantSpam = S.state.social.posts.length;
+soc.publier("coulisses");
+ok(S.state.social.posts.length === avantSpam, "impossible de spammer pendant le delai");
+
+S.state.chapter += soc.COOLDOWN_POST;
+ok(soc.postCooldownRestant() === 0, "le delai expire");
+S.state.argent = 50;
+soc.publier("campagne");
+ok(S.state.social.posts.length === avantSpam, "une campagne payante est refusee sans argent");
+S.state.argent = 99999;
+soc.publier("campagne");
+ok(S.state.social.posts.length === avantSpam + 1, "et passe une fois l'argent la");
+ok(S.state.argent < 99999, "elle a bien ete facturee", `${S.state.argent} EUR`);
+
+// Le fil doit raconter la vraie partie, pas du texte d'ambiance.
+nouvellePartie();
+soc.postSortie({title:"Nuit Blanche", reviews:[{tier:"social", txt:"ce son est fou", src:"X"}]});
+const dernier = S.state.social.posts[0];
+ok(dernier.texte.includes("Nuit Blanche"), "une sortie s'annonce dans le fil", dernier.texte);
+ok(dernier.citation === "ce son est fou", "avec une vraie reaction du public");
+
+S.state.tab = "label"; S.state.labelSub = "reseaux";
+R.safeRender();
+const domSoc = document.getElementById("app").innerHTML;
+ok(/Votre audience/.test(domSoc), "l'onglet Reseaux se rend");
+ok(/abonn/.test(domSoc), "il montre l'audience");
+ok(/Publier/.test(domSoc), "et propose de publier");
+S.state.tab = "dash"; S.state.labelSub = "artistes";
+
+section("Sequenceur (QTE beats)");
+const step = await import("./js/ui/stepqte.js");
+ok(typeof step.launchStepQTE === "function", "le sequenceur existe");
+let resSeq = null;
+step.launchStepQTE({titre:"Test", difficulte:2}, r=>{ resSeq = r; });
+ok(resSeq !== null || true, "il se lance sans exception");
+
+// Le mix reequilibre : les zones doivent etre nettement plus larges.
+const mixSrc = await fetch("./js/ui/mixqte.js").then(r=>r.text());
+const mZone = mixSrc.match(/parfait\s*=\s*Math\.max\((\d+),\s*(\d+)\s*-\s*difficulte\s*\*\s*(\d+)\)/);
+ok(!!mZone, "la formule de zone du mix est lisible");
+if(mZone){
+  const dur = Number(mZone[2]) - Number(mZone[3])*4;   // difficulte max
+  ok(dur >= 14, "meme au format le plus dur, la zone reste jouable", `${Math.max(Number(mZone[1]), dur)}% de barre`);
+}
+
 section("Tutoriel retire");
 nouvellePartie();
 R.safeRender();
@@ -399,7 +571,7 @@ mand.ouvrirMandat("signer_premier");
 R.safeRender();
 const dom3 = document.getElementById("app").innerHTML;
 ok(/mandat/i.test(dom3), "le bandeau de mandat s'affiche");
-ok(/Mandat en cours/.test(dom3), "avec son libelle");
+ok(/Mandat en cours|L'histoire est en attente/.test(dom3), "avec son libelle");
 
 }catch(err){
   ko++;

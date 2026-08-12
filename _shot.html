@@ -30,6 +30,23 @@ if(ecran === "game"){
 }
 else S.state.screen = ecran;
 
+if(q.get("sub")){ S.state.labelSub = q.get("sub"); }
+if(q.get("tab")){ S.state.tab = q.get("tab"); }
+if(q.get("artiste")){
+  S.state.signed.push({id:"a1",name:"Kayn",talent:64,potential:72,pop:28,buzz:4,humeur:74,hits:1,flops:0,projets:1,contractRemaining:38,contractChapters:60,relations:{},resting:0,projectsThisSeason:1,beatBonus:0,themesPreferes:[],audienceLockChapters:0,salaire:42});
+  S.state.careerArtistsSigned = 1;
+  S.state.notoriete = 34; S.state.credibilite = 26; S.state.totalStreams = 480000;
+  const soc = await import("./js/engine/social.js");
+  soc.postSortie({title:"Nuit Blanche", artistName:"Kayn", reviews:[
+    {tier:"social", txt:"ce son tourne en boucle depuis 3 jours", src:"X"},
+    {tier:"presse", txt:"Une production soignée qui trahit une vraie ambition.", src:"Les Inrocks", note:7}
+  ]});
+  S.state.releases.push({title:"Nuit Blanche",artistName:"Kayn",fini:false,streams:480000,dailyStreams:900,age:6,decay:.9,totalRevenue:1400,history:[],reviews:[
+    {tier:"presse", txt:"Une production soignée qui trahit une vraie ambition.", src:"Les Inrocks", note:7},
+    {tier:"presse", txt:"On attendait mieux sur la seconde moitié.", src:"Booska-P", note:5}
+  ]});
+  soc.publier("coulisses");
+}
 if(q.get("mandat")){
   const M = await import("./js/engine/mandate.js");
   S.state.chapter = 5;
@@ -41,13 +58,29 @@ if(open === "mamiePanel") S.state.mamie.panelOpen = true;
 
 R.safeRender();
 
+/* Les mini-jeux (mix, sequenceur) s'accrochent au <body>, pas a #app :
+   on les lance ici et on capture le body entier plutot que #app seul. */
+let captureBody = false;
+if(q.get("qte") === "step"){
+  const { launchStepQTE } = await import("./js/ui/stepqte.js");
+  launchStepQTE({titre:"Nuit Blanche", difficulte:2}, ()=>{});
+  captureBody = true;
+  await new Promise(r=>setTimeout(r, 700));
+}
+if(q.get("qte") === "mix"){
+  const { launchMixQTE } = await import("./js/ui/mixqte.js");
+  launchMixQTE({titre:"Nuit Blanche", difficulte:2}, ()=>{});
+  captureBody = true;
+  await new Promise(r=>setTimeout(r, 700));
+}
+
 /* Le rendu est asynchrone (imports + fetch des JSON), donc une capture
    directe part avant qu'il y ait quoi que ce soit à l'écran. On écrit
    plutôt un instantané statique, que l'on capture ensuite tranquillement. */
 const theme = q.get("theme") || "light";
 const snap = `<!DOCTYPE html><html lang="fr" data-theme="${theme}"><head><meta charset="UTF-8">
 <title>capture</title><link rel="stylesheet" href="style.css"></head><body>
-${document.getElementById("app").outerHTML}
+${captureBody ? document.body.innerHTML : document.getElementById("app").outerHTML}
 </body></html>`;
 fetch("/snap?name=" + encodeURIComponent(q.get("n") || (ecran + "_" + theme)),
       {method:"POST", body:snap});

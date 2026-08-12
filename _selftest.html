@@ -783,6 +783,18 @@ try{
   S.state.managerName = "Joueur"; S.state.label = "Vrai Label"; S.state.startId = "zero";
   S.startGame();
 
+  /* Un vrai joueur signe quelqu'un au tout debut : sans roster, le mandat
+     bloquant suspend le recit (c'est le propos, verifie a part dans le
+     banc de fumee). Ici on mesure une partie qui se deroule, donc on
+     commence par recruter, comme le jeu l'exige desormais. */
+  S.state.signed.push({
+    id:"art-run", name:"Kayn", talent:60, potential:70, pop:25, buzz:0, humeur:70,
+    hits:0, flops:0, projets:0, contractRemaining:60, contractChapters:60,
+    relations:{}, resting:0, projectsThisSeason:0, beatBonus:0,
+    themesPreferes:[], audienceLockChapters:0, salaire:20
+  });
+  S.state.careerArtistsSigned = 1;
+
   let episodesJoues = 0, erreurs = 0, sansEpisode = 0;
   const titresVus = new Set();
   const saisonsVues = new Set();

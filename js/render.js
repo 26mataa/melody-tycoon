@@ -1,4 +1,4 @@
-import { avgMoral, mamieAvailable, mamieChaptersLeft, pveUnlocked } from "./engine/economy.js";
+import { avgMoral, dailyCost, mamieAvailable, mamieChaptersLeft, pveUnlocked, streamDailyIncome } from "./engine/economy.js";
 import { isSoundOn } from "./engine/sound.js";
 import { newState, patchState, save, setPrevStats, state } from "./state.js";
 import { renderHome3Col } from "./ui/home3col.js";
@@ -10,7 +10,7 @@ import { renderArtistModal, renderAudienceModal, renderBeatmakerModal, renderLab
 import { renderAdminPanel, renderBankModal, renderBeatmakerDrawer, renderMamiePanel, renderNegotiationModal, renderProfilePanel, renderRetireConfirmModal } from "./ui/modals.js";
 import { renderLookStep, renderProfile } from "./ui/profile.js";
 import { renderRivalite, renderRivaliteLocked, renderRivalProfileModal } from "./ui/rivalite.js";
-import { chapterStr, errorHTML, esc } from "./utils.js";
+import { chapterStr, errorHTML, esc, fmt } from "./utils.js";
 
 export const app = document.getElementById("app");
 
@@ -97,6 +97,29 @@ export function reRenderPreserveFocus(){
   }
 }
 
+/* La trésorerie était visible uniquement sur l'accueil, dans la colonne de
+   gauche : dès qu'on passait sur Label, Rivalité ou Finance, on ne savait
+   plus combien on avait — or c'est précisément sur l'écran Label qu'on
+   dépense. Plutôt que de déplacer la carte Finance d'un écran à l'autre,
+   le montant vit maintenant dans la barre du haut, qui, elle, est
+   présente partout. Cliquable : il ouvre le détail des finances.
+
+   La pastille affiche aussi le flux net par épisode, parce qu'un solde
+   confortable qui fond de 400 € par chapitre ne dit pas la même chose
+   qu'un solde identique à l'équilibre. */
+function renderMoneyChip(){
+  const net = Math.round(streamDailyIncome() - dailyCost());
+  const negatif = state.argent < 0;
+  const netCls = net > 0 ? "good" : net < 0 ? "bad" : "muted";
+  return `
+  <button class="money-chip ${negatif ? "bad" : ""}"
+          data-action="setTab" data-args='${JSON.stringify(["finance"])}'
+          title="Trésorerie — cliquer pour le détail des finances">
+    <span class="money-chip-val">${fmt(state.argent)}</span>
+    <span class="money-chip-net ${netCls}">${net >= 0 ? "+" : ""}${fmt(net)}/ép.</span>
+  </button>`;
+}
+
 export function renderGame(){
   const negAlert = state.argent < 0 ? `<button class="hud-alert" data-action="openBank">⚠️ Trésorerie négative</button>` : "";
   const themeBtn = state.ui.themeMode === "light" ? "☀️" : state.ui.themeMode === "dark" ? "🌙" : "🌗";
@@ -148,6 +171,7 @@ export function renderGame(){
     </nav>
 
     <div class="topbar-side">
+      ${renderMoneyChip()}
       ${negAlert}
       ${state.mamie.active && !state.mamie.independant
         ? `<button class="icon-btn ${mamieAvailable()?"mamie-ready":""}" data-action="toggleMamiePanel" title="${mamieAvailable()?"Mamie peut vous dépanner":`Mamie a déjà donné — encore ${mamieChaptersLeft()} épisode(s)`}">👵${mamieAvailable()?`<span class="dot"></span>`:``}</button>`
