@@ -1,0 +1,2489 @@
+{
+  "REVIEWS": [
+    {
+      "quote": "Un refrain accrocheur pour des couplets qui le sont moins.",
+      "source": "Blog rap local",
+      "score": 5.5,
+      "tier": "presse",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "Inégal mais intéressant.",
+      "source": "Raplume",
+      "score": 6,
+      "tier": "presse",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "Une déception.",
+      "source": "Compte X d'un fan",
+      "score": 3,
+      "tier": "social",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "qu'il bouffe mon paff ce fdp.",
+      "source": "Compte X d'un fan",
+      "score": 1,
+      "tier": "social",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "c'est vrmnt ce goat.",
+      "source": "Story insta d'un fan",
+      "score": 8,
+      "tier": "social",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "que quelqu'un tue ce mec svp",
+      "source": "Commentaire insta sous le post du son",
+      "score": 0,
+      "tier": "social",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "L'avenir du rap français.",
+      "source": "Konbini",
+      "score": 8,
+      "tier": "presse",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "Vraiment on vous conseille c'est le son du moment.",
+      "source": "Brut.",
+      "score": 8,
+      "tier": "presse",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "Vraiment on vous conseille c'est le son du moment.",
+      "source": "1863",
+      "score": 8,
+      "tier": "presse",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "jsuis vrmnt qu'un con et j'ai des goûts de merde et j'adore",
+      "source": "inovermg",
+      "score": 0,
+      "tier": "social",
+      "section": "LES 10 ORIGINAUX (conservés)"
+    },
+    {
+      "quote": "Un projet qui confirme ce qu'on pressentait depuis deux ans : il a quelque chose.",
+      "source": "Les Inrocks",
+      "score": 7,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "La prod sauve l'ensemble. Le reste est �  jeter.",
+      "source": "Booska-P",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On a écouté trois fois. La première par curiosité, la deuxième par politesse, la troisième pour être sûrs. On a rien raté.",
+      "source": "RapFr",
+      "score": 3,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Le flow est l� . L'écriture, on en parle quand ?",
+      "source": "Générations",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Un uppercut sonore qui redéfinit les codes du game.",
+      "source": "OKLM",
+      "score": 9,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est pas nul. C'est juste� l� .",
+      "source": "Mouv'",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Si c'est ça l'avenir du rap, on a hâte d'être au passé.",
+      "source": "Le Point Pop",
+      "score": 2,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Une claque. Pas dans le bon sens du terme.",
+      "source": "Tsugi",
+      "score": 3,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On sent l'influence de Kendrick, de Cole, de J. Balvin, de Michel Sardou. C'est confus.",
+      "source": "Raplume",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Le son de l'été. Ou d'un été très particulier.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Brut. a aimé. On sait pas trop pourquoi mais on a aimé.",
+      "source": "Brut.",
+      "score": 6,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "1863 valide. Point. Pas besoin de plus.",
+      "source": "1863",
+      "score": 8,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Un OVNI. Malheureusement pas dans le bon sens.",
+      "source": "Les Inrocks",
+      "score": 3,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On a montré le son �  la rédac. Silence gêné de 4 secondes. Puis quelqu'un a dit \"c'est� audacieux\".",
+      "source": "Booska-P",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "La prod de ouf. Les lyrics de ouf aussi. Mais pas le même ouf.",
+      "source": "OKLM",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est le genre de son qu'on écoute une fois en soirée et qu'on oublie dans le Uber du retour.",
+      "source": "Mouv'",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Il rappe comme si sa vie en dépendait. Sauf que sa vie va très bien apparemment.",
+      "source": "RapFr",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Une masterclass d'autotune. Pour le reste, on repassera.",
+      "source": "Générations",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On lui donne un 7 parce qu'on a pas le c�ur de mettre moins.",
+      "source": "Blog rap local",
+      "score": 7,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est pas un son, c'est un appel �  l'aide.",
+      "source": "Tsugi",
+      "score": 2,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Le meilleur featuring c'est le silence entre les deux couplets.",
+      "source": "Les Inrocks",
+      "score": 3,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On a failli mettre 9. Et puis on a écouté le deuxième couplet.",
+      "source": "Raplume",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Un son qui donne envie de conduire vite sur le périph �  3h du mat. Mission accomplie.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est comme un kebab �  2h du mat : c'est pas gastronomique mais ça fait le taf.",
+      "source": "1863",
+      "score": 6,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "La prod est signée par qui ? Parce qu'elle mérite un procès.",
+      "source": "Compte X d'un producteur",
+      "score": 1,
+      "tier": "social",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On a écouté en avant-première. On aurait préféré ne pas.",
+      "source": "Le Parisien Culture",
+      "score": 2,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Un souffle frais dans un rap FR qui tournait en rond.",
+      "source": "Brut.",
+      "score": 8,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est bien. C'est juste pas pour nous. Ni pour personne d'autre apparemment.",
+      "source": "Mouv'",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Il a le charisme d'une porte de frigo mais le flow d'un dieu.",
+      "source": "RapFr",
+      "score": 6,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On a mis 10 minutes �  trouver un adjectif. \"Présent\" sera suffisant.",
+      "source": "OKLM",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Le son qu'on met pour faire semblant d'écouter de la musique en société.",
+      "source": "Tsugi",
+      "score": 3,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Une pépite brute. Très brute. Trop brute.",
+      "source": "Les Inrocks",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Si t'aimes pas c'est que t'as pas compris. Si t'aimes c'est que t'as pas compris non plus.",
+      "source": "Raplume",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Le refrain tourne en boucle dans ma tête depuis 4 jours. Je veux porter plainte.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est le son que ton pote te fait écouter en disant \"attends attends écoute\" et tu fais semblant d'aimer.",
+      "source": "1863",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Une proposition artistique. On dit \"proposition\" parce qu'on est polis.",
+      "source": "Le Monde",
+      "score": 2,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Il rappe comme un GPS qui aurait des émotions. C'est perturbant.",
+      "source": "Booska-P",
+      "score": 4,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "On valide le premier couplet. Le reste est en délibération depuis 3 semaines.",
+      "source": "RapFr",
+      "score": 5,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "C'est comme écouter quelqu'un qui raconte un rêve : c'est long, ça a pas de sens, mais c'est fascinant.",
+      "source": "Mouv'",
+      "score": 6,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "Générations soutient les jeunes talents. Même quand c'est dur. Surtout quand c'est dur.",
+      "source": "Générations",
+      "score": 3,
+      "tier": "presse",
+      "section": "M�DIAS / PRESSE SP�CIALIS�E"
+    },
+    {
+      "quote": "je l'ai écouté 47 fois aujourd'hui. oui j'ai compté. non je vais pas bien.",
+      "source": "@rapfr_addict",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est quoi cette merde ?? qui a validé ça ??",
+      "source": "@puriste_du_92",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il a dit \"skrrt\" 14 fois. j'ai compté.",
+      "source": "@compteur_de_skrrt",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "MON FR�RE. MON FR�RE. MON FR�RE.",
+      "source": "@hype_nation_fr",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai mis le son, ma mère m'a demandé si j'avais mis la machine �  laver en route.",
+      "source": "@fils_de_maman",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est pas un son c'est une agression sonore et j'en redemande",
+      "source": "@maso_musical",
+      "score": 8,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il rappe comme si quelqu'un le poursuivait. j'espère qu'il va bien.",
+      "source": "@inquiet_pour_lui",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai écouté une fois. une seule. c'était une de trop.",
+      "source": "@oreilles_fragiles",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "GOAT. GOAT. GOAT. je me répète mais GOAT.",
+      "source": "@chevre_certifie",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le son que je mettrai �  mon propre enterrement pour que les gens soient mal �  l'aise",
+      "source": "@dark_humour_rap",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "qui a laissé ce mec entrer en studio",
+      "source": "@vigilance_rap",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai pleuré. je sais pas pourquoi. j'ai pleuré.",
+      "source": "@sensible_du_bled",
+      "score": 8,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est nul mais je l'ai en tête depuis mardi. je le déteste.",
+      "source": "@contradiction_amb",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il a mis un adlib de 6 secondes. SIX SECONDES.",
+      "source": "@adlib_police",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "je respecte le travail mais je respecte pas le résultat",
+      "source": "@diplomate_du_rap",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le meilleur son de l'année. je l'ai écouté 3 secondes.",
+      "source": "@jugement_rapide",
+      "score": 6,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "mon chien a aboyé pendant tout le son. je crois qu'il a pas aimé.",
+      "source": "@doglover92",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "je suis en thérapie maintenant. merci.",
+      "source": "@ex_fan_traumatisé",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est comme si Booba et un grille-pain avaient fait un enfant.",
+      "source": "@metaphore_filée",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai mis le son en soirée. tout le monde est parti.",
+      "source": "@plus_ami_de_personne",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il rappe comme mon oncle bourré �  Noël. avec moins de charisme.",
+      "source": "@noel_en_famille",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "je défends ce son avec ma vie. demandez pas pourquoi.",
+      "source": "@avocat_du_diable",
+      "score": 8,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est pas de la musique c'est une erreur de parcours",
+      "source": "@puriste_2003",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai écouté en conduisant. j'ai failli rentrer dans un rond-point. 10/10 pour l'adrénaline.",
+      "source": "@conducteur_danger",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il a utilisé le mot \"banger\" dans la chanson. on est en 2025.",
+      "source": "@gateur_de_rap",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "ma grand-mère a entendu le son. elle a fait le signe de croix.",
+      "source": "@catho_de_cité",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le son que je mets pour me donner du courage avant d'aller chez le dentiste",
+      "source": "@phobique_du_rap",
+      "score": 6,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "je suis fan depuis le début. depuis 3 semaines.",
+      "source": "@fan_de_la_premiere_heure",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il a moins de talent que mon micro-ondes et mon micro-ondes fait juste chauffer des pâtes",
+      "source": "@haine_pure",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai écouté le son en boucle pendant 6h. j'ai perdu 6h de ma vie. je recommande.",
+      "source": "@temps_perdu",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le genre de son qui te fait dire \"c'est pas si nul\" et 3 secondes après \"si c'est nul\"",
+      "source": "@bipolaire_musical",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il rappe comme s'il avait un moustique dans la bouche",
+      "source": "@entomologiste_du_flow",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "GOAT confirmé. J'organise une marche.",
+      "source": "@marche_pour_le_goat",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai montré �  ma copine. elle m'a quitté.",
+      "source": "@celibataire_malgre_lui",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est pas un son c'est une expérience sociale pour voir combien de temps les gens restent",
+      "source": "@sociologue_du_rap",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "le son m'a réveillé �  3h du mat. j'avais pas mis de réveil.",
+      "source": "@fantome_sonore",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "je suis pas fan mais je suis pas hater. je suis juste déçu.",
+      "source": "@nuance_rap",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le son que le diable écouterait en enfer pour se détendre",
+      "source": "@theologien_du_bled",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il a fait un son de 4 minutes. 3 minutes 50 de trop.",
+      "source": "@concis_et_efficace",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai écouté avec un casque �  200�. le casque mérite des excuses.",
+      "source": "@audiophile_trahi",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est mon son préféré après \"au clair de la lune\"",
+      "source": "@culture_generale",
+      "score": 6,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il rappe comme si sa mère l'avait privé de console",
+      "source": "@gamer_frustré",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai mis le son. mon voisin a tapé dans le mur. on est maintenant amis.",
+      "source": "@voisin_solidaire",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est pas de l'art. c'est un accident de parcours.",
+      "source": "@critique_en_herbe",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "je l'ai écouté sous l'eau. même les poissons ont fui.",
+      "source": "@aquaphile_du_rap",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le son que je mets quand je veux que quelqu'un parte de chez moi",
+      "source": "@strategie_sociale",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "GOAT. Point. Pas de débat. Je bloque les réponses.",
+      "source": "@dictateur_du_goat",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "il a plus d'autotune que de mots. c'est un choix.",
+      "source": "@comptable_du_rap",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "j'ai écouté en cours. j'ai eu 2/20. le prof a dit \"concentrez-vous\".",
+      "source": "@etudiant_perdu",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "c'est le son qui m'a donné envie d'arrêter la musique. et j'en fais pas.",
+      "source": "@vocation_avortée",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X / TWITTER � FANS & HATERS"
+    },
+    {
+      "quote": "Qui a validé ça",
+      "source": "Commentaire insta sous le post du son",
+      "score": 1,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Mon frère il est trop fort je l'aime",
+      "source": "Story insta @ptit_du_77",
+      "score": 8,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je suis venu, j'ai écouté, j'ai souffert.",
+      "source": "Commentaire insta",
+      "score": 2,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Frérot t'as fait quoi l�",
+      "source": "Commentaire insta",
+      "score": 3,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je le mets en sonnerie. Oui. Je suis comme ça.",
+      "source": "Story insta @sans_limite",
+      "score": 7,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est quoi ce flow de robot en fin de batterie",
+      "source": "Commentaire insta",
+      "score": 2,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "CE SON M'A SAUV� LA VIE (j'étais juste triste mais bon)",
+      "source": "Story insta @drama_queen",
+      "score": 8,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je tag pas mes potes parce que je suis pas un monstre",
+      "source": "Commentaire insta",
+      "score": 3,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Il a rappé plus vite que moi quand ma mère m'appelle pour manger",
+      "source": "Commentaire insta",
+      "score": 5,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai mis �  fond dans le bus. Le chauffeur m'a regardé dans le rétro. Je regrette rien.",
+      "source": "Story insta @rebellion_quotidienne",
+      "score": 7,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le 47e son que j'écoute cette semaine et c'est le 47e meilleur",
+      "source": "Commentaire insta",
+      "score": 3,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Frère t'as rappé ou t'as fait une crise d'épilepsie vocale",
+      "source": "Commentaire insta",
+      "score": 2,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je pleure au bureau. Mes collègues pensent que c'est un décès. C'est pire.",
+      "source": "Story insta @travail_et_rap",
+      "score": 7,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour me sentir invincible au Carrefour Market",
+      "source": "Story insta @guerrier_du_quotidien",
+      "score": 7,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Il a dit un mot que ma grand-mère utiliserait pas. Et elle a fait la guerre d'Algérie.",
+      "source": "Commentaire insta",
+      "score": 3,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'écoute en boucle et je me sens moins seul. C'est triste mais c'est vrai.",
+      "source": "Story insta @solitude_sonore",
+      "score": 7,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est comme écouter du bruit blanc mais avec des mots.",
+      "source": "Commentaire insta",
+      "score": 2,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai montré �  ma mère. Elle a dit \"c'est joli mon c�ur\". Je suis mort.",
+      "source": "Commentaire insta",
+      "score": 4,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai mis en alarme. Je me réveille en sueur. 10/10.",
+      "source": "Story insta @reveil_brutal",
+      "score": 8,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est pas un son c'est une déclaration de guerre �  mes tympans",
+      "source": "Commentaire insta",
+      "score": 1,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Il rappe comme s'il avait un hot dog dans la gorge",
+      "source": "Commentaire insta",
+      "score": 3,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai écouté en faisant du sport. J'ai couru 3km de plus par énervement.",
+      "source": "Story insta @cardio_par_rage",
+      "score": 6,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mettrai �  mon mariage pour que tout le monde sache qui je suis",
+      "source": "Commentaire insta",
+      "score": 7,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Frère pourquoi t'as fait ça �  la musique",
+      "source": "Commentaire insta",
+      "score": 1,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'écoute en cuisinant. Mes pâtes ont brûlé. Le son m'a distrait.",
+      "source": "Story insta @chef_du_dimanche",
+      "score": 5,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le pire son que j'ai entendu depuis celui du métro �  6h du mat",
+      "source": "Commentaire insta",
+      "score": 1,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Il a moins de rythme que mon lave-linge en mode essorage",
+      "source": "Commentaire insta",
+      "score": 2,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai mis �  mon poisson rouge. Il est mort. Coïncidence ? Je pense pas.",
+      "source": "Story insta @poisson_rouge_rip",
+      "score": 0,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour faire semblant d'être occupé au téléphone",
+      "source": "Commentaire insta",
+      "score": 5,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté 2 secondes. J'ai désinstallé Spotify.",
+      "source": "Commentaire insta",
+      "score": 0,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'écoute en marchant dans la rue et je me prends pour le personnage principal d'un film.",
+      "source": "Story insta @main_character",
+      "score": 8,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est pas un son c'est un crime contre l'humanité auditive",
+      "source": "Commentaire insta",
+      "score": 0,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Mon thérapeute m'a dit d'arrêter de l'écouter. J'ai changé de thérapeute.",
+      "source": "Story insta @patient_fidele",
+      "score": 8,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Il rappe comme si le micro lui devait de l'argent",
+      "source": "Commentaire insta",
+      "score": 4,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai mis en fond pendant que je travaillais. J'ai rien fait de la journée.",
+      "source": "Story insta @productivité_morte",
+      "score": 6,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que mon prof de musique passerait pour nous punir",
+      "source": "Commentaire insta",
+      "score": 2,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté le son. Mon âme a quitté mon corps. Elle est pas revenue.",
+      "source": "Commentaire insta",
+      "score": 1,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai mis �  un mariage. Plus personne me parle.",
+      "source": "Story insta @plus_invité_nulle_part",
+      "score": 3,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour me donner du courage avant d'appeler ma banquière",
+      "source": "Commentaire insta",
+      "score": 6,
+      "tier": "social",
+      "section": "INSTAGRAM � STORIES & COMMENTAIRES"
+    },
+    {
+      "quote": "Premier ! (j'ai pas écouté encore mais je commente)",
+      "source": "@premier_toujours",
+      "score": null,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "3:42 le son s'arrête mais j'ai continué �  écouter 10 minutes de silence. C'était mieux.",
+      "source": "@silence_dor",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Qui écoute ça en 2025 ??? Ah. Moi. Ok.",
+      "source": "@autodérision_yt",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le mec qui a mis \"dislike\" : on sait qui tu es. On te voit.",
+      "source": "@défenseur_du_goat",
+      "score": 9,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté en x0.5 et c'est pire.",
+      "source": "@experimentateur",
+      "score": 1,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "47e écoute. Je commence �  comprendre. Ou pas.",
+      "source": "@perseverant",
+      "score": 6,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "La prod est tellement forte qu'elle cache le fait qu'il dit rien.",
+      "source": "@oreille_critique",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Je suis venu pour la musique. Je repars avec un traumatisme.",
+      "source": "@victime_yt",
+      "score": 1,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour faire croire que j'ai des goûts musicaux.",
+      "source": "@faux_melomane",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Qui d'autre écoute ça au bureau avec un air sérieux ?",
+      "source": "@employé_discret",
+      "score": 7,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le beat est en feu. Les lyrics sont en cendres.",
+      "source": "@pyromane_musical",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai mis le son. Ma plante est morte.",
+      "source": "@jardinier_inquiet",
+      "score": 0,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le genre de son qui te fait checker si tes écouteurs marchent bien.",
+      "source": "@technicien_du_son",
+      "score": 3,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "2:17 j'ai cru que mon téléphone bugait. C'était le son.",
+      "source": "@confusion_technique",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai écouté en boucle pendant 3h. J'ai plus de vie sociale. Merci.",
+      "source": "@hermite_musical",
+      "score": 8,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son est nul mais le thumbnail m'a fait cliquer. Bravo le marketing.",
+      "source": "@victime_du_clickbait",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour énerver mon coloc. �a marche �  chaque fois.",
+      "source": "@coloc_en_guerre",
+      "score": 6,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Il a plus d'adlibs que de paroles. C'est un record.",
+      "source": "@statisticien_du_rap",
+      "score": 3,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Je l'ai mis �  ma grand-mère. Elle a dit \"c'est du jazz ?\". J'ai pas corrigé.",
+      "source": "@petit_fils_lâche",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mettrai �  mes enfants pour qu'ils comprennent pourquoi j'étais bizarre.",
+      "source": "@papa_futur",
+      "score": 7,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son est tellement nul qu'il est devenu intéressant. C'est de l'art.",
+      "source": "@philosophe_yt",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté. J'ai rien compris. J'ai réécouté. J'ai toujours rien compris. Je valide.",
+      "source": "@confusion_positive",
+      "score": 6,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que le prof de sport met pour nous faire courir. On court plus vite pour fuir.",
+      "source": "@eleve_en_fuite",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "10 minutes de ma vie que je récupèrerai jamais.",
+      "source": "@temps_irrecuperable",
+      "score": 1,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son m'a donné envie d'apprendre le piano pour comprendre ce qui s'est passé.",
+      "source": "@musicologue_amateur",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est pas un son c'est une expérience de Milgram version auditive.",
+      "source": "@psychologue_du_dimanche",
+      "score": 3,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté en mangeant. J'ai avalé de travers. Le son est dangereux.",
+      "source": "@risque_alimentaire",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le seul son qui me fait regretter d'avoir des oreilles.",
+      "source": "@regret_anatomique",
+      "score": 0,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets quand je veux que la soirée se termine.",
+      "source": "@hote_fatigué",
+      "score": 3,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai mis le son. Mon chat a quitté l'appartement. Il est pas revenu.",
+      "source": "@proprietaire_abandonné",
+      "score": 1,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le refrain est catchy. Le reste est un accident.",
+      "source": "@semi_satisfait",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour me sentir rebelle au bureau. Je porte un costume.",
+      "source": "@rebel_en_costume",
+      "score": 6,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Il rappe comme s'il avait avalé un dictionnaire et qu'il essayait de le ressortir.",
+      "source": "@metaphore_litteraire",
+      "score": 3,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté 100 fois. � la 101e j'ai compris. C'est nul.",
+      "source": "@cent_fois_sur_le_metier",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son est tellement fort que j'ai entendu mes voisins applaudir. Ou pleurer.",
+      "source": "@voisin_confus",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour faire croire �  mes potes que j'écoute un truc pointu.",
+      "source": "@pretentieux_musical",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "0:47 il a dit un truc et j'ai regardé derrière moi.",
+      "source": "@paranoia_sonore",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son m'a fait pleurer. Pas de joie.",
+      "source": "@larme_froide",
+      "score": 1,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le genre de son qui te fait douter de tes choix de vie. Tous.",
+      "source": "@criseexistentielle_yt",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai mis le son en soirée. Le DJ m'a regardé. J'ai vu la déception dans ses yeux.",
+      "source": "@dj_trahi",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le beat est signé par quelqu'un qui a probablement été payé. J'espère bien payé.",
+      "source": "@soutien_aux_beatmakers",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour me donner du courage avant un entretien d'embauche. Je l'ai raté.",
+      "source": "@chomeur_musical",
+      "score": 3,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté en faisant du yoga. J'ai perdu l'équilibre. Le son est dangereux.",
+      "source": "@yogi_desequilibre",
+      "score": 4,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est pas un son c'est un test de résistance auditive. J'ai échoué.",
+      "source": "@surdite_progressive",
+      "score": 1,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son est nul mais je le mets quand même. C'est ça la vie.",
+      "source": "@masochiste_sonore",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai montré �  mon père. Il a dit \"de mon temps c'était mieux\". Il a raison.",
+      "source": "@fils_respectueux",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mets pour me sentir jeune. J'ai 19 ans.",
+      "source": "@vieux_a_19_ans",
+      "score": 6,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "Le son m'a réconcilié avec ma copine. On s'est disputés sur le son.",
+      "source": "@couple_en_crise",
+      "score": 5,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "J'ai écouté le son. Mon QI a baissé de 3 points.",
+      "source": "@neurologue_amateur",
+      "score": 2,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "C'est le son que je mettrai �  mon propre procès pour me donner du style.",
+      "source": "@avocat_du_style",
+      "score": 7,
+      "tier": "social",
+      "section": "YOUTUBE � COMMENTAIRES"
+    },
+    {
+      "quote": "POV : t'écoutes ce son et tu te prends pour le perso principal",
+      "source": "@maincharacterenergy",
+      "score": 8,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je fais un stitch pour dire que c'est de la merde.",
+      "source": "@stitch_haine",
+      "score": 1,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son m'a fait rater mon bus. Je le recommande.",
+      "source": "@retardataire",
+      "score": 7,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je l'ai mis �  mon prof. Il m'a mis 0.",
+      "source": "@eleve_rebelle",
+      "score": 3,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Duet avec moi-même parce que personne veut le faire avec moi. Le son est nul.",
+      "source": "@solitude_tiktok",
+      "score": 2,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son + un coucher de soleil = je pleure.",
+      "source": "@sensible_tiktok",
+      "score": 8,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je fais un thread pour expliquer pourquoi c'est le meilleur son de 2025. (c'est pas le meilleur son de 2025)",
+      "source": "@contradiction_tiktok",
+      "score": 5,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ma mère a entendu le son. Elle a appelé le médecin.",
+      "source": "@fils_inquiet",
+      "score": 2,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son m'a fait gagner 3 abonnés. Merci. Je pense.",
+      "source": "@influenceur_debutant",
+      "score": 6,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je danse dessus. Mal. Mais je danse.",
+      "source": "@danseur_du_dimanche",
+      "score": 7,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Le son est tellement nul que c'en est devenu un trend.",
+      "source": "@trendsetter_malgre_lui",
+      "score": 4,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "J'ai fait un montage avec ce son. Mon montage est meilleur que le son.",
+      "source": "@monteur_humble",
+      "score": 3,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son m'a fait perdre un ami. Il a dit \"c'est bien\". J'ai coupé les ponts.",
+      "source": "@amitie_fragile",
+      "score": 2,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je l'écoute en boucle dans ma chambre �  2h du mat. Mes parents savent pas.",
+      "source": "@ado_rebelle",
+      "score": 8,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Le son est nul mais le trend est cool. Je sépare les deux.",
+      "source": "@dissociation_tiktok",
+      "score": 5,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "J'ai mis le son. Mon hamster a fait une roulade. Il est mort. RIP.",
+      "source": "@hamster_rip",
+      "score": 0,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son + ma rupture = contenu garanti.",
+      "source": "@contenu_douleur",
+      "score": 7,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je fais un live pour écouter le son en boucle. Rejoignez-moi dans la souffrance.",
+      "source": "@live_souffrance",
+      "score": 3,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Le son m'a fait rater mon examen. Je le recommande.",
+      "source": "@etudiant_sacrifié",
+      "score": 6,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "J'ai mis le son �  mon bébé. Il a pas pleuré. C'est déj�  ça.",
+      "source": "@parent_soulagé",
+      "score": 6,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son m'a fait gagner 10k abonnés. Je sais pas comment.",
+      "source": "@viral_mystere",
+      "score": 7,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je fais un tuto maquillage avec ce son en fond. Le son est mauvais. Le maquillage aussi.",
+      "source": "@beaute_rap",
+      "score": 3,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Le son est tellement fort que mes voisins ont appelé la police.",
+      "source": "@nuisance_sonore",
+      "score": 4,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "J'ai mis le son. Mon ex m'a envoyé un message. Coïncidence ? Non. Le son est un poison.",
+      "source": "@superstitieux",
+      "score": 2,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son + un kebab = la vie.",
+      "source": "@philosophie_simple",
+      "score": 8,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je fais un storytime avec ce son. Le storytime est plus intéressant que le son.",
+      "source": "@storyteller",
+      "score": 4,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Le son m'a fait pleurer dans le bus. Tout le monde regardait.",
+      "source": "@emotion_publique",
+      "score": 6,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "J'ai mis le son en mode avion. Il marchait quand même. C'est de la sorcellerie.",
+      "source": "@technophobe",
+      "score": 3,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Ce son m'a donné envie de faire du rap. J'ai arrêté après 3 secondes.",
+      "source": "@carriere_avortée",
+      "score": 2,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "Je fais un challenge : écouter le son 100 fois sans devenir fou. Jour 3. �a va. Pour l'instant.",
+      "source": "@challenge_fou",
+      "score": 5,
+      "tier": "social",
+      "section": "TIKTOK"
+    },
+    {
+      "quote": "[RAP FR] Quelqu'un peut m'expliquer ce que j'ai écouté ?",
+      "source": "r/rapfrance, u/confus_permanent",
+      "score": 4,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le son est moyen mais au moins il a essayé. C'est déj�  ça.",
+      "source": "Forum Skyrock, pseudo: RapLover93",
+      "score": 5,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "C'est de la merde. Cordialement.",
+      "source": "JeuxVideo.com, pseudo: PuristeDuRapFR",
+      "score": 1,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Je sais pas si c'est un son ou une blague. Dans les deux cas, c'est pas drôle.",
+      "source": "r/rapfrance, u/doute_existentiel",
+      "score": 3,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le son est correct. Le reste de l'album est �  chier. Mais le son est correct.",
+      "source": "Forum Booska-P, pseudo: Nuance",
+      "score": 6,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Quelqu'un peut me dire �  quelle minute ça devient bien ? J'attends.",
+      "source": "JeuxVideo.com, pseudo: Patient",
+      "score": 3,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "C'est le meilleur son depuis le dernier meilleur son.",
+      "source": "r/rapfrance, u/logique_imparable",
+      "score": 7,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "J'ai écouté. J'ai rien compris. J'ai upvote.",
+      "source": "r/rapfrance, u/confusion_positive",
+      "score": 5,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le son est tellement nul qu'il en devient un sujet de conversation. C'est déj�  ça.",
+      "source": "Forum Skyrock, pseudo: Optimiste",
+      "score": 4,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Je suis le seul �  trouver ça bien ou je suis le seul �  trouver ça bien ?",
+      "source": "JeuxVideo.com, pseudo: Solitaire",
+      "score": 7,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le beat est en 4/4. Les paroles sont en 0/4.",
+      "source": "r/rapfrance, u/musicologue",
+      "score": 3,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "C'est le son que je mets pour me donner du courage avant de poster sur ce forum.",
+      "source": "JeuxVideo.com, pseudo: Anxieux",
+      "score": 5,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le son est nul mais le thread est mieux.",
+      "source": "r/rapfrance, u/meta_rappeur",
+      "score": 4,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "J'ai écouté 3 fois. La 4ème fois c'était pour vérifier que j'avais pas halluciné. J'avais pas halluciné.",
+      "source": "Forum Booska-P, pseudo: SainDEsprit",
+      "score": 2,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "C'est le son que je mettrai �  mon enterrement pour que les gens se souviennent de moi. En mal.",
+      "source": "JeuxVideo.com, pseudo: Immortel",
+      "score": 3,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le son est correct. Je dis correct parce que je suis poli.",
+      "source": "r/rapfrance, u/poli_mais_honnête",
+      "score": 4,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "J'ai mis le son. Mon ordi a planté. Coïncidence ?",
+      "source": "JeuxVideo.com, pseudo: Informatique",
+      "score": 2,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "C'est le genre de son qui te fait remettre en question ton abonnement Spotify.",
+      "source": "r/rapfrance, u/econome",
+      "score": 3,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Le son est moyen. Le titre est nul. La pochette est moche. Mais le son est moyen.",
+      "source": "Forum Skyrock, pseudo: Comptable",
+      "score": 5,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "J'ai écouté le son. J'ai écouté le silence après. Le silence était mieux.",
+      "source": "JeuxVideo.com, pseudo: Silencieux",
+      "score": 2,
+      "tier": "social",
+      "section": "FORUMS / REDDIT / JEUXVIDEO.COM"
+    },
+    {
+      "quote": "Un son qui divise notre rédaction de 2 personnes.",
+      "source": "Le Rap du 93, blog local",
+      "score": 5,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "On a aimé. Enfin, un de nous deux a aimé.",
+      "source": "Plume & Flow",
+      "score": 5,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est pas notre style mais on respecte. De loin.",
+      "source": "Rap Banlieue Nord",
+      "score": 4,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Le son qui nous a réconciliés avec le rap FR. Pendant 3 minutes.",
+      "source": "Oreilles du Quartier",
+      "score": 7,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "On a écouté. On a écrit l'article. On a supprimé l'article. On a réécrit. Voil� .",
+      "source": "Le Blog du Fond",
+      "score": 4,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Un son qui sent le vécu. Malheureusement.",
+      "source": "Rimes & Raz",
+      "score": 3,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est le son qu'on aurait aimé aimer.",
+      "source": "La Plume du 18e",
+      "score": 4,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "On valide le refrain. Le reste est en cours d'examen.",
+      "source": "Flow Local",
+      "score": 5,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Un son qui nous a fait sortir de notre zone de confort. On veut y retourner.",
+      "source": "Rap de Province",
+      "score": 3,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est pas le son du siècle. C'est le son du mardi.",
+      "source": "Le Mardi Rap",
+      "score": 5,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "On a écouté en buvant un café. Le café était meilleur.",
+      "source": "Café & Rap",
+      "score": 3,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Un son qui nous rappelle pourquoi on a créé ce blog. Pour pas écouter ça.",
+      "source": "Rap Alternatif FR",
+      "score": 2,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est le son que notre stagiaire a choisi. On l'a viré.",
+      "source": "Le Blog du Patron",
+      "score": 1,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Un son honnête. Malheureusement.",
+      "source": "Plume Honnête",
+      "score": 4,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "On a mis 6 parce qu'on a pas le c�ur de mettre moins. Ni l'envie de mettre plus.",
+      "source": "Le Juste Milieu",
+      "score": 6,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est le son qu'on écoute quand on a plus rien d'autre. Et qu'on a écouté tout le reste.",
+      "source": "Dernier Recours",
+      "score": 3,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Un son qui nous a fait réfléchir. On aurait préféré ne pas.",
+      "source": "Pensée Rap",
+      "score": 3,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est pas nul. C'est pas bien. C'est.",
+      "source": "Existentialisme Rap",
+      "score": 5,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "On a écouté le son. On a écouté notre conscience. On a mis 4.",
+      "source": "Conscience Musicale",
+      "score": 4,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "Le son qui nous a fait douter de notre passion pour le rap.",
+      "source": "Doute & Flow",
+      "score": 2,
+      "tier": "presse",
+      "section": "BLOGS LOCAUX / IND�PENDANTS"
+    },
+    {
+      "quote": "C'est le son qu'on écoute en cachette au bureau.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "On l'a mis dans notre playlist \"Son du moment\". On assume.",
+      "source": "Konbini",
+      "score": 8,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "C'est pas parfait mais c'est vivant. Et c'est déj�  beaucoup.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "Le son qu'on met dans les stories. Oui. On assume.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "On a hésité entre 6 et 8. On a mis 7. Comme la température du café qu'on buvait.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "C'est le son qui nous a réconciliés avec le lundi.",
+      "source": "Konbini",
+      "score": 8,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "On l'a écouté 3 fois. La 3ème fois c'était pour l'article. Les 2 premières c'était par plaisir.",
+      "source": "Konbini",
+      "score": 8,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "C'est pas le son de l'année. C'est le son de la semaine. Et c'est déj�  bien.",
+      "source": "Konbini",
+      "score": 6,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "On a mis le son en réu. Tout le monde a hoché la tête. C'est validé.",
+      "source": "Konbini",
+      "score": 7,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "Le son qu'on recommande �  nos potes en disant \"écoute, c'est pas fou mais c'est cool\".",
+      "source": "Konbini",
+      "score": 6,
+      "tier": "presse",
+      "section": "KONBINI (plusieurs avis)"
+    },
+    {
+      "quote": "On vous conseille. Vraiment. On insiste.",
+      "source": "Brut.",
+      "score": 8,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "C'est le son du moment. On l'a dit. On le redit.",
+      "source": "Brut.",
+      "score": 8,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "Un son qui parle �  une génération. Laquelle ? On sait pas. Mais une.",
+      "source": "Brut.",
+      "score": 6,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "On a écouté. On a kiffé. On partage.",
+      "source": "Brut.",
+      "score": 7,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "C'est pas le son du siècle mais c'est le son du jour. Et c'est déj�  ça.",
+      "source": "Brut.",
+      "score": 7,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "Un son brut. Comme nous.",
+      "source": "Brut.",
+      "score": 7,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "On valide. Pas �  100%. Mais on valide.",
+      "source": "Brut.",
+      "score": 6,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "Le son qu'on met dans nos vidéos. Oui. On assume.",
+      "source": "Brut.",
+      "score": 7,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "C'est le son qui nous a fait revenir au bureau un lundi.",
+      "source": "Brut.",
+      "score": 7,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "On vous conseille. Encore. Toujours.",
+      "source": "Brut.",
+      "score": 8,
+      "tier": "presse",
+      "section": "BRUT. (plusieurs avis)"
+    },
+    {
+      "quote": "1863 approuve. Pas besoin de plus.",
+      "source": "1863",
+      "score": 8,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "C'est dans notre playlist. C'est tout.",
+      "source": "1863",
+      "score": 7,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "Un son qui a sa place. Chez nous.",
+      "source": "1863",
+      "score": 7,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "On valide le flow. Le reste, on verra.",
+      "source": "1863",
+      "score": 6,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "C'est le son qu'on écoute entre deux réunions.",
+      "source": "1863",
+      "score": 7,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "On a écouté. On a partagé. C'est le process.",
+      "source": "1863",
+      "score": 7,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "Un son qui nous ressemble. Enfin, qui ressemble �  notre stagiaire.",
+      "source": "1863",
+      "score": 6,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "C'est dans la playlist \"Découvertes\". On sait pas si c'est une découverte.",
+      "source": "1863",
+      "score": 5,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "On valide. Le comité a voté. 3 pour, 1 contre, 1 abstention.",
+      "source": "1863",
+      "score": 7,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "Le son qu'on met en fond pendant qu'on travaille. On travaille pas.",
+      "source": "1863",
+      "score": 6,
+      "tier": "presse",
+      "section": "1863 (plusieurs avis)"
+    },
+    {
+      "quote": "Inégal mais intéressant. On maintient.",
+      "source": "Raplume",
+      "score": 6,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "Un son qui aurait pu être grand. Il est moyen.",
+      "source": "Raplume",
+      "score": 5,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "On sent le potentiel. Il est bien rangé au fond.",
+      "source": "Raplume",
+      "score": 5,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "C'est pas mauvais. C'est pas bon. C'est Raplume-compatible.",
+      "source": "Raplume",
+      "score": 5,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "Un son qui nous a fait hésiter. On hésite encore.",
+      "source": "Raplume",
+      "score": 5,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "Le flow est l� . L'inspiration est en RTT.",
+      "source": "Raplume",
+      "score": 4,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "C'est le genre de son qu'on chronique par obligation.",
+      "source": "Raplume",
+      "score": 4,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "Un son honnête dans un monde de tricheurs. C'est déj�  ça.",
+      "source": "Raplume",
+      "score": 6,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "On a lu les lyrics. On aurait préféré ne pas.",
+      "source": "Raplume",
+      "score": 3,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "C'est le son qu'on écoute quand on a plus d'espoir.",
+      "source": "Raplume",
+      "score": 4,
+      "tier": "presse",
+      "section": "RAPLUME (plusieurs avis)"
+    },
+    {
+      "quote": "je l'ai écouté en faisant caca. c'est le meilleur moment de ma journée.",
+      "source": "@caca_musical",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "le son est tellement nul que mon téléphone s'est éteint tout seul",
+      "source": "@telephone_sensible",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai mis le son. mon voisin a appelé la police. les policiers ont dansé.",
+      "source": "@fete_inattendue",
+      "score": 6,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour faire croire que je suis occupé au téléphone avec quelqu'un d'important",
+      "source": "@faux_important",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "il a plus de \"euh\" que de mots. c'est un record mondial.",
+      "source": "@compteur_de_euh",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai écouté le son. j'ai appelé ma mère. je lui ai dit que je l'aimais.",
+      "source": "@fils_reconnaissant",
+      "score": 7,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que le diable met en enfer pour faire souffrir les âmes.",
+      "source": "@theologien_du_bled",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai mis le son �  mon poisson. il a sauté hors de l'aquarium. il est libre maintenant.",
+      "source": "@poisson_libre",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour me donner du courage avant d'aller aux toilettes.",
+      "source": "@courageux_du_quotidien",
+      "score": 6,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "il rappe comme si quelqu'un lui avait volé son sandwich.",
+      "source": "@sandwich_vole",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai écouté le son. j'ai perdu 3 minutes de ma vie. je veux un remboursement.",
+      "source": "@client_insatisfait",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour faire fuir les témoins de Jéhovah.",
+      "source": "@strategie_anti_secte",
+      "score": 6,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "le son est tellement mauvais qu'il est devenu bon. c'est de la physique quantique.",
+      "source": "@physicien_du_rap",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai mis le son. mon micro-ondes a bipé. c'était plus mélodieux.",
+      "source": "@micro_ondes_melomane",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour me sentir vivant. ça marche pas.",
+      "source": "@mort_vivant",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "il a plus d'autotune que de neurones. c'est un exploit.",
+      "source": "@neurologue_du_rap",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai écouté le son en faisant du vélo. je suis tombé. le son est dangereux.",
+      "source": "@cycliste_blesse",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour faire croire que j'ai du goût. j'en ai pas.",
+      "source": "@faux_melomane",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "le son m'a fait rêver. dans le rêve, le son était mieux.",
+      "source": "@reveur_deçu",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai mis le son. mon chat m'a regardé. il est parti. il est pas revenu.",
+      "source": "@chat_parti",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour me donner du courage avant de répondre �  un mail.",
+      "source": "@anxieux_du_mail",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "il rappe comme si sa vie en dépendait. sa vie dépend pas de ça.",
+      "source": "@realiste",
+      "score": 3,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai écouté le son. j'ai oublié mon prénom pendant 3 secondes.",
+      "source": "@amnesique_temporaire",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour faire croire que je suis en couple. je suis seul.",
+      "source": "@solitaire_assumé",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "le son est tellement nul que j'ai eu pitié. j'ai mis 2.",
+      "source": "@pitié_musicale",
+      "score": 2,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai mis le son. ma plante a fané. elle était en plastique.",
+      "source": "@plastique_sensible",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour me sentir jeune. j'ai 47 ans.",
+      "source": "@jeune_de_47_ans",
+      "score": 5,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "il a fait un son de 3 minutes. 2 minutes 59 de trop.",
+      "source": "@concis",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "j'ai écouté le son. j'ai appelé mon avocat.",
+      "source": "@procedes_judiciaires",
+      "score": 1,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "c'est le son que je mets pour faire croire que je suis cool. je suis pas cool.",
+      "source": "@faux_cool",
+      "score": 4,
+      "tier": "social",
+      "section": "COMPTES X � TROLLS & ABSURDE"
+    },
+    {
+      "quote": "JE SUIS � GENOUX. JE SUIS � TERRE. JE SUIS FINI.",
+      "source": "@goat_worship",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le meilleur son depuis l'invention du son.",
+      "source": "@historien_du_son",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "il a changé ma vie. en 3 minutes. je suis plus le même.",
+      "source": "@transforme",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "je l'écoute en boucle. je vais mourir. je m'en fous.",
+      "source": "@fan_mourant",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est pas un son c'est une religion. je suis converti.",
+      "source": "@converti_du_rap",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "il a fait ce que personne a osé faire. je sais pas quoi mais il l'a fait.",
+      "source": "@admiratif_vague",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "je pleure. je pleure. je pleure. c'est beau.",
+      "source": "@fontaine_de_larmes",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le son que j'attendais depuis ma naissance. je suis né il y a 22 ans.",
+      "source": "@patience_recompensée",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "il est le rap. le rap c'est lui. c'est fini.",
+      "source": "@philosophe_du_goat",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "je l'ai écouté 200 fois. je vais l'écouter 200 fois de plus.",
+      "source": "@addict_certifié",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le son qui m'a fait croire en Dieu. je suis athée.",
+      "source": "@miracle_sonore",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "il a surpassé Mozart. Beethoven. Bach. Tout le monde.",
+      "source": "@melomane_decale",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "je l'écoute en dormant. je me réveille en l'écoutant. c'est ma vie.",
+      "source": "@vie_sonore",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le son que je mettrai �  mon mariage, mon divorce, et mon enterrement.",
+      "source": "@fan_complet",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "il a changé la musique. il a changé ma vie. il a changé mon frigo.",
+      "source": "@changement_total",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "je suis pas un fan. je suis un disciple.",
+      "source": "@disciple_du_flow",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le son que je mets pour me sentir invincible. ça marche.",
+      "source": "@invincible",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "il a fait un son parfait. je sais pas comment. mais il l'a fait.",
+      "source": "@perfectionniste",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "je l'ai écouté. j'ai vu la lumière. c'était pas la lumière. c'était le son.",
+      "source": "@illumine",
+      "score": 9,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le son de ma vie. de ma mort. de tout.",
+      "source": "@totalite",
+      "score": 10,
+      "tier": "social",
+      "section": "COMPTES X � FANS ULTRA"
+    },
+    {
+      "quote": "c'est le pire son que j'ai entendu. et j'ai écouté du Céline Dion.",
+      "source": "@haine_supreme",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X � HATERS ULTRA"
+    },
+    {
+      "quote": "qui a autorisé ça. qui. donnez-moi un nom.",
+      "source": "@justice_sonore",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X � HATERS ULTRA"
+    },
+    {
+      "quote": "j'ai écouté. j'ai vomi. j'ai réécouté. j'ai revomi.",
+      "source": "@vomi_musical",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X � HATERS ULTRA"
+    },
+    {
+      "quote": "c'est pas de la musique. c'est un crime.",
+      "source": "@avocat_du_silence",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X � HATERS ULTRA"
+    },
+    {
+      "quote": "le son est tellement nul que mon oreille gauche a démissionné.",
+      "source": "@oreille_gauche",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X � HATERS ULTRA"
+    },
+    {
+      "quote": "j'ai mis le son. mon cerveau a fait une grève.",
+      "source": "@cerve",
+      "score": 0,
+      "tier": "social",
+      "section": "COMPTES X � HATERS ULTRA"
+    }
+  ]
+}

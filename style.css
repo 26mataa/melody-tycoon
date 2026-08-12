@@ -1,0 +1,550 @@
+/* ============================================================
+   MELODY TYCOON — DA crème et gris, typo nette, grands arrondis.
+   Le mode clair est la base : c'est lui la référence visuelle. Le
+   mode sombre en est dérivé (mêmes rôles, mêmes contrastes), pas
+   l'inverse.
+
+   Trois états de thème :
+   - aucun attribut sur <html>  → suit la préférence système
+   - data-theme="light"         → clair forcé
+   - data-theme="dark"          → sombre forcé
+   Chaque couleur est définie une première fois sur :root nu, donc
+   aucune ne dépend uniquement d'un bloc média.
+============================================================ */
+:root{
+  --bg:#f5f3ef;--bg2:#eceae4;--panel:#ffffff;--panel2:#f7f5f1;
+  --accent:#c9622a;--accent2:#e08a4e;
+  --text:#1d1b19;--sub:#77726c;--border:#e2ded6;
+  --good:#2f7d4f;--bad:#c0392b;--warn:#b07407;--pve:#7c4fbd;
+  --chip:#efece6;--shadow:rgba(60,50,40,.09);--on-accent:#ffffff;
+  --radius:18px;--radius-sm:12px;--radius-lg:26px;
+}
+
+/* Sombre dérivé de la même palette : mêmes rôles, contrastes inversés. */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141311;--bg2:#1b1a17;--panel:#201e1b;--panel2:#282521;
+    --accent:#e0854a;--accent2:#f0a877;
+    --text:#f2efe9;--sub:#a39c93;--border:#37332e;
+    --good:#5cc98a;--bad:#f0736a;--warn:#e0a94a;--pve:#b18ae0;
+    --chip:#2c2925;--shadow:rgba(0,0,0,.45);--on-accent:#1a1512;
+  }
+}
+/* Bascule manuelle : elle doit gagner dans les deux sens. */
+:root[data-theme="dark"]{
+  --bg:#141311;--bg2:#1b1a17;--panel:#201e1b;--panel2:#282521;
+  --accent:#e0854a;--accent2:#f0a877;
+  --text:#f2efe9;--sub:#a39c93;--border:#37332e;
+  --good:#5cc98a;--bad:#f0736a;--warn:#e0a94a;--pve:#b18ae0;
+  --chip:#2c2925;--shadow:rgba(0,0,0,.45);--on-accent:#1a1512;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  background:var(--bg);
+  color:var(--text);min-height:100vh;transition:background .25s,color .25s;
+}
+#app{max-width:1320px;margin:0 auto;padding:18px;padding-bottom:100px}
+
+@keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:0 4px 18px var(--shadow);animation:cardIn .3s ease}
+.center{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;position:relative;overflow:hidden}
+@keyframes floatNote{0%{transform:translateY(0) rotate(0deg);opacity:.16}50%{opacity:.28}100%{transform:translateY(-120vh) rotate(25deg);opacity:0}}
+.float-note{position:absolute;bottom:-10%;font-size:2.4rem;opacity:.18;animation:floatNote linear infinite;pointer-events:none;filter:blur(.2px)}
+@keyframes titleGlow{0%,100%{filter:drop-shadow(0 0 8px color-mix(in srgb,var(--accent) 40%,transparent))}50%{filter:drop-shadow(0 0 22px color-mix(in srgb,var(--accent) 60%,transparent))}}
+.bigtitle{font-size:3rem;font-weight:800;letter-spacing:-.04em;animation:titleGlow 3.2s ease-in-out infinite}
+.bigtitle span{color:var(--accent)}
+.subtitle{color:var(--sub);max-width:640px;line-height:1.5;font-size:1.02rem}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.spread{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+h2{font-size:1.05rem;margin-bottom:10px;font-weight:800;letter-spacing:-.01em}
+h3{font-size:.76rem;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;font-weight:700}
+.muted{color:var(--sub)}
+.small{font-size:.82rem}
+.tiny{font-size:.7rem}
+.good{color:var(--good)}
+.bad{color:var(--bad)}
+.warn{color:var(--warn)}
+.accent{color:var(--accent)}
+
+button{font:inherit;cursor:pointer;border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:999px;padding:10px 16px;font-weight:700;transition:transform .12s,background .15s,border-color .15s,box-shadow .15s}
+button:hover:not(:disabled){transform:translateY(-1px);border-color:color-mix(in srgb,var(--accent) 50%,var(--border))}
+button:active:not(:disabled){transform:translateY(0) scale(.96)}
+button:disabled{opacity:.38;cursor:not-allowed}
+button.primary{background:var(--accent);border-color:transparent;color:var(--on-accent);box-shadow:0 2px 8px color-mix(in srgb,var(--accent) 22%,transparent)}
+button.primary:hover:not(:disabled){background:color-mix(in srgb,var(--accent) 88%,var(--text));box-shadow:0 4px 14px color-mix(in srgb,var(--accent) 28%,transparent)}
+button.ghost{background:transparent}
+button.danger{background:transparent;border-color:var(--bad);color:var(--bad)}
+button.pve{background:var(--pve);border-color:transparent;color:#fff}
+button.selected{outline:2px solid var(--accent)}
+input[type=text],input[type=number],input[type=file],select{width:100%;padding:11px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--panel2);color:var(--text);font:inherit}
+input[type=text]:focus,input[type=number]:focus,select:focus{outline:2px solid var(--accent)}
+
+/* HUD — vitales du personnage, pas une ligne de tableur */
+.hud{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:14px;box-shadow:0 4px 18px var(--shadow)}
+.brand{font-weight:900;letter-spacing:-.02em;font-size:1.1rem}
+.brand span{color:var(--accent)}
+.tier-badge{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:800;padding:4px 11px;border-radius:999px;background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 38%,transparent)}
+.stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{background:var(--chip);border:1px solid var(--border);border-radius:var(--radius-sm);padding:7px 12px;min-width:80px;transition:transform .15s}
+.stat:hover{transform:translateY(-2px)}
+.stat .l{font-size:.6rem;color:var(--sub);text-transform:uppercase;letter-spacing:.03em}
+.stat .v{font-weight:800;font-size:.94rem}
+.hud-alert{background:var(--bad);color:#fff;border:none;padding:7px 12px;border-radius:999px;font-weight:700;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.62}}
+.stat-delta{display:inline-block;font-size:.68rem;font-weight:800;margin-left:4px;animation:deltaPop 2.2s ease forwards}
+.stat-delta.good{color:var(--good)}
+.stat-delta.bad{color:var(--bad)}
+@keyframes deltaPop{0%{opacity:0;transform:translateY(3px)}12%{opacity:1;transform:translateY(0)}75%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+
+/* Navigation instinctive : grosses icônes, peu d'entrées */
+.subnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.subnav button{border-radius:999px;padding:7px 14px;font-size:.82rem;position:relative}
+.subnav button.active{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.badge{position:absolute;top:-5px;right:-5px;background:var(--bad);color:#fff;border-radius:999px;font-size:.6rem;padding:2px 5px;font-weight:800}
+
+.opt{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:left;cursor:pointer;transition:transform .12s,border-color .15s,background .15s}
+.opt:hover:not(.locked){transform:translateY(-2px)}
+@keyframes optSelectPop{0%{transform:scale(1)}40%{transform:scale(1.035)}100%{transform:scale(1)}}
+.opt.selected{animation:optSelectPop .22s ease}
+.opt .n{font-weight:700;font-size:.86rem}
+.opt .d{font-size:.72rem;color:var(--sub);margin-top:3px}
+.opt.selected{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--panel2))}
+.opt.locked{opacity:.4;cursor:not-allowed}
+.opt-featured{border:2px solid var(--accent);animation:glow 2.4s infinite}
+
+/* Impact preview chips — cœur de la "règle d'or" : pourquoi ce choix change quoi */
+.impacts{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+.impact-chip{font-size:.64rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--chip)}
+.impact-chip.pos{color:var(--good)}
+.impact-chip.neg{color:var(--bad)}
+.impact-chip.risk{color:var(--warn)}
+
+.artist-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;cursor:pointer;transition:.15s}
+.artist-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.bar{height:7px;background:var(--chip);border-radius:99px;overflow:hidden;margin-top:3px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.bar.xp i{background:linear-gradient(90deg,var(--good),var(--accent))}
+.bar.moral i{background:linear-gradient(90deg,var(--bad),var(--warn),var(--good))}
+.tag{display:inline-block;font-size:.62rem;font-weight:800;padding:2px 8px;border-radius:999px}
+.tag.espoir{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.tag.valeur{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+.tag.star{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
+.pill{display:inline-block;font-size:.68rem;padding:3px 10px;border-radius:999px;background:var(--chip);color:var(--sub)}
+.pill.good{color:var(--good)}
+.pill.warn{color:var(--warn)}
+.pill.bad{color:var(--bad)}
+.log{display:flex;flex-direction:column;gap:6px;max-height:360px;overflow:auto}
+.log-item{background:var(--panel2);border-left:3px solid var(--border);padding:9px 12px;border-radius:10px;font-size:.8rem}
+.log-item.pos{border-color:var(--good)}
+.log-item.neg{border-color:var(--bad)}
+.log-item.info{border-color:var(--accent)}
+.log-day{font-size:.66rem;font-weight:800;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-top:10px;padding-top:6px;border-top:1px dashed var(--border)}
+.log-day:first-child{margin-top:0;padding-top:0;border-top:none}
+.event{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px;position:relative;animation:evIn .22s}
+@keyframes evIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.event.imp2{border-color:var(--warn);box-shadow:0 0 0 2px color-mix(in srgb,var(--warn) 14%,transparent)}
+.event.imp3{border-color:var(--bad);animation:pulse 1.8s infinite}
+.event .t{font-weight:800;margin-bottom:5px;font-size:1rem}
+.event .choices{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.event .choices button{text-align:left}
+.ev-badge{position:absolute;top:-8px;right:10px;font-size:.62rem;font-weight:800;padding:3px 9px;border-radius:999px}
+.ev-badge.normal{background:var(--accent);color:var(--on-accent)}
+.ev-badge.important{background:var(--warn);color:var(--on-accent)}
+.ev-badge.critical{background:var(--bad);color:#fff}
+
+/* ============================================================
+   L'ÉPISODE EN COURS — la pièce centrale de l'écran d'accueil.
+   Un seul épisode affiché à la fois : c'est lui que le joueur lit,
+   et c'est son choix qui fait avancer le temps d'un chapitre.
+============================================================ */
+.episode-card{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;position:relative;animation:evIn .22s}
+.episode-card.imp2{border-color:var(--warn);box-shadow:0 0 0 2px color-mix(in srgb,var(--warn) 14%,transparent)}
+.episode-card.imp3{border-color:var(--bad);box-shadow:0 0 0 3px color-mix(in srgb,var(--bad) 16%,transparent)}
+.episode-card.push{border:2px solid var(--accent)}
+.episode-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:.74rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+.episode-card .t{font-weight:800;font-size:1.14rem;line-height:1.3;margin-bottom:6px}
+.episode-card .d{color:var(--sub);font-size:.9rem;line-height:1.5}
+.episode-card .choices{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.episode-choice{text-align:left;width:100%;padding:13px 16px;border-radius:999px;font-weight:600}
+
+/* Bilan de fin de saison — l'épisode final, façon série. */
+.season-modal{max-width:560px;text-align:left}
+.season-modal-head{text-align:center;margin-bottom:16px}
+.season-grid{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.season-stat{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px}
+.season-stat .l{font-size:.7rem;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+.season-stat .v{font-weight:800;font-size:1.05rem;margin-top:2px}
+.gameover-screen .epilogue-icon{filter:grayscale(.3)}
+
+/* Widget beatmakers — fenêtre compacte fermable en bas d'écran, côté gauche */
+.beatmaker-drawer{position:fixed;left:16px;bottom:16px;width:280px;max-width:calc(100vw - 32px);background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 8px 30px var(--shadow);z-index:70;animation:modalIn .2s ease;overflow:hidden}
+.beatmaker-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-weight:800;font-size:.82rem;cursor:pointer;background:var(--panel2);border-bottom:1px solid var(--border)}
+.beatmaker-drawer-body{max-height:40vh;overflow-y:auto;padding:10px}
+.beatmaker-row{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;margin-bottom:6px}
+.beatmaker-row:last-child{margin-bottom:0}
+.beatmaker-reopen{position:fixed;left:16px;bottom:16px;z-index:70;background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:11px 18px;font-weight:800;box-shadow:0 6px 20px var(--shadow);animation:reopenPop .25s ease}
+@media(max-width:700px){.beatmaker-drawer{left:8px;right:8px;width:auto;bottom:78px}.beatmaker-reopen{left:8px;bottom:78px}}
+@keyframes modalBgIn{from{opacity:0}to{opacity:1}}
+@keyframes modalIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-bg{position:fixed;inset:0;background:rgba(10,5,10,.6);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60;backdrop-filter:blur(3px);animation:modalBgIn .18s ease}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:680px;width:100%;max-height:86vh;overflow:auto;padding:22px;animation:modalIn .22s cubic-bezier(.2,.9,.3,1.2);box-shadow:0 12px 40px var(--shadow)}
+.divider{height:1px;background:var(--border);margin:14px 0}
+.flash-highlight{animation:flashH 1.1s ease 3}
+@keyframes flashH{0%,100%{box-shadow:0 0 0 0 transparent}50%{box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 55%,transparent)}}
+.roll-bg{position:fixed;inset:0;background:rgba(10,5,10,.8);display:none;align-items:center;justify-content:center;z-index:120;backdrop-filter:blur(4px)}
+.roll-bg.show{display:flex;animation:modalBgIn .15s ease}
+@keyframes rollCardIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.roll-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 42px;text-align:center;width:340px;box-shadow:0 0 44px color-mix(in srgb,var(--accent) 30%,transparent);animation:rollCardIn .22s cubic-bezier(.2,.9,.3,1.3)}
+.roll-label{color:var(--sub);font-size:.9rem;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+.roll-emoji{font-size:4.2rem;line-height:1;margin:10px 0;display:inline-block}
+@keyframes rollSpin{0%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.15) rotate(8deg)}100%{transform:scale(1) rotate(0deg)}}
+.roll-emoji.spin{animation:rollSpin .22s ease infinite}
+@keyframes rollReveal{0%{transform:scale(.4) rotate(-10deg);opacity:0}60%{transform:scale(1.25) rotate(4deg);opacity:1}100%{transform:scale(1) rotate(0deg);opacity:1}}
+.roll-emoji.reveal{animation:rollReveal .38s cubic-bezier(.2,.9,.3,1.4)}
+.roll-emoji.reveal.good{filter:drop-shadow(0 0 16px color-mix(in srgb,var(--good) 70%,transparent))}
+.roll-emoji.reveal.bad{filter:drop-shadow(0 0 16px color-mix(in srgb,var(--bad) 70%,transparent))}
+.roll-result{font-weight:800;font-size:1.05rem;margin-top:8px;animation:cardIn .2s ease}
+.roll-result.good{color:var(--good)}
+.roll-result.bad{color:var(--bad)}
+@keyframes glow{0%,100%{box-shadow:0 0 10px color-mix(in srgb,var(--accent) 22%,transparent)}50%{box-shadow:0 0 22px color-mix(in srgb,var(--accent) 48%,transparent)}}
+.objective{display:flex;gap:8px;align-items:center;padding:8px 8px;border-radius:var(--radius-sm);cursor:pointer;font-size:.86rem}
+.objective:hover{background:var(--panel2)}
+.objective .check{width:18px;height:18px;border-radius:6px;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:.68rem}
+.objective.done{opacity:.55;text-decoration:line-through}
+.objective.done .check{background:var(--good);border-color:transparent;color:#fff}
+.filter-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.filter-pills button{border-radius:999px;padding:6px 12px;font-size:.72rem}
+.filter-pills button.active{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.pager{display:flex;gap:4px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:12px}
+.pager button{min-width:32px;padding:6px 9px;font-size:.74rem}
+.pager button.active{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.pager-dots{color:var(--sub);font-size:.8rem;padding:0 2px}
+.nego-phrase{font-style:italic;color:var(--accent);background:var(--panel2);border-left:3px solid var(--accent);padding:11px;border-radius:var(--radius-sm);margin:10px 0;font-size:.9rem}
+.release-trend.up{color:var(--good)}
+.release-trend.stable{color:var(--warn)}
+.release-trend.down{color:var(--bad)}
+.error-box{padding:20px;color:var(--bad);font-family:monospace;white-space:pre-wrap;font-size:.9rem}
+
+/* Cashflow chart */
+.cashchart{display:flex;flex-direction:column;margin-top:10px}
+.cashchart-top{display:flex;align-items:flex-end;gap:3px;height:40px}
+.cashchart-bot{display:flex;align-items:flex-start;gap:3px;height:40px}
+.cashchart-mid{height:1px;background:var(--border);margin:2px 0}
+.cashbar{flex:1;min-width:4px;border-radius:4px 4px 0 0}
+.cashchart-bot .cashbar{border-radius:0 0 4px 4px}
+.cashbar.good{background:var(--good)}
+.cashbar.bad{background:var(--bad)}
+.cashbar.empty{background:transparent}
+
+/* PvE / Rivalité */
+.locked-panel{text-align:center;padding:44px 20px;border:2px dashed var(--border);border-radius:var(--radius)}
+.locked-panel .lockicon{font-size:2.6rem;margin-bottom:10px}
+.progress-locks{display:flex;flex-direction:column;gap:8px;max-width:420px;margin:14px auto 0;text-align:left}
+.lock-req{display:flex;justify-content:space-between;align-items:center;background:var(--panel2);border-radius:var(--radius-sm);padding:9px 13px;font-size:.82rem}
+.lock-req .ok{color:var(--good);font-weight:800}
+.lock-req .ko{color:var(--bad);font-weight:800}
+.leaderboard{display:flex;flex-direction:column;gap:6px}
+.lb-row{display:flex;align-items:center;gap:10px;background:var(--panel2);border-radius:var(--radius-sm);padding:9px 13px;border:1px solid var(--border)}
+.lb-row.me{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--panel2))}
+.lb-rank{font-weight:800;width:22px;text-align:center;color:var(--sub)}
+.lb-row.me .lb-rank{color:var(--accent)}
+.lb-name{flex:1;font-weight:700}
+.lb-score{font-weight:800}
+.rival-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-sm);padding:15px}
+.aggro-bar i{background:linear-gradient(90deg,var(--warn),var(--bad))}
+
+/* Événement rare de sortie : fusée qui décolle / s'écrase + tremblement d'écran */
+.rocket-fx{position:fixed;top:50%;left:50%;font-size:6rem;z-index:150;pointer-events:none;opacity:0;transform:translate(-50%,-50%)}
+.rocket-fx.boost{animation:rocketBoost 1.3s ease forwards}
+.rocket-fx.crash{animation:rocketCrash 1.3s ease forwards}
+@keyframes rocketBoost{0%{opacity:0;transform:translate(-50%,40vh) scale(.5)}25%{opacity:1}100%{opacity:0;transform:translate(-50%,-60vh) scale(1.3)}}
+@keyframes rocketCrash{0%{opacity:0;transform:translate(-50%,-60vh) scale(1.3) rotate(0deg)}35%{opacity:1}100%{opacity:0;transform:translate(-50%,40vh) scale(1) rotate(45deg)}}
+@keyframes screenShake{0%,100%{transform:translate(0,0)}10%{transform:translate(-6px,-3px)}20%{transform:translate(6px,3px)}30%{transform:translate(-5px,4px)}40%{transform:translate(5px,-4px)}50%{transform:translate(-4px,2px)}60%{transform:translate(4px,-2px)}70%{transform:translate(-3px,2px)}80%{transform:translate(3px,-2px)}90%{transform:translate(-2px,1px)}}
+body.screen-shake{animation:screenShake .5s ease}
+
+/* Mini courbe des streams de la sortie (7 derniers jours) */
+.release-chart{display:flex;align-items:flex-end;gap:2px;height:34px;margin-top:6px}
+.release-chart .rbar{flex:1;min-width:3px;border-radius:3px 3px 0 0;background:var(--accent)}
+
+/* Personnage, équipe compacte, relations */
+.relations-list{display:flex;flex-direction:column;gap:2px}
+
+/* Avatar upload (création du look) */
+
+/* Épilogue / retraite */
+.epilogue-screen .epilogue-icon{font-size:3.4rem;filter:drop-shadow(0 0 20px color-mix(in srgb,var(--accent) 45%,transparent))}
+.epilogue-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;width:100%;max-width:760px;margin-top:8px}
+.epilogue-stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px}
+.epilogue-stat .v{font-weight:800;font-size:1.1rem}
+.epilogue-stat .l{font-size:.7rem;color:var(--sub);margin-top:4px}
+.epilogue-flavor{max-width:640px;line-height:1.6;color:var(--text);font-size:1rem;font-style:italic;margin:6px 0}
+
+/* Passe DA : bandeau diagonal sur les cartes clés, marque plus graphique */
+h2{position:relative;padding-left:11px;border-left:4px solid var(--accent)}
+
+@media(max-width:700px){.bigtitle{font-size:2.2rem}.nav button .ic{font-size:1.2rem}}
+
+/* Mamie Huguette — joker activable depuis la barre du haut. */
+.mamie-ready{border-color:var(--good);color:var(--good);font-weight:800}
+.mamie-modal{max-width:460px}
+
+/* Profil du joueur — ouvert depuis la carte profil de la barre du haut. */
+.profile-modal{max-width:440px}
+.profile-modal-head{display:flex;align-items:center;gap:14px;margin-top:14px}
+.profile-modal-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none}
+.profile-modal-avatar.fallback{display:flex;align-items:center;justify-content:center;background:var(--chip);font-size:1.7rem}
+.profile-modal-name{font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
+
+/* Carte Mamie de la colonne de droite — sa vraie vitrine, plus visible
+   qu'une simple icône dans la barre du haut. */
+.mamie-card{cursor:pointer;transition:border-color .15s,transform .12s}
+.mamie-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.mamie-card-head{display:flex;align-items:center;gap:10px}
+.mamie-card-icon{width:38px;height:38px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:1.15rem;background:var(--chip)}
+.mamie-card-icon.ready{background:color-mix(in srgb,var(--good) 20%,var(--chip))}
+.mamie-card-name{font-weight:800;font-size:.92rem}
+
+
+/* Sous-onglet Sorties — la discographie complete du label. */
+.release-marquee{border-color:var(--accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 20%,transparent)}
+.review-line{margin:3px 0;line-height:1.45}
+.review-line.social{opacity:.85;font-style:italic}
+.pill.muted{opacity:.6}
+
+/* ============================================================
+   MIX FINAL — le seul geste manuel du joueur sur un projet.
+   Une barre, un curseur qui va-et-vient, une zone a viser.
+============================================================ */
+.mixqte-bg{position:fixed;inset:0;background:rgba(10,5,10,.72);display:flex;align-items:center;justify-content:center;z-index:90;backdrop-filter:blur(4px);animation:modalBgIn .18s ease;padding:18px}
+.mixqte-bg.out{opacity:0;transition:opacity .2s ease}
+.mixqte-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;max-width:520px;width:100%;text-align:center;box-shadow:0 14px 50px var(--shadow);animation:modalIn .22s cubic-bezier(.2,.9,.3,1.2)}
+.mixqte-title{font-weight:800;font-size:1.3rem;margin-bottom:6px}
+.mixqte-sub{color:var(--sub);font-size:.86rem;line-height:1.5;margin-bottom:20px}
+.mixqte-bar{position:relative;height:52px;background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;user-select:none}
+.mixqte-zone{position:absolute;top:0;bottom:0}
+.mixqte-zone.correct{background:color-mix(in srgb,var(--warn) 24%,transparent)}
+.mixqte-zone.parfait{background:color-mix(in srgb,var(--good) 38%,transparent)}
+.mixqte-cursor{position:absolute;top:4px;bottom:4px;width:5px;margin-left:-2px;border-radius:3px;background:var(--text);box-shadow:0 0 10px var(--text);transition:background .12s,box-shadow .12s}
+.mixqte-cursor.hit-parfait{background:var(--good);box-shadow:0 0 18px var(--good);width:9px}
+.mixqte-cursor.hit-correct{background:var(--warn);box-shadow:0 0 14px var(--warn);width:7px}
+.mixqte-cursor.hit-rate{background:var(--bad);box-shadow:0 0 14px var(--bad)}
+.mixqte-tries{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.mixqte-dot{width:12px;height:12px;border-radius:50%;background:var(--chip);border:1px solid var(--border)}
+.mixqte-dot.parfait{background:var(--good);border-color:var(--good)}
+.mixqte-dot.correct{background:var(--warn);border-color:var(--warn)}
+.mixqte-dot.rate{background:var(--bad);border-color:var(--bad)}
+.mixqte-result{margin-top:14px;min-height:44px;opacity:0;transition:opacity .2s ease;font-size:1.05rem}
+.mixqte-result.show{opacity:1}
+.mixqte-result.good{color:var(--good)}
+.mixqte-result.bad{color:var(--bad)}
+.mixqte-skip{margin-top:16px;opacity:.6}
+.mixqte-skip:hover{opacity:1}
+
+/* ============================================================
+   BARRE DU HAUT — logo a gauche, navigation au centre, profil a droite.
+============================================================ */
+.topbar{display:flex;align-items:center;gap:16px;padding:10px 18px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;flex-wrap:wrap;box-shadow:0 2px 10px var(--shadow)}
+.topbar-brand{display:flex;flex-direction:column;min-width:0}
+.topbar-brand .logo{font-weight:900;letter-spacing:.02em;font-size:1.02rem;color:var(--accent);line-height:1.1;white-space:nowrap}
+.topbar-brand .logo b{color:var(--text);font-weight:900}
+.topbar-brand .label-name{font-size:.72rem;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px}
+
+.topnav{display:flex;gap:4px;flex:1;justify-content:center;flex-wrap:wrap}
+.topnav button{position:relative;display:flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;font-weight:700;font-size:.86rem;background:transparent;border:1px solid transparent;color:var(--sub)}
+.topnav button:hover{background:var(--panel2);color:var(--text)}
+.topnav button.active{background:var(--text);color:var(--panel);border-color:var(--text)}
+.topnav button.locked{opacity:.5}
+.topnav .ic{font-size:1rem}
+.topnav .lock{font-size:.7rem;margin-left:2px}
+.topnav .badge{position:static;margin-left:4px;background:var(--accent);color:#fff;border-radius:999px;padding:1px 7px;font-size:.66rem;font-weight:800}
+
+.topbar-side{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.icon-btn{position:relative;padding:8px 11px;border-radius:999px;background:var(--panel2);border:1px solid var(--border);font-size:.95rem;line-height:1}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn.admin{background:var(--pve);border-color:transparent}
+.icon-btn .dot{position:absolute;top:4px;right:4px;width:7px;height:7px;border-radius:50%;background:var(--good)}
+.icon-btn.mamie-ready{border-color:var(--good)}
+.topbar-profile{display:flex;align-items:center;gap:9px;padding:5px 12px 5px 5px;border-radius:999px;background:var(--panel2);border:1px solid var(--border);cursor:pointer;transition:border-color .15s,transform .12s}
+.topbar-profile:hover{border-color:var(--accent);transform:translateY(-1px)}
+.topbar-avatar{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none}
+.topbar-avatar.fallback{display:flex;align-items:center;justify-content:center;background:var(--chip);font-size:1.05rem}
+.topbar-id{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.topbar-id b{font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px}
+
+/* ============================================================
+   ACCUEIL 3 COLONNES — finances / arc narratif / suivi.
+   Les autres ecrans (Label, Rivalite, Finance) restent pleine largeur.
+============================================================ */
+.home3{display:grid;grid-template-columns:290px minmax(0,1fr) 290px;gap:16px;align-items:start}
+.home3 .col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.col-story{gap:0}
+
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:15px}
+.panel-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--sub);margin-bottom:9px}
+.panel-journal .log{max-height:240px}
+
+.big-money{font-size:1.85rem;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.big-money.bad{color:var(--bad)}
+.side-stat{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--border);font-size:.82rem}
+.side-stat:last-child{border-bottom:none}
+.side-stat .l{color:var(--sub)}
+.side-stat .v{font-weight:800}
+
+.story-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.story-season{font-weight:900;font-size:1.05rem;letter-spacing:-.01em}
+.story-progress{display:flex;flex-direction:column;align-items:flex-end;gap:3px;min-width:150px}
+.story-progress .bar{width:150px}
+.bar.thin{height:5px}
+
+.prod-strip{padding:9px 0;border-bottom:1px solid var(--border)}
+.prod-strip:last-of-type{border-bottom:none}
+
+.alerte{font-size:.79rem;line-height:1.4;padding:8px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:6px;background:var(--panel2)}
+.alerte:last-child{margin-bottom:0}
+.alerte.warn{border-color:var(--warn);color:var(--warn)}
+.alerte.bad{border-color:var(--bad);color:var(--bad)}
+
+/* Bouton Retraite : present, mais discret. C'est le joueur qui choisit sa fin. */
+.retire-link{width:100%;padding:10px;border-radius:var(--radius-sm);background:transparent;border:1px dashed var(--border);color:var(--sub);font-size:.79rem;font-weight:600}
+.retire-link:hover{border-color:var(--accent);color:var(--accent);border-style:solid}
+
+@media(max-width:1100px){
+  .home3{grid-template-columns:minmax(0,1fr)}
+  .col-story{order:-1}
+  .topnav{order:3;flex-basis:100%;justify-content:flex-start}
+}
+
+/* ============================================================
+   PARCOURS DE CREATION — deux etapes, plein ecran, respire.
+   Meme langage visuel que le reste (creme/gris, grands arrondis),
+   mais plus grand et plus centre : c'est le premier ecran du jeu.
+============================================================ */
+.onboard{max-width:640px;margin:0 auto;padding:32px 0 48px;animation:cardIn .35s ease;
+  /* #app ajoute 18px en haut et 100px en bas : on les retire pour que le
+     parcours tienne dans l'ecran sans faire apparaitre d'ascenseur. */
+  min-height:calc(100vh - 130px);display:flex;flex-direction:column;justify-content:center}
+.onboard-head{text-align:center;margin-bottom:28px}
+.onboard-title{font-size:2.6rem;font-weight:900;letter-spacing:-.035em;line-height:1.1}
+.onboard-title span{color:var(--accent)}
+
+/* Le mot "label" du titre cache le mode admin : dix appuis dessus.
+   Aucun indice visuel — juste un curseur qui ne trahit rien. */
+.secret-tap{cursor:default;-webkit-user-select:none;user-select:none}
+
+.onboard-steps{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px}
+.ostep{display:flex;align-items:center;gap:7px;font-size:.72rem;font-weight:800;color:var(--sub);
+  background:var(--panel2);border:1px solid var(--border);border-radius:999px;padding:5px 14px 5px 8px}
+.ostep i{font-style:normal;font-weight:600}
+.ostep.on{background:var(--text);color:var(--panel);border-color:var(--text)}
+.ostep.done{cursor:pointer;border-color:var(--accent);color:var(--accent)}
+.ostep.done:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.ostep-line{width:36px;height:2px;background:var(--border);border-radius:2px}
+.ostep-line.on{background:var(--accent)}
+
+.onboard-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:28px;box-shadow:0 10px 40px var(--shadow)}
+
+.ofield-row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ofield{display:block}
+.ofield-label{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--sub);margin-bottom:6px}
+.ofield input[type=text]{padding:14px 16px;border-radius:14px;font-size:.98rem;background:var(--panel2)}
+.ofield input[type=text]::placeholder{color:var(--sub);opacity:.55}
+.ofield-msg{margin-top:12px;font-size:.8rem;color:var(--bad)}
+
+.osection{margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.osection-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
+.osection-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--sub)}
+.osection-note{margin-top:12px;font-size:.76rem;color:var(--sub);line-height:1.5}
+.reroll{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;font-size:.78rem;font-weight:700;line-height:1;background:var(--panel2);border:1px solid var(--border);color:var(--sub)}
+.reroll::after{content:"Une autre"}
+.reroll:hover:not(:disabled){color:var(--accent);border-color:var(--accent)}
+.reroll:hover:not(:disabled) .de{display:inline-block;transform:rotate(-20deg)}
+
+/* Le point de depart : la carte qui raconte d'ou vient le joueur. */
+.start-hero{display:flex;gap:16px;align-items:flex-start;background:var(--panel2);
+  border:1px solid var(--border);border-radius:var(--radius);padding:18px;animation:cardIn .28s ease}
+.start-hero.admin{border-color:var(--pve);background:color-mix(in srgb,var(--pve) 8%,var(--panel2))}
+.start-hero-icon{font-size:2.2rem;line-height:1;flex:none;width:54px;height:54px;display:flex;
+  align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);border-radius:16px}
+.start-hero-body{min-width:0;flex:1}
+.start-hero-name{font-weight:800;font-size:1.12rem;letter-spacing:-.01em}
+.start-hero-desc{color:var(--sub);font-size:.87rem;line-height:1.55;margin-top:5px}
+.start-hero-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.pill.pve{background:color-mix(in srgb,var(--pve) 18%,transparent);color:var(--pve);
+  border-color:color-mix(in srgb,var(--pve) 40%,transparent)}
+
+.obtn{width:100%;margin-top:26px;padding:15px;font-size:.98rem;border-radius:16px}
+.obtn-row{display:flex;gap:10px;margin-top:26px;align-items:center}
+.obtn-row .ghost{padding:15px 22px;border-radius:16px}
+.obtn-row .obtn{margin-top:0;flex:1}
+
+/* Photo de profil : une vraie zone de depot, pas un champ fichier brut. */
+.avatar-block{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.avatar-drop{position:relative;width:132px;height:132px;flex:none;border-radius:26px;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;overflow:hidden;
+  background:var(--panel2);border:2px dashed var(--border);transition:border-color .15s,transform .12s}
+.avatar-drop:hover{border-color:var(--accent);transform:translateY(-2px)}
+.avatar-drop.filled{border-style:solid;border-color:var(--border)}
+.avatar-drop img{width:100%;height:100%;object-fit:cover}
+.avatar-drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;padding:0;border:none}
+.avatar-drop-icon{font-size:2.6rem;line-height:1}
+.avatar-drop-txt{font-size:.7rem;font-weight:700;color:var(--sub);text-align:center;line-height:1.3}
+.avatar-side{flex:1;min-width:180px}
+.avatar-side-title{font-weight:800;font-size:.92rem;margin-bottom:4px}
+
+@media(max-width:560px){
+  .onboard{padding:26px 0 40px}
+  .onboard-title{font-size:2rem}
+  .onboard-card{padding:20px}
+  .ostep i{display:none}
+}
+
+/* ============================================================
+   MANDAT — l'injonction avec compte à rebours, en tête de la
+   colonne narrative. Volontairement plus contrasté qu'un panneau
+   ordinaire : c'est la seule chose de l'écran qui a une échéance.
+============================================================ */
+.mandat{
+  border:1px solid var(--accent);
+  border-left:4px solid var(--accent);
+  background:var(--panel2);
+  border-radius:var(--radius);
+  padding:14px 16px;
+  margin-bottom:14px;
+}
+.mandat.urgent{
+  border-color:var(--bad);
+  border-left-color:var(--bad);
+  animation:mandatPulse 2.4s ease-in-out infinite;
+}
+@keyframes mandatPulse{
+  0%,100%{ box-shadow:0 0 0 0 transparent; }
+  50%    { box-shadow:0 0 0 3px color-mix(in srgb, var(--bad) 18%, transparent); }
+}
+.mandat-tag{
+  font-size:.72rem; font-weight:700; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--accent);
+}
+.mandat.urgent .mandat-tag{ color:var(--bad); }
+.mandat-compte{
+  font-size:.72rem; font-weight:700;
+  color:var(--sub);
+  font-variant-numeric:tabular-nums;
+}
+.mandat-compte.bad{ color:var(--bad); }
+.mandat-titre{ font-weight:700; margin:8px 0 4px; }
+.mandat-texte{ font-size:.9rem; color:var(--sub); line-height:1.5; }
+.mandat-cta{ margin-top:12px; width:100%; }
+
+/* Le mouvement gêne plus qu'il n'aide quand on l'a désactivé au système. */
+@media (prefers-reduced-motion: reduce){
+  .mandat.urgent{ animation:none; box-shadow:0 0 0 2px color-mix(in srgb, var(--bad) 25%, transparent); }
+}

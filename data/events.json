@@ -1,0 +1,1726 @@
+{
+  "CURATED_EVENTS": {
+    "1_politique_extremes": {
+      "distinct": [
+        {
+          "title": "Hommage controversé",
+          "desc": "{artiste} poste une story en hommage à une figure politique très clivante.",
+          "choices": [
+            "S'excuser",
+            "Assumer",
+            "Supprimer"
+          ]
+        },
+        {
+          "title": "La photo qui refait surface",
+          "desc": "Une photo de {artiste} avec Dieudonné refait surface.",
+          "choices": [
+            "Assumer",
+            "Démentir",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "Le drapeau brûlé",
+          "desc": "{artiste} brûle un drapeau français sur scène.",
+          "choices": [
+            "Assumer",
+            "S'excuser",
+            "Dire que c'était un accident"
+          ]
+        },
+        {
+          "title": "La chanson anti-système",
+          "desc": "{artiste} sort une chanson anti-système très radicale.",
+          "choices": [
+            "Assumer",
+            "Adoucir",
+            "Retirer"
+          ]
+        },
+        {
+          "title": "Le soutien à Poutine",
+          "desc": "{artiste} exprime son soutien à Poutine dans une interview.",
+          "choices": [
+            "Assumer",
+            "Revenir sur ses propos",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "Le concert en Israël",
+          "desc": "{artiste} donne un concert en Israël en pleine guerre.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Annuler"
+          ]
+        },
+        {
+          "title": "Le soutien à la Palestine",
+          "desc": "{artiste} exprime son soutien à la Palestine.",
+          "choices": [
+            "Assumer",
+            "Modérer ses propos",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "Le tweet sur les impôts",
+          "desc": "{artiste} tweete \"Les impôts c'est du vol\".",
+          "choices": [
+            "Assumer",
+            "S'excuser",
+            "En faire une chanson"
+          ]
+        },
+        {
+          "title": "Le drapeau palestinien",
+          "desc": "{artiste} porte un drapeau palestinien en concert.",
+          "choices": [
+            "Assumer",
+            "Retirer",
+            "En faire un symbole"
+          ]
+        },
+        {
+          "title": "Le soutien à Macron en plein live",
+          "desc": "{artiste} exprime son soutien à Macron en plein live.",
+          "choices": [
+            "Assumer",
+            "Se rétracter",
+            "Ignorer"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "photo_dictateur",
+          "desc": "Une photo de {artiste} avec {mot} refait surface.",
+          "choices": [
+            "Démentir",
+            "Assumer",
+            "Ignorer"
+          ],
+          "words": [
+            "un dictateur nord-coréen",
+            "un dictateur syrien",
+            "un dictateur biélorusse",
+            "un dictateur vénézuélien",
+            "un dictateur cubain",
+            "un dictateur soudanais",
+            "un criminel de guerre",
+            "un génocidaire présumé",
+            "un chef de guerre",
+            "un groupuscule néonazi",
+            "un dictateur égyptien",
+            "un dictateur saoudien",
+            "un dictateur ougandais",
+            "un dictateur rwandais",
+            "un dictateur zimbabwéen",
+            "un terroriste présumé"
+          ]
+        },
+        {
+          "id": "meeting_politique",
+          "desc": "{artiste} est invité(e) à chanter à un meeting {mot}.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Y aller déguisé(e)"
+          ],
+          "words": [
+            "du FN",
+            "du RN",
+            "de Zemmour",
+            "de LFI",
+            "des patriotes",
+            "des souverainistes",
+            "des indépendantistes",
+            "d'extrême gauche",
+            "des régionalistes",
+            "des anti-mondialisation",
+            "des climatosceptiques",
+            "des anti-OGM"
+          ]
+        },
+        {
+          "id": "concert_regime",
+          "desc": "{artiste} donne un concert en {mot}.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Annuler"
+          ],
+          "words": [
+            "Russie, en pleine guerre",
+            "Chine, sous un régime autoritaire",
+            "Arabie Saoudite",
+            "Iran, sous un régime autoritaire",
+            "Turquie, sous un régime autoritaire",
+            "Hongrie, sous un régime autoritaire",
+            "Égypte, sous un régime autoritaire",
+            "Corée du Nord"
+          ]
+        },
+        {
+          "id": "tweet_erreur",
+          "desc": "{artiste} tweete un message {mot} \"par erreur\".",
+          "choices": [
+            "S'excuser",
+            "Assumer",
+            "Dire que c'était un hack"
+          ],
+          "words": [
+            "antisémite",
+            "raciste",
+            "homophobe",
+            "islamophobe",
+            "sexiste",
+            "complotiste",
+            "antivax",
+            "pro-Poutine",
+            "anti-immigration",
+            "anti-UE"
+          ]
+        },
+        {
+          "id": "slogan_tshirt",
+          "desc": "{artiste} porte un t-shirt avec un slogan {mot} en concert.",
+          "choices": [
+            "Assumer",
+            "Enlever",
+            "En faire une vente"
+          ],
+          "words": [
+            "communiste",
+            "anarchiste",
+            "nationaliste",
+            "écologiste radical",
+            "féministe radical",
+            "animaliste radical",
+            "pro-vie",
+            "pro-avortement",
+            "pro-LGBT",
+            "pro-voile",
+            "pro-mariage gay",
+            "pro-armes"
+          ]
+        }
+      ]
+    },
+    "2_scandales_sexuels": {
+      "distinct": [
+        {
+          "title": "Le sextape",
+          "desc": "Un sextape de {artiste} fuite sur le darknet.",
+          "choices": [
+            "Nier et porter plainte",
+            "Assumer et en rire",
+            "Le vendre à un site porno"
+          ]
+        },
+        {
+          "title": "Le fan trop collant",
+          "desc": "Un fan s'introduit dans la loge de {artiste} en sous-vêtements.",
+          "choices": [
+            "Appeler la sécurité",
+            "Faire une photo",
+            "Le prendre comme assistant"
+          ]
+        },
+        {
+          "title": "La soirée très arrosée",
+          "desc": "{artiste} est filmé(e) complètement ivre en train de faire des choses compromettantes.",
+          "choices": [
+            "Faire une cure",
+            "Assumer",
+            "Faire taire les témoins"
+          ]
+        },
+        {
+          "title": "Le strip-tease sur scène",
+          "desc": "{artiste} fait un strip-tease improvisé sur scène.",
+          "choices": [
+            "Assumer",
+            "S'excuser",
+            "En faire un clip"
+          ]
+        },
+        {
+          "title": "La rumeur de grossesse",
+          "desc": "La presse annonce que {artiste} attend un enfant avec une personne controversée.",
+          "choices": [
+            "Confirmer",
+            "Démentir",
+            "Garder le mystère"
+          ]
+        },
+        {
+          "title": "Le coming out forcé",
+          "desc": "Un média menace de révéler l'orientation sexuelle de {artiste}.",
+          "choices": [
+            "Faire un coming out",
+            "Payer",
+            "Menacer le média"
+          ]
+        },
+        {
+          "title": "L'accusation de harcèlement",
+          "desc": "{artiste} est accusé(e) de harcèlement sexuel par un ancien membre de l'équipe.",
+          "choices": [
+            "Nier",
+            "S'excuser",
+            "Payer pour faire taire"
+          ]
+        },
+        {
+          "title": "La soirée avec des mineurs",
+          "desc": "{artiste} est filmé(e) à une soirée où des mineurs étaient présents.",
+          "choices": [
+            "Nier",
+            "S'excuser",
+            "Payer pour faire taire"
+          ]
+        },
+        {
+          "title": "L'ex qui balance",
+          "desc": "L'ex de {artiste} donne une interview choc sur leur vie privée.",
+          "choices": [
+            "Nier",
+            "Assumer",
+            "Payer pour faire taire"
+          ]
+        },
+        {
+          "title": "Le message compromettant",
+          "desc": "Un message privé de {artiste} avec des propos très crus fuite.",
+          "choices": [
+            "Démentir",
+            "Assumer",
+            "Payer pour faire disparaître"
+          ]
+        },
+        {
+          "title": "La relation avec une personnalité controversée",
+          "desc": "{artiste} est en couple avec une personne très controversée.",
+          "choices": [
+            "Soutenir",
+            "Dissuader",
+            "Exploiter"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "photo_compromettante",
+          "desc": "Une photo de {artiste} {mot} refait surface.",
+          "choices": [
+            "Nier",
+            "Assumer",
+            "Ignorer"
+          ],
+          "words": [
+            "avec une escort girl",
+            "en lingerie",
+            "en tenue sexy",
+            "en sous-vêtements",
+            "en bikini",
+            "de nu",
+            "avec une prostituée",
+            "avec un acteur porno",
+            "avec une dominatrice",
+            "avec un ex dans un lit",
+            "avec un membre du label, en position compromettante"
+          ]
+        },
+        {
+          "id": "video_fuite",
+          "desc": "Une vidéo de {artiste} {mot} fuite.",
+          "choices": [
+            "Nier",
+            "Assumer",
+            "Payer pour retirer"
+          ],
+          "words": [
+            "en train d'embrasser une inconnue",
+            "avec une prostituée",
+            "dans un sauna avec des personnes suspectes",
+            "à une soirée échangiste",
+            "de baiser volé avec une star",
+            "avec une groupie"
+          ]
+        },
+        {
+          "id": "soiree_douteuse",
+          "desc": "{artiste} est filmé(e) à une soirée {mot}.",
+          "choices": [
+            "Nier",
+            "Assumer",
+            "Ignorer"
+          ],
+          "words": [
+            "en boîte de nuit avec des personnes suspectes",
+            "à la piscine, en train de faire des choses compromettantes",
+            "en boîte échangiste",
+            "avec des travestis",
+            "avec des escortes",
+            "avec des strip-teaseuses",
+            "avec des drogués"
+          ]
+        }
+      ]
+    },
+    "3_argent_scams": {
+      "distinct": [
+        {
+          "title": "Le faux manager",
+          "desc": "{artiste} a été escroqué(e) par un faux manager qui lui a volé 10 000€.",
+          "choices": [
+            "Payer pour récupérer",
+            "Porter plainte",
+            "Faire du buzz"
+          ]
+        },
+        {
+          "title": "Le producteur véreux",
+          "desc": "Un producteur propose un contrat très lucratif mais avec des clauses cachées.",
+          "choices": [
+            "Signer sans lire",
+            "Faire relire",
+            "Refuser"
+          ]
+        },
+        {
+          "title": "La crypto-monnaie",
+          "desc": "{artiste} veut investir 5000€ dans une crypto-monnaie.",
+          "choices": [
+            "Investir à fond",
+            "Investir prudemment",
+            "Refuser"
+          ]
+        },
+        {
+          "title": "Le sponsoring toxique",
+          "desc": "Une marque propose un sponsoring de 20 000€, mais son image est douteuse.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Négocier"
+          ]
+        },
+        {
+          "title": "Le vol de matériel",
+          "desc": "Le studio de {artiste} est cambriolé.",
+          "choices": [
+            "Porter plainte",
+            "Racheter",
+            "Faire une cagnotte"
+          ]
+        },
+        {
+          "title": "Le contrat de rêve",
+          "desc": "Une major propose un contrat d'un million d'euros à {artiste}.",
+          "choices": [
+            "Signer",
+            "Négocier",
+            "Refuser"
+          ]
+        },
+        {
+          "title": "Les NFT",
+          "desc": "{artiste} veut lancer une collection de NFT.",
+          "choices": [
+            "Collection massive",
+            "Collection limitée",
+            "Ne pas en faire"
+          ]
+        },
+        {
+          "title": "L'héritage inattendu",
+          "desc": "{artiste} hérite de 100 000€ d'un fan décédé.",
+          "choices": [
+            "Accepter",
+            "Reverser",
+            "Faire un concert hommage"
+          ]
+        },
+        {
+          "title": "La dette de jeu",
+          "desc": "{artiste} a des dettes de jeu de 20 000€.",
+          "choices": [
+            "Payer pour lui/elle",
+            "Le/la laisser gérer",
+            "Le/la virer"
+          ]
+        },
+        {
+          "title": "La fraude fiscale",
+          "desc": "Le fisc accuse {artiste} de fraude fiscale.",
+          "choices": [
+            "Payer",
+            "Contester",
+            "Nier"
+          ]
+        },
+        {
+          "title": "L'arnaque au streaming",
+          "desc": "{artiste} est accusé(e) d'avoir acheté des streams.",
+          "choices": [
+            "Nier",
+            "Reconnaître",
+            "Enquêter en interne"
+          ]
+        },
+        {
+          "title": "Le don d'un fan",
+          "desc": "Un fan fait un don de 50 000€ au label.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Utiliser pour un projet"
+          ]
+        },
+        {
+          "title": "La faille de sécurité",
+          "desc": "Les comptes du label sont piratés, 10 000€ volés.",
+          "choices": [
+            "Porter plainte",
+            "Sécuriser",
+            "Ignorer"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "vente_actif",
+          "desc": "L'occasion se présente de {mot} du label.",
+          "choices": [
+            "Vendre",
+            "Garder",
+            "Négocier"
+          ],
+          "words": [
+            "vendre une partie du catalogue",
+            "vendre des parts",
+            "louer une partie du catalogue",
+            "céder des contrats à un autre label",
+            "vendre les droits d'une chanson"
+          ]
+        },
+        {
+          "id": "subvention",
+          "desc": "{mot} propose une subvention au label.",
+          "choices": [
+            "Demander",
+            "Accepter",
+            "Refuser"
+          ],
+          "words": [
+            "La mairie",
+            "La région",
+            "L'État",
+            "L'Europe"
+          ]
+        },
+        {
+          "id": "artiste_finance",
+          "desc": "{artiste} veut {mot}.",
+          "choices": [
+            "Financer",
+            "Conseiller la prudence",
+            "Refuser"
+          ],
+          "words": [
+            "acheter une voiture de luxe",
+            "acheter une maison",
+            "investir dans l'immobilier"
+          ]
+        }
+      ]
+    },
+    "4_rivaux_competition": {
+      "distinct": [
+        {
+          "title": "Le rival vous copie",
+          "desc": "Un label rival sort un son très similaire à celui de {artiste}.",
+          "choices": [
+            "Ignorer",
+            "Faire un clash",
+            "Dénoncer"
+          ]
+        },
+        {
+          "title": "Le rival se ridiculise",
+          "desc": "Le show d'un label rival est un fiasco total.",
+          "choices": [
+            "Partager la vidéo",
+            "Respecter",
+            "Proposer une collab"
+          ]
+        },
+        {
+          "title": "Le duel au sommet",
+          "desc": "Un label rival vous défie à un battle de rap.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Saboter"
+          ]
+        },
+        {
+          "title": "Le vol de prod",
+          "desc": "Une prod de {artiste} a été volée par un label rival.",
+          "choices": [
+            "Porter plainte",
+            "Laisser tomber",
+            "Faire un disstrack"
+          ]
+        },
+        {
+          "title": "Le rival vous espionne",
+          "desc": "Vous découvrez qu'un label rival espionne votre studio.",
+          "choices": [
+            "Porter plainte",
+            "Engager un expert en sécurité",
+            "Piéger"
+          ]
+        },
+        {
+          "title": "Le rival signe votre ex-artiste",
+          "desc": "Un artiste que vous avez laissé partir signe chez votre pire rival.",
+          "choices": [
+            "Féliciter",
+            "Critiquer",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "Le clash de fans",
+          "desc": "Les fans de {artiste} et ceux d'un rival se clashent sur les réseaux.",
+          "choices": [
+            "Appeler au calme",
+            "Alimenter",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "La rumeur de fusion",
+          "desc": "La presse annonce une fusion entre votre label et un rival.",
+          "choices": [
+            "Confirmer",
+            "Démentir",
+            "Profiter du buzz"
+          ]
+        },
+        {
+          "title": "Le rival en faillite",
+          "desc": "Un label rival est en faillite et propose de vendre ses artistes.",
+          "choices": [
+            "Racheter",
+            "Laisser tomber",
+            "Rachat partiel"
+          ]
+        },
+        {
+          "title": "Le scandale chez le rival",
+          "desc": "Un scandale interne éclate chez un label rival. L'occasion est là.",
+          "choices": [
+            "Récupérer des artistes déçus",
+            "Rester neutre",
+            "En faire un exemple publiquement"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "rival_hostile",
+          "desc": "Un label rival {mot}.",
+          "choices": [
+            "Répondre",
+            "Ignorer",
+            "Attaquer"
+          ],
+          "words": [
+            "vous insulte en interview",
+            "vous dénigre dans le milieu",
+            "vous humilie sur les réseaux sociaux",
+            "vous méprise en interview",
+            "vous nargue sur les réseaux",
+            "vous raille en concert",
+            "se moque de vous en interview",
+            "vous ridiculise dans la presse",
+            "vous provoque en duel"
+          ]
+        },
+        {
+          "id": "rival_malhonnete",
+          "desc": "Un label rival {mot}.",
+          "choices": [
+            "Porter plainte",
+            "Négocier",
+            "Ignorer"
+          ],
+          "words": [
+            "vous vole un artiste",
+            "vous pique un contrat",
+            "vous arnaque sur un contrat",
+            "vous trahit sur un partenariat",
+            "sabote un de vos projets",
+            "vole vos idées",
+            "vous berne sur un contrat",
+            "vous fait chanter",
+            "vous piège avec un contrat"
+          ]
+        },
+        {
+          "id": "rival_juridique",
+          "desc": "Un label rival {mot}.",
+          "choices": [
+            "Se défendre",
+            "Négocier",
+            "Contre-attaquer"
+          ],
+          "words": [
+            "vous attaque en justice",
+            "vous poursuit en justice",
+            "vous menace de poursuites",
+            "vous calomnie dans la presse"
+          ]
+        }
+      ]
+    },
+    "5_relations_drames_internes": {
+      "distinct": [
+        {
+          "title": "L'artiste veut partir",
+          "desc": "{artiste} veut quitter le label pour un rival.",
+          "choices": [
+            "Laisser partir",
+            "Offrir un meilleur contrat",
+            "Menacer"
+          ]
+        },
+        {
+          "title": "Le clash entre artistes",
+          "desc": "Deux artistes du label se clashent sur les réseaux sociaux.",
+          "choices": [
+            "Les réunir",
+            "Prendre parti",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "L'artiste en dépression",
+          "desc": "{artiste} est en dépression après son dernier flop.",
+          "choices": [
+            "Envoyer en thérapie",
+            "Motiver",
+            "Remplacer"
+          ]
+        },
+        {
+          "title": "Le chantage d'un ex-manager",
+          "desc": "L'ancien manager de {artiste} fait chanter le label.",
+          "choices": [
+            "Payer",
+            "Porter plainte",
+            "Négocier"
+          ]
+        },
+        {
+          "title": "Le conflit de leadership",
+          "desc": "Deux artistes se disputent la place de tête d'affiche.",
+          "choices": [
+            "Trancher",
+            "Organiser un battle",
+            "Proposer une collab"
+          ]
+        },
+        {
+          "title": "L'artiste alcoolique",
+          "desc": "{artiste} a un problème d'alcool.",
+          "choices": [
+            "Envoyer en cure",
+            "Le/la laisser gérer",
+            "Licencier"
+          ]
+        },
+        {
+          "title": "Le vol de chanson",
+          "desc": "Une chanson de {artiste} est volée par un membre du label.",
+          "choices": [
+            "Porter plainte",
+            "Régler en interne",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "Le syndrome de la star",
+          "desc": "{artiste} devient imbuvable et méprise tout le monde.",
+          "choices": [
+            "Recadrer",
+            "Ignorer",
+            "Mettre en concurrence"
+          ]
+        },
+        {
+          "title": "La jalousie entre artistes",
+          "desc": "Un artiste jalouse le succès d'un autre.",
+          "choices": [
+            "Discuter",
+            "Ignorer",
+            "Recadrer"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "conflit_artiste",
+          "desc": "{artiste} se dispute avec {mot}.",
+          "choices": [
+            "Médiation",
+            "Ignorer",
+            "Recadrer"
+          ],
+          "words": [
+            "son producteur",
+            "son manager",
+            "le label",
+            "ses fans",
+            "la presse",
+            "un rival",
+            "un ex",
+            "sa famille",
+            "son entourage",
+            "ses collègues",
+            "son équipe",
+            "le management"
+          ]
+        }
+      ]
+    },
+    "6_sante_accidents": {
+      "distinct": [
+        {
+          "title": "L'accident de voiture",
+          "desc": "{artiste} a un accident de voiture et est hospitalisé(e).",
+          "choices": [
+            "Payer les frais",
+            "Soins publics",
+            "Cagnotte"
+          ]
+        },
+        {
+          "title": "La maladie soudaine",
+          "desc": "{artiste} est atteint(e) d'une maladie rare.",
+          "choices": [
+            "Traitement de pointe",
+            "Attendre",
+            "Annuler la tournée"
+          ]
+        },
+        {
+          "title": "La crise d'angoisse",
+          "desc": "{artiste} fait une crise d'angoisse en concert.",
+          "choices": [
+            "Soutenir",
+            "Forcer à continuer",
+            "Remplacer au pied levé"
+          ]
+        },
+        {
+          "title": "L'overdose",
+          "desc": "{artiste} fait une overdose en studio.",
+          "choices": [
+            "Appeler les urgences",
+            "Réanimer soi-même",
+            "Cacher l'incident"
+          ]
+        },
+        {
+          "title": "Le malaise en live",
+          "desc": "{artiste} s'évanouit en live.",
+          "choices": [
+            "Couper le concert",
+            "Continuer",
+            "En faire une blague"
+          ]
+        },
+        {
+          "title": "La dépression post-tournée",
+          "desc": "{artiste} est en dépression après sa tournée.",
+          "choices": [
+            "Vacances forcées",
+            "Le/la faire écrire",
+            "Laisser tranquille"
+          ]
+        },
+        {
+          "title": "L'allergie en tournée",
+          "desc": "{artiste} fait une réaction allergique grave.",
+          "choices": [
+            "Soins d'urgence",
+            "Soins locaux",
+            "Rentrer"
+          ]
+        },
+        {
+          "title": "Le diagnostic difficile",
+          "desc": "{artiste} est diagnostiqué(e) avec un trouble bipolaire.",
+          "choices": [
+            "Soutenir",
+            "Mettre en retrait",
+            "Licencier"
+          ]
+        },
+        {
+          "title": "Le cancer",
+          "desc": "{artiste} est diagnostiqué(e) d'un cancer.",
+          "choices": [
+            "Soutenir",
+            "Mettre en retrait",
+            "Licencier"
+          ]
+        },
+        {
+          "title": "La perte de voix",
+          "desc": "{artiste} perd sa voix avant une échéance importante.",
+          "choices": [
+            "Repos forcé",
+            "Traitement risqué",
+            "Annuler"
+          ]
+        },
+        {
+          "title": "L'agression",
+          "desc": "{artiste} est agressé(e).",
+          "choices": [
+            "Soins",
+            "Porter plainte",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "La menace de mort",
+          "desc": "{artiste} reçoit des menaces de mort.",
+          "choices": [
+            "Sécuriser",
+            "Porter plainte",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "L'incendie du studio",
+          "desc": "Le studio de {artiste} prend feu.",
+          "choices": [
+            "Sécuriser et reconstruire",
+            "Porter plainte (soupçon d'incendie criminel)",
+            "Ignorer"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "panne_studio",
+          "desc": "{mot} du studio est en panne.",
+          "choices": [
+            "Réparer",
+            "Remplacer",
+            "Ignorer"
+          ],
+          "words": [
+            "Le matériel d'enregistrement",
+            "L'informatique",
+            "Le système de son",
+            "L'éclairage",
+            "La climatisation",
+            "Le chauffage",
+            "La ventilation",
+            "Le réseau internet",
+            "Le système de sécurité",
+            "L'alarme",
+            "La serrure",
+            "Le toit",
+            "Le matériel vidéo",
+            "Le matériel photo",
+            "L'équipement de scène",
+            "Le véhicule de tournée"
+          ]
+        }
+      ]
+    },
+    "7_histoires_amour": {
+      "distinct": [
+        {
+          "title": "Le couple star",
+          "desc": "{artiste} est en couple avec une célébrité.",
+          "choices": [
+            "Exploiter médiatiquement",
+            "Protéger l'intimité",
+            "Pousser à la séparation"
+          ]
+        },
+        {
+          "title": "Le cœur brisé",
+          "desc": "{artiste} est en pleine rupture.",
+          "choices": [
+            "Accorder du temps",
+            "Faire travailler quand même",
+            "Envoyer en voyage"
+          ]
+        },
+        {
+          "title": "Le mariage surprise",
+          "desc": "{artiste} annonce son mariage.",
+          "choices": [
+            "Soutenir",
+            "Dissuader",
+            "En faire un événement médiatique"
+          ]
+        },
+        {
+          "title": "La rumeur d'infidélité",
+          "desc": "{artiste} est accusé(e) d'infidélité.",
+          "choices": [
+            "Démentir",
+            "Assumer",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "La grossesse non désirée",
+          "desc": "Une ex de {artiste} annonce être enceinte.",
+          "choices": [
+            "Assumer",
+            "Payer pour arranger la situation",
+            "Nier"
+          ]
+        },
+        {
+          "title": "L'ex qui fait scandale",
+          "desc": "L'ex de {artiste} vend son histoire à la presse.",
+          "choices": [
+            "Payer",
+            "Porter plainte",
+            "Faire une déclaration publique"
+          ]
+        },
+        {
+          "title": "Le coming out amoureux",
+          "desc": "{artiste} fait son coming out.",
+          "choices": [
+            "Soutenir",
+            "Faire taire",
+            "En faire un moment fort médiatique"
+          ]
+        },
+        {
+          "title": "La rupture brutale",
+          "desc": "{artiste} rompt brutalement avec sa/son compagne/compagnon en public.",
+          "choices": [
+            "Calmer le jeu",
+            "Soutenir",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "Le baiser volé",
+          "desc": "{artiste} est photographié(e) en train d'embrasser un(e) inconnu(e).",
+          "choices": [
+            "Assumer",
+            "Démentir",
+            "Payer pour retirer la photo"
+          ]
+        },
+        {
+          "title": "La relation toxique",
+          "desc": "{artiste} est en couple avec une personne toxique.",
+          "choices": [
+            "Soutenir malgré tout",
+            "Dissuader",
+            "Ignorer"
+          ]
+        },
+        {
+          "title": "La demande en mariage publique",
+          "desc": "{artiste} demande son/sa partenaire en mariage en plein concert.",
+          "choices": [
+            "Soutenir",
+            "Rester neutre",
+            "En faire un clip"
+          ]
+        },
+        {
+          "title": "Le divorce médiatisé",
+          "desc": "{artiste} traverse un divorce très médiatisé.",
+          "choices": [
+            "Soutenir",
+            "Rester neutre",
+            "Gérer la garde d'enfants avec lui/elle"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "relation_metier",
+          "desc": "{artiste} est en couple avec {mot}.",
+          "choices": [
+            "Soutenir",
+            "Dissuader",
+            "Ignorer"
+          ],
+          "words": [
+            "un collègue du label",
+            "son producteur",
+            "son manager",
+            "un journaliste",
+            "un politicien",
+            "un autre artiste",
+            "un sportif de haut niveau",
+            "un acteur connu",
+            "un ex qui refait surface",
+            "un fan"
+          ]
+        },
+        {
+          "id": "relation_ideologie",
+          "desc": "{artiste} est en couple avec {mot}.",
+          "choices": [
+            "Soutenir",
+            "Dissuader",
+            "Exploiter"
+          ],
+          "words": [
+            "un fasciste assumé",
+            "un communiste assumé",
+            "un anarchiste assumé",
+            "une personne ouvertement raciste",
+            "une personne ouvertement homophobe",
+            "une personne ouvertement transphobe",
+            "une personne ouvertement xénophobe"
+          ]
+        }
+      ]
+    },
+    "8_situations_absurdes": {
+      "distinct": [
+        {
+          "title": "Le sosie improbable",
+          "desc": "Un sosie troublant d'une figure historique très controversée se présente au casting.",
+          "choices": [
+            "Le prendre",
+            "Le refuser",
+            "Le faire en featuring"
+          ]
+        },
+        {
+          "title": "Le dîner avec Poutine",
+          "desc": "{artiste} est invité(e) à dîner avec Poutine.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Y aller déguisé(e)"
+          ]
+        },
+        {
+          "title": "Le fan qui sait tout",
+          "desc": "Un fan prétend connaître le vrai nom de {artiste}.",
+          "choices": [
+            "Ignorer",
+            "Confirmer",
+            "Démentir"
+          ]
+        },
+        {
+          "title": "Le chien de l'artiste",
+          "desc": "Le chien de {artiste} aboie pendant toute la session studio.",
+          "choices": [
+            "Garder",
+            "Recommencer sans lui",
+            "En faire un featuring canin"
+          ]
+        },
+        {
+          "title": "Le micro qui grésille",
+          "desc": "Le micro grésille en plein concert.",
+          "choices": [
+            "Continuer",
+            "Changer de micro",
+            "En faire un sketch"
+          ]
+        },
+        {
+          "title": "Le sosie de star",
+          "desc": "{artiste} est constamment confondu(e) avec une star.",
+          "choices": [
+            "En profiter",
+            "Se fâcher",
+            "Proposer un duo"
+          ]
+        },
+        {
+          "title": "L'invité surprenant",
+          "desc": "Un(e) inconnu(e) très étrange se présente au studio et demande à entrer.",
+          "choices": [
+            "Accueillir",
+            "Ignorer",
+            "En faire un clip"
+          ]
+        },
+        {
+          "title": "La poupée vaudou",
+          "desc": "Une poupée vaudou à l'effigie de {artiste} est trouvée devant le studio.",
+          "choices": [
+            "Porter plainte",
+            "En rire",
+            "En faire un clip"
+          ]
+        },
+        {
+          "title": "La voyante",
+          "desc": "Une voyante prédit l'avenir de {artiste} en pleine interview.",
+          "choices": [
+            "Écouter",
+            "Ignorer",
+            "En faire un clip"
+          ]
+        },
+        {
+          "title": "La bénédiction",
+          "desc": "Une figure religieuse propose de bénir le studio devant les caméras.",
+          "choices": [
+            "Accepter",
+            "Ignorer",
+            "En faire un clip"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "visiteur_studio",
+          "desc": "{mot} se présente au studio.",
+          "choices": [
+            "Accueillir",
+            "Ignorer",
+            "En faire un clip"
+          ],
+          "words": [
+            "Un magicien",
+            "Un cracheur de feu",
+            "Un jongleur",
+            "Un acrobate",
+            "Un musicien de rue",
+            "Un danseur de rue",
+            "Un peintre de rue",
+            "Un dompteur",
+            "Un exorciste",
+            "Un chaman",
+            "Un gourou",
+            "Un imposteur se faisant passer pour {artiste}"
+          ]
+        },
+        {
+          "id": "animal_studio",
+          "desc": "{mot} est trouvé(e) dans le studio.",
+          "choices": [
+            "S'en occuper",
+            "Ignorer",
+            "En faire un clip"
+          ],
+          "words": [
+            "Un cafard géant",
+            "Une souris",
+            "Un serpent",
+            "Une araignée géante"
+          ]
+        }
+      ]
+    },
+    "9_complots_services_secrets": {
+      "distinct": [
+        {
+          "title": "L'agent du Mossad",
+          "desc": "{artiste} est en réalité un agent du Mossad en mission. Il/elle doit quitter le label pour 3 semaines.",
+          "choices": [
+            "Le/la couvrir",
+            "Le/la dénoncer",
+            "Lui demander un service"
+          ]
+        },
+        {
+          "title": "La clé USB classifiée",
+          "desc": "{artiste} trouve une clé USB contenant des documents classifiés.",
+          "choices": [
+            "Rendre à la police",
+            "Vendre à un média",
+            "La garder"
+          ]
+        },
+        {
+          "title": "L'espion russe",
+          "desc": "{artiste} est soupçonné(e) d'être un agent dormant russe.",
+          "choices": [
+            "Déclaration patriotique",
+            "En faire un buzz",
+            "Le/la licencier"
+          ]
+        },
+        {
+          "title": "Le gouvernement vous contacte",
+          "desc": "Un agent du gouvernement vous propose une collaboration discrète.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Dénoncer à la presse"
+          ]
+        },
+        {
+          "title": "Les cryptos de l'artiste",
+          "desc": "{artiste} est accusé(e) d'avoir des liens avec des groupes extrémistes via des cryptos.",
+          "choices": [
+            "Démentir fermement",
+            "Se taire",
+            "Porter plainte"
+          ]
+        },
+        {
+          "title": "La taupe dans le label",
+          "desc": "Une taupe travaillant pour un rival se cache dans votre équipe.",
+          "choices": [
+            "La démasquer",
+            "Ignorer",
+            "L'utiliser à votre avantage"
+          ]
+        },
+        {
+          "title": "L'enquête officielle",
+          "desc": "Un service de renseignement enquête discrètement sur le label.",
+          "choices": [
+            "Collaborer",
+            "Ignorer",
+            "Faire profil bas"
+          ]
+        },
+        {
+          "title": "La surveillance du label",
+          "desc": "Vous découvrez que le label est surveillé par les services secrets.",
+          "choices": [
+            "Sécuriser les communications",
+            "Ignorer",
+            "Fuir médiatiquement en avant"
+          ]
+        },
+        {
+          "title": "Le vol d'identité",
+          "desc": "{artiste} est victime d'un vol d'identité.",
+          "choices": [
+            "Porter plainte",
+            "Ignorer",
+            "En faire un buzz"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "faux_document",
+          "desc": "On découvre que {artiste} a {mot}.",
+          "choices": [
+            "Assumer",
+            "Ignorer",
+            "Fuir en avant médiatiquement"
+          ],
+          "words": [
+            "une fausse identité",
+            "un faux nom de scène",
+            "un faux diplôme de musique",
+            "un faux CV",
+            "une fausse expérience professionnelle",
+            "un faux contrat antérieur",
+            "une carte d'identité falsifiée",
+            "un passeport falsifié"
+          ]
+        }
+      ]
+    },
+    "10_finances_crises": {
+      "distinct": [
+        {
+          "title": "La crise financière",
+          "desc": "Une crise financière mondiale touche le label.",
+          "choices": [
+            "Tenir bon",
+            "Emprunter",
+            "Vendre des actifs"
+          ]
+        },
+        {
+          "title": "La faillite d'un sponsor",
+          "desc": "Un sponsor important fait faillite et ne vous paie pas.",
+          "choices": [
+            "Poursuivre en justice",
+            "Chercher un nouveau sponsor",
+            "Faire une cagnotte"
+          ]
+        },
+        {
+          "title": "La dette du label",
+          "desc": "Le label accumule une dette importante.",
+          "choices": [
+            "Payer immédiatement",
+            "Négocier un échéancier",
+            "Envisager la faillite"
+          ]
+        },
+        {
+          "title": "La saisie des biens",
+          "desc": "Les biens du label risquent d'être saisis.",
+          "choices": [
+            "Payer",
+            "Contester",
+            "Se déclarer en faillite"
+          ]
+        },
+        {
+          "title": "La reprise par un autre label",
+          "desc": "Un autre label veut reprendre le vôtre.",
+          "choices": [
+            "Accepter",
+            "Négocier les conditions",
+            "Refuser"
+          ]
+        },
+        {
+          "title": "La fusion proposée",
+          "desc": "Un autre label propose une fusion.",
+          "choices": [
+            "Accepter",
+            "Négocier",
+            "Refuser"
+          ]
+        },
+        {
+          "title": "La donation d'un fan fortuné",
+          "desc": "Un fan fait une donation généreuse au label.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Utiliser pour un projet précis"
+          ]
+        },
+        {
+          "title": "Le crowdfunding",
+          "desc": "Vous envisagez de lancer un crowdfunding pour financer le prochain projet.",
+          "choices": [
+            "Lancer",
+            "Ne pas faire",
+            "Le faire porter par les artistes"
+          ]
+        },
+        {
+          "title": "Le licenciement pour économies",
+          "desc": "Il faut réduire la masse salariale du label.",
+          "choices": [
+            "Licencier des artistes",
+            "Réduire les autres coûts",
+            "Négocier des baisses temporaires"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "vente_edition",
+          "desc": "Une occasion se présente de vendre {mot}.",
+          "choices": [
+            "Vendre",
+            "Ne pas vendre",
+            "Négocier les conditions"
+          ],
+          "words": [
+            "une édition limitée numérotée",
+            "une édition collector",
+            "une édition anniversaire",
+            "les droits numériques d'un catalogue",
+            "le catalogue physique",
+            "une exclusivité streaming"
+          ]
+        },
+        {
+          "id": "subvention_crise",
+          "desc": "{mot} propose une aide financière au label.",
+          "choices": [
+            "Demander",
+            "Accepter",
+            "Refuser"
+          ],
+          "words": [
+            "La région",
+            "La ville",
+            "L'État",
+            "L'Europe",
+            "Un mécène privé"
+          ]
+        }
+      ]
+    },
+    "11_reseaux_sociaux_medias": {
+      "distinct": [
+        {
+          "title": "Le live qui dérape",
+          "desc": "{artiste} lâche une phrase choc en plein live Twitch.",
+          "choices": [
+            "Couper",
+            "Débattre",
+            "Passer par le community manager"
+          ]
+        },
+        {
+          "title": "Le tweet supprimé",
+          "desc": "{artiste} tweete quelque chose de politique puis le supprime aussitôt.",
+          "choices": [
+            "Assumer",
+            "Démentir",
+            "En faire un tee-shirt"
+          ]
+        },
+        {
+          "title": "Le compte OnlyFans du beatmaker",
+          "desc": "Un beatmaker du label vend du contenu sur OnlyFans.",
+          "choices": [
+            "Soutenir",
+            "Lui demander d'arrêter",
+            "Prendre un pourcentage"
+          ]
+        },
+        {
+          "title": "La fausse interview",
+          "desc": "Un magazine publie une fausse interview de {artiste}.",
+          "choices": [
+            "Démentir",
+            "Laisser passer",
+            "En faire un buzz"
+          ]
+        },
+        {
+          "title": "La tendance TikTok",
+          "desc": "Une chanson de {artiste} devient un challenge TikTok.",
+          "choices": [
+            "Encourager",
+            "S'impliquer personnellement",
+            "Lancer un défi officiel"
+          ]
+        },
+        {
+          "title": "Le commentaire polémique",
+          "desc": "{artiste} commente une publication politique sensible.",
+          "choices": [
+            "Assumer",
+            "Supprimer",
+            "S'excuser"
+          ]
+        },
+        {
+          "title": "La fake news",
+          "desc": "Une fake news annonce la mort de {artiste}.",
+          "choices": [
+            "Démentir immédiatement",
+            "Laisser courir",
+            "En faire du buzz"
+          ]
+        },
+        {
+          "title": "Le podcast explosif",
+          "desc": "{artiste} donne un podcast où il/elle balance tout sur le milieu.",
+          "choices": [
+            "Assumer",
+            "Faire retirer",
+            "Monnayer la suite"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "contenu_viral",
+          "desc": "{mot} de {artiste} devient viral(e) du jour au lendemain.",
+          "choices": [
+            "Profiter",
+            "Ignorer",
+            "Exploiter commercialement"
+          ],
+          "words": [
+            "Une vidéo",
+            "Un mème",
+            "Un hashtag",
+            "Un challenge",
+            "Une parodie",
+            "Un selfie",
+            "Un extrait de backstage",
+            "Une déclaration publique"
+          ]
+        }
+      ]
+    },
+    "12_production_projets": {
+      "distinct": [
+        {
+          "title": "La prod volée",
+          "desc": "Une prod de {artiste} est utilisée sans autorisation par un label rival.",
+          "choices": [
+            "Porter plainte",
+            "Laisser tomber",
+            "Faire un disstrack"
+          ]
+        },
+        {
+          "title": "Le studio brûle",
+          "desc": "Un début d'incendie au studio cause 2 jours de retard.",
+          "choices": [
+            "Attendre la remise en état",
+            "Enregistrer ailleurs",
+            "Faire un live d'excuse"
+          ]
+        },
+        {
+          "title": "Le beatmaker trop créatif",
+          "desc": "Le beatmaker propose d'intégrer des bruits d'animaux dans la prod.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Le laisser tenter autre chose"
+          ]
+        },
+        {
+          "title": "Le titre déjà pris",
+          "desc": "Le titre choisi pour le projet est déjà utilisé par un autre artiste.",
+          "choices": [
+            "Changer de titre",
+            "Garder quand même",
+            "Ajouter un featuring pour se différencier"
+          ]
+        },
+        {
+          "title": "La session avortée",
+          "desc": "{artiste} arrive 3 heures en retard à la session studio.",
+          "choices": [
+            "Le/la sanctionner",
+            "Laisser passer",
+            "Reporter la session"
+          ]
+        },
+        {
+          "title": "Le producteur en burnout",
+          "desc": "Le producteur attitré fait un burnout en pleine production.",
+          "choices": [
+            "Lui offrir des vacances",
+            "Le remplacer temporairement",
+            "Réduire sa charge de travail"
+          ]
+        },
+        {
+          "title": "Le featuring en demi-teinte",
+          "desc": "Le featuring enregistré est décevant.",
+          "choices": [
+            "Recommencer",
+            "Sortir quand même",
+            "Annuler le projet"
+          ]
+        },
+        {
+          "title": "La chanson qui divise",
+          "desc": "Une chanson terminée divise déjà les premiers auditeurs.",
+          "choices": [
+            "Assumer et sortir",
+            "Proposer une version alternative",
+            "Retirer le titre"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "element_qui_cloche",
+          "desc": "{mot} du projet en cours ne convainc pas l'équipe.",
+          "choices": [
+            "Retravailler",
+            "Garder tel quel",
+            "Annuler le projet"
+          ],
+          "words": [
+            "Le mix",
+            "Le mastering",
+            "La pochette",
+            "Le clip",
+            "Les paroles",
+            "La mélodie",
+            "L'arrangement",
+            "Le budget",
+            "Le planning",
+            "La stratégie promo"
+          ]
+        }
+      ]
+    },
+    "13_contrats_negociations": {
+      "distinct": [
+        {
+          "title": "L'offre de la major",
+          "desc": "Une major propose un contrat de 500 000€ à {artiste}.",
+          "choices": [
+            "Accepter",
+            "Négocier",
+            "Refuser"
+          ]
+        },
+        {
+          "title": "Le contrat piégé",
+          "desc": "Le contrat de {artiste} contient une clause abusive repérée trop tard.",
+          "choices": [
+            "Annuler la signature",
+            "Signer quand même",
+            "Rompre le contrat existant"
+          ]
+        },
+        {
+          "title": "La fin de contrat",
+          "desc": "Le contrat de {artiste} arrive à échéance.",
+          "choices": [
+            "Renouveler",
+            "Ne pas renouveler",
+            "Renégocier les termes"
+          ]
+        },
+        {
+          "title": "La clause de discrétion",
+          "desc": "{artiste} veut supprimer sa clause de confidentialité.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Négocier une version allégée"
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "negociation_demande",
+          "desc": "{artiste} demande {mot}.",
+          "choices": [
+            "Accepter",
+            "Refuser",
+            "Négocier un compromis"
+          ],
+          "words": [
+            "une augmentation de salaire",
+            "un contrat plus long",
+            "un bonus de signature",
+            "un pourcentage sur les revenus",
+            "plus de liberté artistique",
+            "plus de promotion",
+            "plus de featurings",
+            "un featuring avec un artiste précis",
+            "plus d'influence sur les décisions du label",
+            "du meilleur matériel en studio"
+          ]
+        }
+      ]
+    }
+  }
+}

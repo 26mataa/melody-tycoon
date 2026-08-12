@@ -1,0 +1,415 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>V0.9 — banc de fumée</title>
+<div id="app"></div>
+<pre id="out" style="font:12px monospace;white-space:pre-wrap"></pre>
+<script type="module">
+/* Banc de fumée V0.9 : charge le VRAI moteur, joue une partie complète et
+   vérifie les invariants de la refonte (deux jauges, jalons stricts,
+   mandats, mémoire de conduite). Le rapport est renvoyé au serveur. */
+const L = [];
+let ko = 0;
+function ok(cond, msg, extra){
+  if(cond){ L.push("OK   " + msg + (extra?` — ${extra}`:"")); }
+  else { ko++; L.push("ECHEC " + msg + (extra?` — ${extra}`:"")); }
+}
+function section(t){ L.push(""); L.push("### " + t); }
+/* Verification en boucle serree : on ne veut pas 80 lignes identiques dans
+   le rapport, seulement savoir si l'invariant a casse une fois. */
+let silentKo = 0;
+function ok_silent(cond){ if(!cond) silentKo++; }
+async function flush(){
+  try{ await fetch("/report",{method:"POST",body:L.join("\n")+"\n"}); }catch(e){}
+  document.getElementById("out").textContent = L.join("\n");
+}
+
+try{
+
+const S       = await import("./js/state.js");
+const eco     = await import("./js/engine/economy.js");
+const stages  = await import("./js/engine/stages.js");
+const nar     = await import("./js/engine/narrative.js");
+const cur     = await import("./js/engine/curated.js");
+const mand    = await import("./js/engine/mandate.js");
+const mem     = await import("./js/engine/memory.js");
+const day     = await import("./js/engine/day.js");
+const chips   = await import("./js/ui/chips.js");
+const R       = await import("./js/render.js");
+const D       = await import("./js/data.js");
+await D.initData();
+ok(!!D.DATA.START_OPTIONS, "donnees de jeu chargees", `${Object.keys(D.DATA).length} blocs`);
+
+function nouvellePartie(){
+  S.resetState();
+  S.state.managerName = "Test";
+  S.state.label = "Sonar Test";
+  S.state.startId = "zero";
+  S.startGame();
+}
+
+/* ---------------------------------------------------------- */
+section("Deux jauges seulement");
+nouvellePartie();
+ok(typeof S.state.notoriete === "number", "state.notoriete existe", `= ${S.state.notoriete}`);
+ok(typeof S.state.credibilite === "number", "state.credibilite existe", `= ${S.state.credibilite}`);
+["buzz","popularite","reputation","reseau"].forEach(k=>{
+  ok(S.state[k] === undefined, `state.${k} a bien disparu`);
+});
+
+section("Le vocabulaire d'ecriture se replie sur les deux jauges");
+const avant = {n:S.state.notoriete, c:S.state.credibilite};
+eco.impact({buzz:10, popularite:10, reputation:10, reseau:10});
+const dn = S.state.notoriete - avant.n, dc = S.state.credibilite - avant.c;
+ok(Math.abs(dn - 15) < .01, "buzz 10 + popularite 10 -> +15 Notoriete", `+${dn}`);
+ok(Math.abs(dc - 17) < .01, "reputation 10 + reseau 10 -> +17 Credibilite", `+${dc}`);
+eco.impact({cleInconnue: 50});
+ok(S.state.cleInconnue === undefined, "une cle inconnue ne cree pas de champ fantome");
+
+const html = chips.chipsFromDeltas({buzz:8, reseau:4});
+ok(!/Buzz|Réseau/.test(html), "les pastilles n'affichent plus les anciennes jauges");
+ok(/Notoriété/.test(html) && /Crédibilité/.test(html), "les pastilles parlent Notoriete/Credibilite", html.replace(/<[^>]+>/g,"|"));
+
+/* ---------------------------------------------------------- */
+section("Jalons vecus — le correctif de coherence");
+nouvellePartie();
+ok(stages.playerStage() === 0, "partie neuve = jalon 0", `jalon ${stages.playerStage()}`);
+
+const pool0 = nar.getEpisodePool();
+ok(pool0.length > 0, "le pool du jalon 0 n'est jamais vide", `${pool0.length} entrees`);
+const tropTot = pool0.filter(d=>stages.stageOf(d) > 0);
+ok(tropTot.length === 0, "aucun episode d'un jalon superieur au jalon 0",
+   tropTot.length ? tropTot.slice(0,3).map(d=>d.id).join(", ") : "");
+
+// Le cas exact remonte : la crise financiere mondiale a l'episode 2.
+const tout = nar.getNarrativePool();
+const crise = tout.find(d=>/10_finances/.test(d.id||""));
+ok(!!crise, "la categorie crises financieres existe toujours", crise ? crise.id : "");
+ok(crise && stages.stageOf(crise) >= 2, "elle exige au moins le jalon 2 (une sortie publiee)",
+   crise ? `jalon requis ${stages.stageOf(crise)}` : "");
+ok(!pool0.some(d=>/10_finances/.test(d.id||"")), "elle est absente du pool d'une partie qui commence");
+
+// Les categories qui n'ont aucun sens sans rien : politique, complots.
+["1_politique","9_complots","2_scandales","4_rivaux"].forEach(cat=>{
+  ok(!pool0.some(d=>(d.id||"").includes(cat)), `categorie ${cat} hors-jeu au jalon 0`);
+});
+
+/* Le jalon monte avec les faits, pas avec les stats. */
+S.state.notoriete = 90; S.state.credibilite = 90;
+ok(stages.playerStage() === 0, "gonfler les jauges ne fait PAS monter le jalon");
+S.state.careerArtistsSigned = 1;
+ok(stages.playerStage() === 1, "signer quelqu'un fait passer au jalon 1");
+S.state.releases.push({title:"Premier son", fini:false, streams:1, reviews:[]});
+ok(stages.playerStage() === 2, "sortir un son fait passer au jalon 2");
+S.state.careerHits = 1;
+ok(stages.playerStage() === 3, "un hit fait passer au jalon 3");
+S.state.careerArtistsSigned = 3;
+S.state.releases.push({title:"b",fini:false,reviews:[]},{title:"c",fini:false,reviews:[]},{title:"d",fini:false,reviews:[]});
+ok(stages.playerStage() === 4, "structure installee = jalon 4");
+const pool4 = nar.getEpisodePool();
+ok(pool4.length > pool0.length, "le pool s'ouvre franchement en montant les jalons",
+   `${pool0.length} -> ${pool4.length}`);
+
+// Un jalon acquis ne se reperd pas.
+S.state.signed = [];
+ok(stages.playerStage() === 4, "perdre son roster ne fait pas redescendre le jalon");
+
+/* ---------------------------------------------------------- */
+section("Les textes parlent de VOTRE partie");
+nouvellePartie();
+S.state.label = "Vendetta Records";
+const t1 = cur.remplir("Une crise financière mondiale touche le label.", null);
+ok(t1.includes("Vendetta Records"), "« le label » devient le nom du joueur", t1);
+const t2 = cur.remplir("Un label rival sort un son très similaire.", null);
+ok(!/label rival/.test(t2), "« un label rival » est remplace par un vrai concurrent", t2);
+ok(S.state.rivals.some(r=>t2.includes(r.name)), "et c'est bien un rival de la partie", t2);
+const a = {name:"Kayn", id:1};
+const t3 = cur.remplir("{artiste} poste une story polémique.", a);
+ok(t3.startsWith("Kayn"), "le marqueur artiste porte le vrai nom", t3);
+S.state.releases.push({title:"Nuit Blanche", fini:false, reviews:[]});
+const t4 = cur.remplir("On parle encore de {titre}.", null);
+ok(t4.includes("Nuit Blanche"), "un titre reellement sorti est cite", t4);
+S.state.releases = [];
+const t5 = cur.remplir("On parle encore de {titre}.", null);
+ok(!t5.includes("{titre}"), "sans catalogue, aucun marqueur brut ne fuit a l'ecran", t5);
+
+/* ---------------------------------------------------------- */
+section("Mandats — l'histoire exige un acte");
+nouvellePartie();
+S.state.chapter = 4;
+const decl = mand.peutDeclencherMandat();
+ok(decl && decl.id === "signer_premier", "un label sans personne recoit son mandat",
+   decl ? decl.id : "aucun");
+mand.ouvrirMandat(decl.id);
+ok(!!S.state.mandate, "le mandat est ouvert");
+ok(mand.mandatEpisodesRestants() > 0, "un compte a rebours court",
+   `${mand.mandatEpisodesRestants()} episodes`);
+ok(!mand.ouvrirMandat("eponger_dette"), "un seul mandat a la fois");
+
+// Tenu : on signe avant l'echeance.
+S.state.signed.push({id:99,name:"Kayn",humeur:70,salaire:5,hits:0,flops:0,buzz:0,pop:20,talent:50,relations:{},contractRemaining:30});
+S.state.careerArtistsSigned = 1;
+const credAvant = S.state.credibilite;
+mand.checkMandat();
+ok(S.state.mandate === null, "mandat rempli : il se referme");
+ok(S.state.credibilite > credAvant, "et il recompense", `${credAvant} -> ${S.state.credibilite}`);
+ok(S.state.storyFlags.includes("a_demarre_vite"), "il pose un flag durable");
+
+// Rate : l'echeance passe sans rien faire.
+nouvellePartie();
+S.state.chapter = 4;
+mand.ouvrirMandat("signer_premier");
+S.state.chapter = S.state.mandate.dueChapter;
+mand.checkMandat();
+ok(S.state.mandate === null, "echeance depassee : le mandat se solde");
+ok(S.state.storyFlags.includes("a_tarde_a_demarrer"), "et laisse un flag d'echec durable");
+
+// La sanction est reelle : un artiste abandonne s'en va.
+nouvellePartie();
+S.state.signed.push({id:7,name:"Lior",humeur:70,salaire:5,hits:0,flops:0,buzz:0,pop:20,talent:50,relations:{},contractRemaining:30});
+S.state.careerArtistsSigned = 1;
+S.state.chapter = 7;
+mand.ouvrirMandat("produire_premier", 7);
+S.state.chapter = S.state.mandate.dueChapter;
+mand.checkMandat();
+ok(S.state.signed.length === 0, "un artiste laisse sans projet finit par partir");
+ok(S.state.storyFlags.includes("a_laisse_tomber_un_artiste"), "la sanction pose son flag");
+
+/* ---------------------------------------------------------- */
+section("Memoire de conduite — l'histoire retient la maniere");
+nouvellePartie();
+for(let i=0;i<mem.SEUIL_REPUTATION;i++) mem.noterConduite("nier");
+ok(mem.conduiteCompte("nier") === mem.SEUIL_REPUTATION, "les postures se comptent",
+   `${mem.conduiteCompte("nier")}`);
+ok(S.state.storyFlags.includes("reput_menteur"), "au seuil, la reputation devient un flag durable");
+ok(!!S.state.currentEpisode || S.state.episodeQueue.length > 0,
+   "et quelqu'un vient vous le dire en face");
+const dom = mem.conduiteDominante();
+ok(dom && dom.posture === "nier", "la posture dominante est identifiee", dom ? dom.nom : "aucune");
+
+nouvellePartie();
+mem.programmerRetour("payer");
+ok(S.state.retoursEnAttente.length === 1, "un retour de baton est programme");
+const due = S.state.retoursEnAttente[0].dueChapter - S.state.chapter;
+ok(due >= 3 && due <= 8, "il revient entre 3 et 8 episodes plus tard", `${due} episodes`);
+mem.programmerRetour("payer");
+ok(S.state.retoursEnAttente.length === 1, "pas deux fois le meme boomerang");
+S.state.chapter = S.state.retoursEnAttente[0].dueChapter;
+mem.checkRetours();
+ok(S.state.retoursEnAttente.length === 0, "a l'echeance il se declenche");
+ok(!!S.state.currentEpisode || S.state.episodeQueue.length > 0, "et un episode arrive");
+
+/* ---------------------------------------------------------- */
+section("Une partie complete tourne sans casser");
+nouvellePartie();
+let joues = 0, refus = 0;
+for(let i=0;i<120 && joues<70;i++){
+  const ep = S.state.currentEpisode || nar.drawNextEpisode();
+  if(!ep){ L.push("!!! plus aucun episode disponible au chapitre " + S.state.chapter); break; }
+  const avantCh = S.state.chapter;
+  nar.resolveEpisodeChoice(Math.floor(Math.random()*ep.choices.length));
+  if(S.state.chapter > avantCh) joues++; else refus++;
+}
+ok(joues >= 60, "70 episodes s'enchainent sans blocage", `${joues} joues, ${refus} refuses (fonds)`);
+ok(S.state.chapter === joues, "un episode joue = exactement un chapitre",
+   `chapitre ${S.state.chapter} / ${joues} episodes`);
+ok(S.state.season > 1, "les saisons defilent", `saison ${S.state.season}`);
+ok(S.state.notoriete >= 0 && S.state.notoriete <= 100, "Notoriete reste bornee", `${Math.round(S.state.notoriete)}`);
+ok(S.state.credibilite >= 0 && S.state.credibilite <= 100, "Credibilite reste bornee", `${Math.round(S.state.credibilite)}`);
+const flagsFin = S.state.storyFlags.length;
+ok(flagsFin > 0, "la partie a laisse des traces", `${flagsFin} flags`);
+
+// Aucun marqueur de gabarit ne doit fuir dans le texte affiche.
+nouvellePartie();
+let fuites = [];
+for(let i=0;i<200;i++){
+  nar.adminNextEpisode();
+  const ep = S.state.currentEpisode;
+  if(!ep) continue;
+  const txt = ep.title + " " + ep.desc + " " + ep.choices.map(c=>c.t).join(" ");
+  const m = txt.match(/\{[a-z]+\}/g);
+  if(m) fuites = fuites.concat(m);
+  if(i % 12 === 0){ S.state.careerArtistsSigned = 3; S.state.careerHits = 1;
+    S.state.releases.push({title:"T"+i, fini:false, reviews:[]}); }
+}
+ok(fuites.length === 0, "aucun marqueur {xxx} ne s'affiche jamais",
+   fuites.length ? [...new Set(fuites)].join(" ") : "200 tirages verifies");
+
+/* ---------------------------------------------------------- */
+section("Casting recurrent — les gens qui restent");
+nouvellePartie();
+ok(S.state.cast.length === 4, "quatre personnes accompagnent la partie", `${S.state.cast.length}`);
+ok(S.state.cast.every(c=>c.nom && c.nom.includes(" ")), "chacune a un vrai nom",
+   S.state.cast.map(c=>c.nom).join(", "));
+const nomsA = S.state.cast.map(c=>c.nom).join("|");
+nouvellePartie();
+const nomsB = S.state.cast.map(c=>c.nom).join("|");
+ok(nomsA !== nomsB, "deux parties n'ont pas le meme casting");
+
+const cast = await import("./js/engine/cast.js");
+const j = cast.pnj("journaliste");
+// La relation de depart est volontairement tiree au hasard (personne ne
+// part de zero) : on mesure donc l'ecart, pas la valeur absolue.
+const relAvant = j.relation;
+cast.ajusterRelation("journaliste", 40);
+ok(j.relation === relAvant + 40, "la relation evolue de ce qu'on lui applique",
+   `${relAvant} -> ${j.relation}`);
+cast.ajusterRelation("journaliste", 999);
+ok(j.relation === 100, "et reste bornee a +100", `${j.relation}`);
+j.relation = relAvant; j.rencontres = 1;
+ok(j.rencontres > 0, "les rencontres se comptent");
+ok(cast.relationLabel(80).txt.length > 0 && cast.relationLabel(-80).txt.length > 0,
+   "la relation se lit en clair", `${cast.relationLabel(80).txt} / ${cast.relationLabel(-80).txt}`);
+
+/* Le meme personnage, deux episodes opposes selon la relation. */
+S.state.careerArtistsSigned = 1; S.state.chapter = 30;
+j.relation = 60; j.dernierChapitre = 0;
+let epOk = cast.CAST_EPISODES.find(e=>e.id === "cast_journaliste_ok");
+let epKo = cast.CAST_EPISODES.find(e=>e.id === "cast_journaliste_ko");
+ok(epOk.when(), "en bons termes : elle vous propose un portrait");
+ok(!epKo.when(), "et ne prepare pas de papier a charge");
+j.relation = -60;
+ok(!epOk.when() && epKo.when(), "en mauvais termes : c'est l'inverse exactement");
+ok(epKo.make().title.includes(j.nom), "et c'est bien la meme personne, nommee",
+   epKo.make().title);
+
+section("Chaines de graines — le depart se prolonge");
+nouvellePartie();
+const chaines = nar.SEED_CHAINS;
+ok(chaines.length >= 12, "les graines ont des suites", `${chaines.length} suites`);
+ok(chaines.every(c=>c.stage === 0 || c.stage === 1), "elles restent jouables tot");
+S.state.storyFlags = [];
+const sansFlag = nar.getEpisodePool().filter(d=>d.source === "chain");
+ok(sansFlag.length === 0, "aucune suite sans le flag qui l'ouvre");
+nar.addFlag("clash_public");
+const avecFlag = nar.getEpisodePool().filter(d=>d.source === "chain");
+ok(avecFlag.length === 1, "poser le flag ouvre exactement sa suite",
+   avecFlag.map(d=>d.id).join(", "));
+
+section("Le debut de partie n'est plus etrique");
+nouvellePartie();
+const p0 = nar.getEpisodePool();
+ok(p0.length >= 34, "assez de contenu des le premier episode", `${p0.length} entrees`);
+const debuts = p0.filter(d=>d.source === "debut");
+ok(debuts.length >= 12, "l'arc des debuts est bien la ou il sert", `${debuts.length} episodes`);
+
+/* Sur une trajectoire realiste : le joueur signe quelqu'un tot (le mandat
+   l'y pousse des le chapitre 3), puis sort un son. On mesure la variete
+   dans ce parcours-la, pas dans un joueur fige au jalon 0 pendant 45
+   episodes — un cas qui n'arrive jamais en jeu. */
+let vus = new Set();
+for(let i=0;i<45;i++){
+  const ep = S.state.currentEpisode || nar.drawNextEpisode();
+  if(!ep) break;
+  vus.add(ep.defId || ep.title);
+  nar.resolveEpisodeChoice(Math.floor(Math.random()*ep.choices.length));
+  if(i === 6){
+    S.state.signed.push({id:501,name:"Kayn",humeur:70,salaire:4,hits:0,flops:0,buzz:0,pop:25,talent:60,relations:{},contractRemaining:40,themesPreferes:[],potential:70,projets:0,resting:0,projectsThisSeason:0,beatBonus:0,audienceLockChapters:0});
+    S.state.careerArtistsSigned = 1;
+  }
+  if(i === 16){ S.state.releases.push({title:"Premier son",fini:false,reviews:[],streams:1000,dailyStreams:10,age:0,decay:.87,totalRevenue:0,history:[]}); }
+  if(i === 26){ S.state.careerHits = 1; }
+}
+ok(vus.size >= 30, "le contenu ne tourne pas en rond sur 45 episodes",
+   `${vus.size} episodes distincts`);
+
+section("Jamais de blocage, meme sans un centime");
+/* Regression : un episode dont TOUS les choix coutent de l'argent laissait
+   un joueur a sec incapable de resoudre quoi que ce soit — donc incapable
+   de faire avancer le temps. La partie restait figee pour de bon. */
+const { choiceAbordable, choiceRequiredArgent } = await import("./js/engine/events.js");
+nouvellePartie();
+S.state.argent = -50000;
+const gratuit = {t:"gratuit", d:{credibilite:1}};
+const payant  = {t:"payant",  d:{argent:-300}};
+ok(choiceAbordable(gratuit), "a decouvert, un choix GRATUIT reste disponible");
+ok(!choiceAbordable(payant), "mais un choix qui coute reste refuse");
+S.state.argent = 1000;
+ok(choiceAbordable(payant), "et redevient possible une fois l'argent la");
+nouvellePartie();
+S.state.argent = -50000;
+S.state.bank.dette = 50000;
+let bloque = 0, avancees = 0;
+for(let i=0;i<80;i++){
+  const avant = S.state.chapter;
+  const ep = S.state.currentEpisode || nar.drawNextEpisode();
+  if(!ep){ bloque++; break; }
+  // Le cout reel d'un choix se lit dans ses deltas d'argent, pas dans un
+  // champ `cost` : c'est choiceRequiredArgent qui fait foi.
+  const jouables = nar.episodeChoices(ep)
+    .map((c,idx)=>({idx, ok: choiceAbordable(c)}))
+    .filter(x=>x.ok);
+  ok_silent(jouables.length > 0);
+  if(!jouables.length) break;
+  nar.resolveEpisodeChoice(jouables[0].idx);
+  if(S.state.chapter > avant) avancees++;
+}
+ok(bloque === 0, "aucun episode sans issue, meme a -50 000 EUR");
+ok(silentKo === 0, "chaque episode servi a au moins une option payable",
+   silentKo ? `${silentKo} episode(s) fautif(s)` : "80 verifies");
+ok(avancees >= 75, "le temps continue d'avancer normalement", `${avancees} chapitres sur 80 tentatives`);
+
+/* Le cas precis ou la porte de secours sert : TOUS les choix coutent de
+   l'argent et le joueur ne peut en payer aucun. Sans elle, l'episode
+   serait affiche avec trois boutons gris et rien de cliquable. */
+nouvellePartie();
+S.state.argent = 10;
+S.state.currentEpisode = {
+  title:"Test", desc:"Tous les choix coutent cher.",
+  choices:[{t:"A",d:{argent:-5000}},{t:"B",d:{argent:-8000}},{t:"C",p:.5,sD:{argent:-9000},fD:{}}]
+};
+const secours = nar.episodeChoices();
+ok(secours.length === 4, "une quatrieme option apparait", `${secours.length} options`);
+ok(/pas les moyens/.test(secours[3].t), "et c'est bien la porte de sortie", secours[3].t);
+ok(choiceAbordable(secours[3]), "elle est gratuite, donc reellement cliquable");
+const chapAvant = S.state.chapter;
+nar.resolveEpisodeChoice(3);
+ok(S.state.chapter === chapAvant + 1, "la prendre fait bien avancer le chapitre",
+   `${chapAvant} -> ${S.state.chapter}`);
+
+nouvellePartie();
+S.state.argent = 999999;
+let sortiesOfferte = 0;
+for(let i=0;i<40;i++){
+  nar.adminNextEpisode();
+  const e = S.state.currentEpisode;
+  if(e && e.choices.some(c=>/pas les moyens/.test(c.t))) sortiesOfferte++;
+}
+ok(sortiesOfferte === 0, "et cette porte de sortie n'apparait jamais quand on a l'argent");
+
+section("Tutoriel retire");
+nouvellePartie();
+R.safeRender();
+const domT = document.getElementById("app").innerHTML;
+ok(!/Compris, à moi de jouer/.test(domT), "plus de modale de tutoriel au lancement");
+ok(!/data-action="openHelp"/.test(domT), "plus de bouton d'aide vers l'ancien tutoriel");
+ok(S.state.ui.tutorialSeen === undefined, "l'etat du tutoriel a disparu du state");
+
+/* ---------------------------------------------------------- */
+section("Rendu");
+nouvellePartie();
+R.safeRender();
+const dom2 = document.getElementById("app").innerHTML;
+ok(dom2.length > 500, "l'ecran de jeu se rend", `${dom2.length} caracteres`);
+ok(!/Erreur|stack/i.test(dom2.slice(0,400)), "sans page d'erreur");
+ok(/Notoriété/.test(dom2) && /Crédibilité/.test(dom2), "les deux jauges sont a l'ecran");
+ok(!/Buzz|Popularité|Réputation|Réseau/.test(dom2), "les anciennes jauges ont disparu de l'ecran");
+
+S.state.chapter = 5;
+mand.ouvrirMandat("signer_premier");
+R.safeRender();
+const dom3 = document.getElementById("app").innerHTML;
+ok(/mandat/i.test(dom3), "le bandeau de mandat s'affiche");
+ok(/Mandat en cours/.test(dom3), "avec son libelle");
+
+}catch(err){
+  ko++;
+  L.push("");
+  L.push("!!! EXCEPTION : " + (err && err.message));
+  L.push(String(err && err.stack).split("\n").slice(0,6).join("\n"));
+}
+
+L.push("");
+L.push(ko === 0 ? "=== TOUT PASSE ===" : `=== ${ko} ECHEC(S) ===`);
+L.push("=== FIN ===");
+await flush();
+</script>

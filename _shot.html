@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Melody Tycoon — capture</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<div class="roll-bg" id="rollBg"><div class="roll-card"><div class="roll-label" id="rollLabel"></div><div class="roll-emoji" id="rollEmoji"></div><div class="roll-result" id="rollResult"></div></div></div>
+<script type="module">
+/* Page utilitaire de capture d'ecran : ?s=profile / ?s=look / ?s=game / ?s=home,
+   &theme=light|dark, &open=profilePanel|mamiePanel (ouvre une pop-up une
+   fois la partie lancee). Sert uniquement a regarder le rendu, pas au jeu. */
+const q = new URLSearchParams(location.search);
+const { initData } = await import("./js/data.js");
+const S = await import("./js/state.js");
+const R = await import("./js/render.js");
+const { initDispatch } = await import("./js/dispatch.js");
+await initData();
+S.resetState(); S.patchState();
+initDispatch();
+S.state.ui.themeMode = q.get("theme") || "light";
+S.state.managerName = q.get("m") || "Alex Rivera";
+S.state.label = q.get("l") || "Nova Records";
+const ecran = q.get("s") || "profile";
+if(ecran === "game"){
+  S.state.startId = "zero";
+  S.startGame();
+}
+else S.state.screen = ecran;
+
+if(q.get("mandat")){
+  const M = await import("./js/engine/mandate.js");
+  S.state.chapter = 5;
+  M.ouvrirMandat(q.get("mandat"));
+}
+const open = q.get("open");
+if(open === "profilePanel") S.state.profilePanelOpen = true;
+if(open === "mamiePanel") S.state.mamie.panelOpen = true;
+
+R.safeRender();
+
+/* Le rendu est asynchrone (imports + fetch des JSON), donc une capture
+   directe part avant qu'il y ait quoi que ce soit à l'écran. On écrit
+   plutôt un instantané statique, que l'on capture ensuite tranquillement. */
+const theme = q.get("theme") || "light";
+const snap = `<!DOCTYPE html><html lang="fr" data-theme="${theme}"><head><meta charset="UTF-8">
+<title>capture</title><link rel="stylesheet" href="style.css"></head><body>
+${document.getElementById("app").outerHTML}
+</body></html>`;
+fetch("/snap?name=" + encodeURIComponent(q.get("n") || (ecran + "_" + theme)),
+      {method:"POST", body:snap});
+</script>
+</body>
+</html>

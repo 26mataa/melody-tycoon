@@ -1,0 +1,612 @@
+{
+  "THEMES": [
+    {
+      "id": "triste",
+      "name": "Triste",
+      "desc": "Mélancolique et sincère",
+      "pub": -2,
+      "crit": 8,
+      "buzz": 2,
+      "risk": 1
+    },
+    {
+      "id": "marrant",
+      "name": "Marrant",
+      "desc": "Léger et viral",
+      "pub": 8,
+      "crit": -3,
+      "buzz": 10,
+      "risk": 2
+    },
+    {
+      "id": "denonce",
+      "name": "Qui dénonce",
+      "desc": "Engagé et puissant",
+      "pub": 3,
+      "crit": 10,
+      "buzz": 8,
+      "risk": 4
+    },
+    {
+      "id": "edgy",
+      "name": "Edgy",
+      "desc": "Provocateur et risqué",
+      "pub": 5,
+      "crit": 2,
+      "buzz": 15,
+      "risk": 6
+    },
+    {
+      "id": "romantique",
+      "name": "Romantique",
+      "desc": "Doux et universel",
+      "pub": 7,
+      "crit": 4,
+      "buzz": 4,
+      "risk": 1
+    },
+    {
+      "id": "festif",
+      "name": "Festif",
+      "desc": "Énergie et danse",
+      "pub": 9,
+      "crit": -2,
+      "buzz": 12,
+      "risk": 2
+    },
+    {
+      "id": "nostalgique",
+      "name": "Nostalgique",
+      "desc": "Rétro et émotionnel",
+      "pub": 4,
+      "crit": 6,
+      "buzz": 3,
+      "risk": 1
+    },
+    {
+      "id": "sombre",
+      "name": "Sombre",
+      "desc": "Intense et profond",
+      "pub": -1,
+      "crit": 9,
+      "buzz": 5,
+      "risk": 3
+    },
+    {
+      "id": "motivant",
+      "name": "Motivant",
+      "desc": "Inspirant et positif",
+      "pub": 8,
+      "crit": 3,
+      "buzz": 6,
+      "risk": 1
+    },
+    {
+      "id": "polemique",
+      "name": "Polémique",
+      "desc": "Controversé et viral",
+      "pub": 2,
+      "crit": -4,
+      "buzz": 18,
+      "risk": 8
+    },
+    {
+      "id": "chill",
+      "name": "Chill",
+      "desc": "Détendu et atmosphérique",
+      "pub": 3,
+      "crit": 5,
+      "buzz": 2,
+      "risk": 1
+    },
+    {
+      "id": "experimental",
+      "name": "Expérimental",
+      "desc": "Innovant et niche",
+      "pub": -5,
+      "crit": 10,
+      "buzz": 4,
+      "risk": 5
+    },
+    {
+      "id": "street",
+      "name": "Street",
+      "desc": "Authentique et brut",
+      "pub": 6,
+      "crit": 4,
+      "buzz": 7,
+      "risk": 2
+    },
+    {
+      "id": "luxe",
+      "name": "Luxe",
+      "desc": "Premium et aspirant",
+      "pub": 5,
+      "crit": 2,
+      "buzz": 5,
+      "risk": 2
+    },
+    {
+      "id": "viral",
+      "name": "Viral",
+      "desc": "Optimisé pour les tendances",
+      "pub": 10,
+      "crit": -5,
+      "buzz": 16,
+      "risk": 4
+    },
+    {
+      "id": "spirituel",
+      "name": "Spirituel",
+      "desc": "Profond et introspectif",
+      "pub": 1,
+      "crit": 8,
+      "buzz": 3,
+      "risk": 2
+    },
+    {
+      "id": "revolte",
+      "name": "Révolté",
+      "desc": "Colère et énergie",
+      "pub": 4,
+      "crit": 6,
+      "buzz": 9,
+      "risk": 4
+    },
+    {
+      "id": "amoureux",
+      "name": "Amoureux",
+      "desc": "Passion et vulnérabilité",
+      "pub": 6,
+      "crit": 5,
+      "buzz": 5,
+      "risk": 1
+    },
+    {
+      "id": "decale",
+      "name": "Décalé",
+      "desc": "Absurde et unique",
+      "pub": 4,
+      "crit": 3,
+      "buzz": 8,
+      "risk": 3
+    },
+    {
+      "id": "melancolique",
+      "name": "Mélancolique",
+      "desc": "Doux-amer et poétique",
+      "pub": 2,
+      "crit": 7,
+      "buzz": 3,
+      "risk": 1
+    }
+  ],
+  "COVER_STYLES": [
+    {
+      "name": "Cover maison",
+      "cost": 0,
+      "pub": 0,
+      "crit": 0,
+      "risk": 0
+    },
+    {
+      "name": "Artiste IA indé",
+      "cost": 200,
+      "pub": 3,
+      "crit": 2,
+      "risk": 1
+    },
+    {
+      "name": "Grand peintre classique",
+      "cost": 1500,
+      "pub": 4,
+      "crit": 8,
+      "risk": 1
+    },
+    {
+      "name": "Peintre contemporain",
+      "cost": 800,
+      "pub": 5,
+      "crit": 6,
+      "risk": 2
+    },
+    {
+      "name": "Graffeur street",
+      "cost": 500,
+      "pub": 7,
+      "crit": 4,
+      "risk": 2
+    },
+    {
+      "name": "Photographe argentique",
+      "cost": 600,
+      "pub": 5,
+      "crit": 5,
+      "risk": 1
+    },
+    {
+      "name": "Photographe mode",
+      "cost": 900,
+      "pub": 8,
+      "crit": 3,
+      "risk": 2
+    },
+    {
+      "name": "Collage punk",
+      "cost": 300,
+      "pub": 6,
+      "crit": 3,
+      "risk": 3
+    },
+    {
+      "name": "Pixel art",
+      "cost": 250,
+      "pub": 5,
+      "crit": 2,
+      "risk": 1
+    },
+    {
+      "name": "Minimalisme premium",
+      "cost": 400,
+      "pub": 4,
+      "crit": 5,
+      "risk": 0
+    },
+    {
+      "name": "Manga / anime",
+      "cost": 350,
+      "pub": 6,
+      "crit": 2,
+      "risk": 2
+    },
+    {
+      "name": "3D futuriste",
+      "cost": 800,
+      "pub": 6,
+      "crit": 4,
+      "risk": 2
+    },
+    {
+      "name": "Néon cyberpunk",
+      "cost": 500,
+      "pub": 6,
+      "crit": 3,
+      "risk": 2
+    },
+    {
+      "name": "Pop art",
+      "cost": 700,
+      "pub": 7,
+      "crit": 4,
+      "risk": 2
+    }
+  ],
+  "PRODS": [
+    {
+      "id": "home",
+      "name": "Enregistrement maison",
+      "cost": 0,
+      "bonus": 0,
+      "desc": "Gratuit, brut"
+    },
+    {
+      "id": "under",
+      "name": "Beatmaker underground",
+      "cost": 150,
+      "bonus": 6,
+      "desc": "Son brut, crédibilité"
+    },
+    {
+      "id": "maison",
+      "name": "Producteur maison",
+      "cost": 400,
+      "bonus": 11,
+      "desc": "Fiable"
+    },
+    {
+      "id": "renomme",
+      "name": "Producteur reconnu",
+      "cost": 1500,
+      "bonus": 19,
+      "desc": "Hits radio"
+    },
+    {
+      "id": "super",
+      "name": "Superproducer intl.",
+      "cost": 5000,
+      "bonus": 29,
+      "desc": "Le sommet",
+      "reseau": 50
+    }
+  ],
+  "MARCHES": [
+    {
+      "id": "fr",
+      "name": "France",
+      "reach": 1,
+      "cost": 0,
+      "desc": "Votre base"
+    },
+    {
+      "id": "uk",
+      "name": "UK",
+      "reach": 1.35,
+      "cost": 400,
+      "desc": "Scène dynamique"
+    },
+    {
+      "id": "usa",
+      "name": "USA",
+      "reach": 2.1,
+      "cost": 1500,
+      "desc": "Gros marché"
+    },
+    {
+      "id": "intl",
+      "name": "International",
+      "reach": 3.6,
+      "cost": 4000,
+      "desc": "Monde entier",
+      "rep": 50
+    }
+  ],
+  "LANGUES": [
+    {
+      "id": "fr",
+      "name": "Français",
+      "desc": "Bonus marché français"
+    },
+    {
+      "id": "en",
+      "name": "Anglais",
+      "desc": "Bonus international"
+    },
+    {
+      "id": "bi",
+      "name": "Bilingue FR/EN",
+      "desc": "Touche les deux marchés"
+    },
+    {
+      "id": "instru",
+      "name": "Instrumental",
+      "desc": "Niche playlists/sync"
+    },
+    {
+      "id": "autre",
+      "name": "Autre langue",
+      "desc": "Effet spécifique, risqué"
+    }
+  ],
+  "PROMO_OPTIONS": [
+    {
+      "id": "org",
+      "name": "Organique",
+      "cost": 0,
+      "mult": 0,
+      "desc": "Bouche-à-oreille naturel",
+      "risk": 0
+    },
+    {
+      "id": "soc",
+      "name": "Réseaux sociaux",
+      "cost": 300,
+      "mult": 0.3,
+      "desc": "Posts et stories",
+      "risk": 1
+    },
+    {
+      "id": "teaser",
+      "name": "Teaser court",
+      "cost": 400,
+      "mult": 0.35,
+      "desc": "Extrait de 15 secondes",
+      "risk": 1
+    },
+    {
+      "id": "lyric",
+      "name": "Clip lyric",
+      "cost": 800,
+      "mult": 0.5,
+      "desc": "Vidéo avec paroles",
+      "risk": 2
+    },
+    {
+      "id": "clip",
+      "name": "Clip officiel",
+      "cost": 2000,
+      "mult": 0.8,
+      "desc": "Vidéo complète",
+      "risk": 3
+    },
+    {
+      "id": "playlist",
+      "name": "Campagne playlists",
+      "cost": 1500,
+      "mult": 0.7,
+      "desc": "Placement playlists",
+      "risk": 2
+    },
+    {
+      "id": "radio",
+      "name": "Radio",
+      "cost": 3000,
+      "mult": 0.9,
+      "desc": "Diffusion radio",
+      "risk": 3
+    },
+    {
+      "id": "tv",
+      "name": "Campagne TV / média",
+      "cost": 8000,
+      "mult": 1.3,
+      "desc": "Publicité TV et presse",
+      "risk": 4
+    }
+  ],
+  "MARKETING_OPTIONS": [
+    {
+      "id": "none",
+      "name": "Aucun",
+      "cost": 0,
+      "bonus": 0,
+      "desc": "Pas de coup marketing",
+      "risk": 0
+    },
+    {
+      "id": "film",
+      "name": "Placement film",
+      "cost": 1500,
+      "bonus": 8,
+      "desc": "Musique dans un film",
+      "risk": 1
+    },
+    {
+      "id": "serie",
+      "name": "Placement série",
+      "cost": 1200,
+      "bonus": 7,
+      "desc": "Musique dans une série",
+      "risk": 1
+    },
+    {
+      "id": "tiktok",
+      "name": "Campagne TikTok",
+      "cost": 600,
+      "bonus": 12,
+      "desc": "Challenge ou trend",
+      "risk": 4
+    },
+    {
+      "id": "playlistOff",
+      "name": "Entrée playlist officielle",
+      "cost": 1000,
+      "bonus": 6,
+      "desc": "Playlist Spotify/Apple",
+      "risk": 2
+    },
+    {
+      "id": "influenceurs",
+      "name": "Influenceurs",
+      "cost": 800,
+      "bonus": 10,
+      "desc": "Partenariat influenceurs",
+      "risk": 3
+    },
+    {
+      "id": "listening",
+      "name": "Listening party privée",
+      "cost": 700,
+      "bonus": 5,
+      "desc": "Événement exclusif",
+      "risk": 1
+    },
+    {
+      "id": "marque",
+      "name": "Collab avec marque",
+      "cost": 3000,
+      "bonus": 9,
+      "desc": "Partenariat commercial",
+      "risk": 3
+    },
+    {
+      "id": "popup",
+      "name": "Événement pop-up",
+      "cost": 2500,
+      "bonus": 11,
+      "desc": "Concert surprise",
+      "risk": 3
+    },
+    {
+      "id": "polemique",
+      "name": "Débat / polémique contrôlée",
+      "cost": 200,
+      "bonus": 15,
+      "desc": "Créer le buzz par la controverse",
+      "risk": 7
+    }
+  ],
+  "PTYPES": {
+    "maquette": {
+      "name": "Maquette / Freestyle chambre",
+      "cost": 0,
+      "chapitres": 1,
+      "base": 60000,
+      "desc": "Gratuit. Enregistré dans la chambre."
+    },
+    "amateur": {
+      "name": "Single amateur",
+      "cost": 50,
+      "chapitres": 2,
+      "base": 180000,
+      "desc": "Petit son maison."
+    },
+    "single": {
+      "name": "Single pro",
+      "cost": 400,
+      "chapitres": 3,
+      "base": 700000,
+      "rep": 20,
+      "desc": "Qualité studio."
+    },
+    "ep": {
+      "name": "EP",
+      "cost": 1800,
+      "chapitres": 5,
+      "base": 2200000,
+      "rep": 35,
+      "desc": "Format indie."
+    },
+    "album": {
+      "name": "Album Studio",
+      "cost": 7000,
+      "chapitres": 8,
+      "base": 7000000,
+      "rep": 45,
+      "desc": "Le cœur d'une carrière."
+    },
+    "tournee": {
+      "name": "Tournée",
+      "cost": 10000,
+      "chapitres": 6,
+      "base": 4000000,
+      "artists": 2,
+      "releases": 3,
+      "tour": true,
+      "desc": "Revenus sur la durée."
+    },
+    "intl": {
+      "name": "Album International",
+      "cost": 28000,
+      "chapitres": 10,
+      "base": 20000000,
+      "rep": 55,
+      "releases": 5,
+      "desc": "Le blockbuster."
+    }
+  },
+  "BEAT_PTYPES": {
+    "pack": {
+      "name": "Pack de beats (5 instrus)",
+      "cost": 0,
+      "chapitres": 1,
+      "base": 800,
+      "desc": "Vendu en ligne, revenu rapide et modeste."
+    },
+    "exclusif": {
+      "name": "Beat exclusif pour un artiste",
+      "cost": 0,
+      "chapitres": 2,
+      "base": 0,
+      "desc": "Réservé à un artiste du label : +qualité garantie sur son prochain projet.",
+      "needsArtist": true
+    },
+    "sync": {
+      "name": "Placement sync (pub / série)",
+      "cost": 200,
+      "chapitres": 3,
+      "base": 3000,
+      "rep": 15,
+      "desc": "Revenu élevé, demande un peu de Réputation."
+    }
+  }
+}

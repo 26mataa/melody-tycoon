@@ -1,0 +1,274 @@
+{
+  "MAMIE_PHRASES": [
+    "Tiens mon petit, pour t'acheter un sandwich.",
+    "Tiens mon chéri, pour te payer une bonne pâtisserie.",
+    "Tiens mon grand, pour te prendre un bon café.",
+    "Tiens mon loulou, pour t'offrir une petite douceur.",
+    "Tiens mon biquet, pour te régaler ce soir.",
+    "Tiens mon poussin, pour t'acheter un bon gâteau.",
+    "Tiens mon cœur, pour te faire plaisir.",
+    "Tiens mon petit chat, pour te prendre une boisson chaude.",
+    "Tiens mon canard, pour te payer une glace.",
+    "Tiens mon lapin, pour te faire un petit kiff.",
+    "Tiens mon trésor, pour t'offrir un bon repas.",
+    "Tiens mon soleil, pour égayer ta journée.",
+    "Tiens ma puce, pour te prendre un bon goûter.",
+    "Tiens mon ange, pour te faire une petite surprise.",
+    "Tiens mon petit bout, pour t'acheter des bonbons."
+  ],
+  "MAMIE_MUSIQUE_PHRASES": [
+    "Tiens mon petit, mange bien, tu vas avoir besoin d'énergie pour faire du bruit.",
+    "Tiens mon grand, j'ai écouté ton dernier son, c'était... original. Prends ça.",
+    "Tiens mon loulou, tu me fais penser à mon fils, il fait aussi de la musique dans son garage.",
+    "Tiens mon poussin, avec ça tu pourras t'acheter un synthé d'occasion.",
+    "Tiens mon cœur, j'aime bien ton style, même si je comprends rien aux paroles.",
+    "Tiens mon petit chat, t'as l'air fatigué, mange un peu et repose-toi.",
+    "Tiens mon canard, j'ai vu ta vidéo TikTok, tu danses bien pour un jeune.",
+    "Tiens mon lapin, tiens-toi droit, un artiste ça doit avoir du charisme.",
+    "Tiens mon trésor, j'ai dit à mes copines de maternelle d'écouter ta musique.",
+    "Tiens mon soleil, tu me rappelles Johnny quand il était jeune."
+  ],
+  "MAMIE_FINAL_PHRASES": [
+    "Mon petit, tu n'as plus besoin de moi. Tu es indépendant maintenant. Je suis fière de toi.",
+    "Ça y est, tu as 100 000€. Maintenant, vole de tes propres ailes.",
+    "Je garde mes 50€ pour mes mots croisés. Tu es grand maintenant.",
+    "Tu as réussi, mon chéri. Mamie peut enfin souffler.",
+    "À partir d'aujourd'hui, c'est toi le patron. Plus besoin de Mamie."
+  ],
+  "ARTIST_NEGO_PHRASES": [
+    "Alors, on renouvelle ou pas ?",
+    "Mon contrat se termine, qu'est-ce que tu proposes ?",
+    "Je suis là pour parler de mon avenir.",
+    "Tu veux continuer avec moi ou je me casse ?",
+    "J'ai des offres ailleurs, mais je t'écoute d'abord.",
+    "Je suis prêt à rester si les conditions sont bonnes.",
+    "Je pars si t'as pas de bons arguments.",
+    "Je veux rester, mais j'ai besoin de plus.",
+    "Tu veux resigner un talent comme moi ?",
+    "Je viens te parler de mon contrat.",
+    "On fait le point sur mon avenir ?",
+    "Je suis en fin de contrat, je veux voir ce que tu proposes.",
+    "J'ai kiffé bosser avec toi, mais j'ai des doutes.",
+    "Je suis chaud pour continuer, mais à mes conditions.",
+    "Je vais pas te mentir, j'ai des offres intéressantes ailleurs."
+  ],
+  "EVENT_SUCCESS_PHRASES": [
+    "Les réseaux sociaux sont en ébullition !",
+    "Le public est en transe !",
+    "Le Mossad vous doit une fière chandelle.",
+    "Le scandale est retombé comme par magie.",
+    "Le live Twitch a explosé les compteurs.",
+    "Le vent tourne en votre faveur.",
+    "Vous avez un sacré culot."
+  ],
+  "EVENT_FAIL_PHRASES": [
+    "Le public est furieux, il manifeste dans la rue !",
+    "Les réseaux sociaux vous lynchent.",
+    "Le scandale est dans tous les journaux.",
+    "La roue tourne mal...",
+    "Les dieux du rap vous ont abandonné.",
+    "La poisse vous colle à la peau."
+  ],
+  "RIVAL_NAMES": [
+    {
+      "name": "Empire Records",
+      "style": "Major agressif"
+    },
+    {
+      "name": "Underground Kings",
+      "style": "Crédibilité rue"
+    },
+    {
+      "name": "Global Sound Co.",
+      "style": "Hits internationaux"
+    }
+  ],
+  "LOOK_PLACEHOLDERS": [
+    "mon poto",
+    "ma myrtille",
+    "mon mexicanos",
+    "un croissant qui a mal tourné",
+    "une légende urbaine",
+    "Beyoncé un lundi matin",
+    "un stagiaire trop confiant",
+    "un cousin de la hess",
+    "une pub de parfum ratée",
+    "un vendeur de kebab visionnaire",
+    "ta tante à un mariage",
+    "un influenceur en PLS"
+  ],
+  "HELP_CONTENT": [
+    {
+      "title": "👋 Bienvenue à la tête de ${label}",
+      "body": "<b>🎯 Le but :</b> faire grandir votre label jusqu'à devenir un empire musical, palier après palier.<br><br> <b>📊 Vos 6 statistiques (chaque action vous dit toujours pourquoi elle bouge) :</b><br> 💰 <b>Argent</b> — le carburant, sans lui rien ne tourne.<br> 📣 <b>Buzz</b> — viralité éclair, monte et redescend vite.<br> 👥 <b>Popularité</b> — notoriété durable, bouge lentement.<br> 📰 <b>Réputation</b> — crédibilité artistique.<br> 🤝 <b>Réseau</b> — vos relations professionnelles.<br> 😊 <b>Moral</b> — le bien-être moyen de vos artistes.<br><br> <b>🗺️ Où aller :</b> 🏠 Dashboard (vue d'ensemble), 🎤 Label (recruter/produire), 💰 Finance.<br><br> <b>⚡ La règle d'or :</b> les événements importants (bordure rouge) doivent être résolus avant de pouvoir avancer d'un Jour ou d'une Semaine — c'est le cœur du jeu. Et un choix reste toujours une surprise : vous ne savez ce qu'il change qu'une fois cliqué."
+    },
+    {
+      "title": "🎚️ Le label prend forme",
+      "body": "Vous pouvez maintenant recruter des <b>beatmakers</b> (fenêtre en bas à gauche, hype qui change chaque semaine) en plus des artistes.<br><br> Les <b>actions rapides</b> du Dashboard ont des rendements décroissants si vous les spammez dans la même semaine — variez vos leviers.<br><br> Un contrat qui se termine ouvre une <b>négociation</b> : l'artiste propose ses conditions, vous pouvez valider, refuser, ou contre-proposer avec une chance d'acceptation affichée en temps réel."
+    },
+    {
+      "title": "🏙️ Label local",
+      "body": "Vos artistes ont des <b>thèmes préférés</b> : les respecter en production augmente la qualité. Vous pouvez aussi les faire <b>changer de public</b> (nouveau genre/thèmes), au prix d'une indisponibilité.<br><br> Les artistes tissent des <b>relations</b> entre eux (amitié, rivalité, amour...) visibles dans leur profil — une bonne alchimie améliore un featuring, une mauvaise le plombe."
+    },
+    {
+      "title": "📡 Label national",
+      "body": "La <b>Rivalité (PvE)</b> se débloque à ce stade : affrontez des labels concurrents.<br><br> Le marché des artistes établis se filtre maintenant par genre, popularité, talent et salaire, avec une vraie recherche par pseudo.<br><br> Surveillez votre <b>stress</b> et votre <b>énergie</b> (carte Personnage du Dashboard) : à haute intensité, votre personnage encaisse aussi."
+    },
+    {
+      "title": "🌍 Label international",
+      "body": "Vos choix passés peuvent revenir vous voir sous forme de nouveaux événements — une manipulation ratée, une trahison, une dette de service... rien n'est jamais vraiment terminé.<br><br> L'âge de votre personnage fait évoluer les événements qui vous concernent : jeunesse, cap de la trentaine, maturité, plus tard une réflexion sur la suite."
+    },
+    {
+      "title": "👑 Empire musical",
+      "body": "Vous avez atteint le sommet. Le vrai jeu maintenant : préserver l'équilibre — moral de l'équipe, relations, stress personnel — tout en continuant de faire des sons qui comptent."
+    }
+  ],
+  "MAMIE_JOKER_PHRASES": [
+    "J'ai réussi à scam Papie, tiens prends son fric aussi.",
+    "Tiens mon minou, j'ai escroqué une mamie tricheuse au bingo, bien fait pour elle.",
+    "Tiens mon petit, j'ai vendu la vieille culotte trouée de la voisine comme \"pièce vintage\" sur un vide-grenier.",
+    "Prends ça mon chat, j'ai piqué la cagnotte du loto des retraités et j'ai dit que c'était le facteur.",
+    "Tiens mon loulou, j'ai fait croire à un gars que j'étais une princesse en exil qui avait besoin d'aide.",
+    "J'ai retourné le frère de Mamie Michelle, tiens prends sa part avant qu'il se réveille.",
+    "Tiens mon grand, j'ai volé le porte-monnaie d'un client qui pionçait au bar-tabac.",
+    "Tiens mon poussin, j'ai fait un concours de pets avec les copines à la maison de retraite, j'ai gagné 50 balles.",
+    "J'ai vendu mon vieux fauteuil à un type bizarre sur Le Bon Coin, tiens prends l'argent avant que je change d'avis.",
+    "Tiens mon trésor, j'ai fait chanter le maire en personne, il a craché le morceau direct.",
+    "Prends ça mon petit père, j'ai volé le chien de la voisine snob pour toucher la rançon.",
+    "Tiens mon chéri, j'ai fait semblant d'être perdue et amnésique toute la journée sur le parvis de la gare.",
+    "J'ai dragué le fils du patron de la boulangerie, il m'a filé 100 balles pour que je le laisse tranquille.",
+    "Tiens mon canard, j'ai chanté un vieux tube à tue-tête collée à un gars dans le métro jusqu'à ce qu'il me paie pour arrêter.",
+    "Prends cette thune mon lapin, j'ai falsifié des tickets de loterie pour les mamies du quartier, elles ont rien vu.",
+    "Tiens mon petit cœur, j'ai vendu les bijoux de la mère de ma belle-fille, elle les cherche encore.",
+    "J'ai fait une fausse tombola pour les enfants du village, personne n'a rien gagné sauf moi.",
+    "Tiens mon soleil, j'ai insulté le facteur, il m'a filé 50 euros pour que je ferme ma gueule.",
+    "Prends ça ma puce, j'ai volé le caddie d'une vieille au supermarché, il était plein.",
+    "Tiens mon bijou, j'ai fait la manche devant la mairie déguisée en clown, ça a bien marché.",
+    "Tiens mon petit bout, j'ai volé un chèque dans la boîte aux lettres du voisin, je l'ai encaissé.",
+    "J'ai fauché la carte bleue de mon fils, tiens, prends ça avant qu'il la bloque.",
+    "Tiens mon caniche, j'ai chanté à tue-tête dans le bus, un type m'a donné 10 euros pour que je me taise.",
+    "J'ai pissé dans le pot de fleurs du patron du PMU, il m'a filé 50 euros pour que je le refasse pas.",
+    "Tiens mon poussin, j'ai volé le pop-corn d'une vieille au cinéma, elle a fini le film le ventre vide.",
+    "J'ai fait croire à mon pharmacien que j'avais le cancer, il m'a filé des médicaments gratuits.",
+    "Tiens mon chat, j'ai écrasé les fleurs de la voisine avec ma trottinette, elle m'a donné 20 euros pour les remplacer.",
+    "J'ai vendu la télé de Papie à un inconnu au marché aux puces, il a cru que c'était du neuf.",
+    "J'ai pris le petit-déjeuner de l'hôtel à 6h du mat', personne m'a vue, tiens prends les viennoiseries.",
+    "Tiens mon biquet, j'ai volé un vélo à un gamin, je l'ai revendu à son père.",
+    "J'ai chanté du Johnny à tue-tête en plein marché, un type m'a donné 10 euros pour que j'arrête.",
+    "Tiens mon trésor, j'ai fait la queue devant le distributeur pour un SDF, il m'a donné 5 euros.",
+    "J'ai pissé sur le banc du parc, les flics m'ont filé 20 euros pour que je me casse.",
+    "Tiens mon cœur, j'ai volé un lapin dans la ferme du voisin, je l'ai mangé et j'ai menti sur son âge pour le vendre en tant que \"lapin de qualité supérieure\".",
+    "Tiens mon ange, j'ai escroqué le médecin en lui disant que j'avais une maladie rare, il m'a prescrit des médicaments que j'ai revendus.",
+    "J'ai fait le mort au milieu de la rue, les gens m'ont filé 30 euros pour que je bouge.",
+    "Tiens mon petit, j'ai volé un chat dans une animalerie, j'ai inventé un nom et je l'ai vendu à 3 personnes différentes.",
+    "J'ai fait une pièce de théâtre dans le métro avec une fausse guitare, j'ai gagné 50 euros en une heure.",
+    "Tiens mon bijou, j'ai dit à ma sœur que j'avais un cancer pour qu'elle me donne sa maison, elle l'a fait.",
+    "J'ai vendu des faux billets à un touriste un peu naïf, il m'a même remerciée, tiens je te file le bénéfice.",
+    "Tiens mon chou, j'ai insulté un sportif dans la rue, il m'a filé 100 euros pour que je me taise, il avait peur des paparazzis.",
+    "Tiens ma puce, j'ai volé des fleurs dans un cimetière et je les ai vendues à une autre personne en deuil, elle a dit que c'était magnifique.",
+    "Tiens mon biquet, j'ai fait une fausse pizza pour un livreur, il m'a payé et je lui ai dit qu'il était trop tard pour la livraison.",
+    "Tiens mon petit, j'ai dit à une mamie que j'étais agent immobilier, elle m'a donné 200 euros pour vendre sa maison, je lui ai juste volé la clé."
+  ],
+  "START_FLAVORS": [
+    {
+      "name": "Sept kebabs",
+      "icon": "🥙",
+      "desc": "Sept kebabs chez AntoineKebab, ça fait 50€. C'est très exactement tout ce que vous possédez au monde."
+    },
+    {
+      "name": "Le dernier ticket",
+      "icon": "🎰",
+      "desc": "Vous avez gratté le dernier ticket du carnet. 50€. De quoi arrêter, ou de quoi commencer."
+    },
+    {
+      "name": "Trois semaines de scooter",
+      "icon": "🛵",
+      "desc": "Trois semaines à livrer des pizzas sous la pluie. Il reste 50€ une fois l'essence payée."
+    },
+    {
+      "name": "La collection",
+      "icon": "👟",
+      "desc": "Vous avez vendu vos paires une par une. La dernière est partie ce matin. Total : 50€."
+    },
+    {
+      "name": "Le budget nouilles",
+      "icon": "🍜",
+      "desc": "50€, soit environ six mois de nouilles instantanées. Ou le début de quelque chose."
+    },
+    {
+      "name": "Le vide-grenier",
+      "icon": "🪑",
+      "desc": "Vous avez vidé l'appartement sur une table pliante. Les gens ont marchandé. Il reste 50€."
+    },
+    {
+      "name": "La console",
+      "icon": "🎮",
+      "desc": "Vous avez revendu la console et les jeux avec. 50€, et plus aucune excuse pour procrastiner."
+    },
+    {
+      "name": "Le trop-perçu",
+      "icon": "🧾",
+      "desc": "Un remboursement inattendu tombe sur le compte : 50€. Vous décidez de ne pas le dépenser bêtement."
+    },
+    {
+      "name": "Le pari improbable",
+      "icon": "🍀",
+      "desc": "Vous aviez misé sur un match que personne ne croyait gagnable. 50€ de gains, et une idée en tête."
+    },
+    {
+      "name": "La consigne",
+      "icon": "🧃",
+      "desc": "Deux mois à ramener les bouteilles. La machine a fini par cracher 50€. C'est un début."
+    },
+    {
+      "name": "La porte claquée",
+      "icon": "🚪",
+      "desc": "Vous avez posé votre démission ce matin sans plan B. Il vous reste 50€ et une intuition."
+    },
+    {
+      "name": "Le solde de tout compte",
+      "icon": "💼",
+      "desc": "Licencié en fin de mois. Une fois les dettes réglées, il reste 50€ sur le compte."
+    },
+    {
+      "name": "Le dernier virement",
+      "icon": "🎓",
+      "desc": "Vos parents ont fait le dernier virement. Ils ont été clairs : c'était le dernier. 50€."
+    },
+    {
+      "name": "Ce qu'il reste",
+      "icon": "🏚️",
+      "desc": "Loyer, factures, courses. Ce qui survit à la fin du mois tient dans une main : 50€."
+    },
+    {
+      "name": "Dix ans de retard",
+      "icon": "📻",
+      "desc": "Dix ans que vous repoussez ce projet. Aujourd'hui vous avez 50€ et plus vraiment le temps d'attendre."
+    },
+    {
+      "name": "L'héritage",
+      "icon": "🕯️",
+      "desc": "Un grand-oncle que vous connaissiez à peine vous a laissé 50€ et une lettre de deux lignes."
+    },
+    {
+      "name": "Le refus",
+      "icon": "🧭",
+      "desc": "Vous avez décliné un CDI la semaine dernière. Il vous reste 50€ et la conviction d'avoir eu raison."
+    },
+    {
+      "name": "Après la casse",
+      "icon": "🩹",
+      "desc": "Le groupe a splitté en janvier. Vous récupérez 50€ de la caisse commune et tout le reste à reconstruire."
+    },
+    {
+      "name": "La deuxième tentative",
+      "icon": "⚓",
+      "desc": "Ce n'est pas votre premier essai. Le premier a coûté cher. Cette fois vous partez avec 50€ et de la méthode."
+    },
+    {
+      "name": "La promesse",
+      "icon": "🌙",
+      "desc": "Vous aviez promis à quelqu'un que vous le feriez un jour. Ce jour est arrivé, avec 50€ en poche."
+    }
+  ]
+}

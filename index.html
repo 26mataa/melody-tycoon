@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Melody Tycoon — gérez un label musical, signez des artistes, produisez des sons et affrontez vos rivaux.">
+<meta name="theme-color" content="#f5f3ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<title>Melody Tycoon</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript>Melody Tycoon nécessite JavaScript pour fonctionner. Activez-le puis rechargez la page.</noscript>
+
+<div id="app"></div>
+
+<!-- Overlay de révélation partagé : tirages au sort ET révélation des conséquences d'un choix d'événement. -->
+<div class="roll-bg" id="rollBg">
+  <div class="roll-card">
+    <div class="roll-label" id="rollLabel">Le destin se joue...</div>
+    <div class="roll-emoji" id="rollEmoji">🎲</div>
+    <div class="roll-result" id="rollResult"></div>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

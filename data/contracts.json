@@ -1,0 +1,154 @@
+{
+  "CONTRACT_DURATIONS": [
+    {
+      "id": "3m",
+      "name": "Court terme",
+      "chapitres": 4,
+      "mult": 0.5
+    },
+    {
+      "id": "6m",
+      "name": "Standard",
+      "chapitres": 8,
+      "mult": 1
+    },
+    {
+      "id": "1a",
+      "name": "Longue durée",
+      "chapitres": 15,
+      "mult": 1.8
+    },
+    {
+      "id": "2a",
+      "name": "Engagement total",
+      "chapitres": 28,
+      "mult": 3.2
+    }
+  ],
+  "START_OPTIONS": [
+    {
+      "id": "zero",
+      "name": "Commencer avec 7 kebabs",
+      "icon": "🥙",
+      "budget": 50,
+      "artists": 0,
+      "mamie": true,
+      "difficulty": "Le vrai départ",
+      "main": true,
+      "desc": "7 kebabs chez AntoineKebab, ça fait 50€. C'est tout ce que vous avez. Mamie Huguette vous aidera au début. C'est la seule façon de commencer une vraie partie."
+    },
+    {
+      "id": "admin",
+      "name": "Mode Admin (test)",
+      "icon": "🛠️",
+      "budget": 99999999,
+      "artists": 0,
+      "mamie": false,
+      "difficulty": "Debug",
+      "main": false,
+      "desc": "Argent illimité, tous les paliers et systèmes débloqués immédiatement. Sert uniquement à tester le jeu, pas à y jouer normalement."
+    }
+  ],
+  "ROSTER_CAPS": [
+    2,
+    3,
+    5,
+    8,
+    12,
+    18
+  ],
+  "TIERS": [
+    {
+      "id": 0,
+      "name": "Garage",
+      "icon": "🏚️",
+      "min": 0
+    },
+    {
+      "id": 1,
+      "name": "Underground reconnu",
+      "icon": "🎚️",
+      "min": 12
+    },
+    {
+      "id": 2,
+      "name": "Label local",
+      "icon": "🏙️",
+      "min": 28
+    },
+    {
+      "id": 3,
+      "name": "Label national",
+      "icon": "📡",
+      "min": 48
+    },
+    {
+      "id": 4,
+      "name": "Label international",
+      "icon": "🌍",
+      "min": 68
+    },
+    {
+      "id": 5,
+      "name": "Empire musical",
+      "icon": "👑",
+      "min": 85
+    }
+  ],
+  "MARKET_PAGE_SIZE": 4,
+  "POP_BRACKET_LABEL": {
+    "tous": "Toutes popularités",
+    "insta": "Rappeur d'insta (<40)",
+    "pays": "Star de son pays (40-74)",
+    "intl": "Star internationale (75+)"
+  },
+  "TALENT_BRACKET_LABEL": {
+    "tous": "Tous talents",
+    "0-25": "0-25",
+    "25-50": "25-50",
+    "50-75": "50-75",
+    "75-100": "75-100"
+  },
+  "IMPACT_LABELS": {
+    "argent": "€",
+    "notoriete": "Notoriété",
+    "credibilite": "Crédibilité",
+    "humeur": "Moral"
+  },
+  "ARTIST_GENRES": [
+    "Rap Hardcore",
+    "Pop",
+    "RnB",
+    "Electro",
+    "Drill",
+    "Afro",
+    "Rap Comédie",
+    "Rock",
+    "Rap US",
+    "Rap FR",
+    "Rap UK",
+    "K-pop",
+    "Experimental",
+    "Rage",
+    "RnB FR",
+    "Metal",
+    "Reggae",
+    "Jazz",
+    "Techno",
+    "Country",
+    "Punk",
+    "Trap",
+    "R&B",
+    "Classique",
+    "Soul",
+    "Chanson",
+    "Folk",
+    "Dub",
+    "Dancehall",
+    "Grime",
+    "Crunk",
+    "Plug",
+    "YouTuber",
+    "Insta-Artist"
+  ]
+}
